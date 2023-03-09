@@ -1,0 +1,226 @@
+a {
+  color: #1977cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3291e6;
+  text-decoration: none;
+}
+
+#header {
+  background: #fff;
+  height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+  z-index: 996;
+  position: relative;
+}
+
+#header.header-scrolled {
+  top: -40px;
+}
+
+#header .contact-info a {
+  line-height: 1;
+  color: #444444;
+  transition: 0.3s;
+}
+
+#header .contact-info a:hover {
+  color: #1977cc;
+}
+
+#header .contact-info i {
+  color: #1977cc;
+  padding-right: 4px;
+  margin-left: 15px;
+  line-height: 0;
+}
+
+#header .contact-info i:first-child {
+  margin-left: 0;
+}
+
+#header .social-links a {
+  color: #437099;
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#header .social-links a:hover {
+  color: #1977cc;
+}
+
+#header .social-links a:first-child {
+  border-left: 0;
+}
+
+#header .social-links a {
+  color: #437099;
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#header .social-links a:hover {
+  color: #1977cc;
+}
+
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* contact.html */
+
+.address-section {
+  padding-top: 2rem;
+}
+
+.info {
+  padding-bottom: 2rem;
+}
+
+.info a {
+  text-decoration: none;
+  color: black;
+}
+/* contact.html */
+
+/* Event,Event_detail, news and news_detail start*/
+/*breadcrumb starts*/
+@media only screen and (max-width: 768px) {
+  .breadcrumb-title-heading h3 {
+    font-size: medium;
+  }
+}
+
+.breadcrumb-item a {
+  text-decoration-line: underline !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  float: left;
+  padding-right: 0.5rem;
+  color: black;
+  content: var(--bs-breadcrumb-divider, "/");
+}
+
+/* breadcrumb end*/
+
+/* event details right card section starts */
+@media only screen and (max-width: 767px) {
+  .card_section {
+    display: none;
+  }
+}
+
+.event-detail-item-card img {
+  height: 150px;
+  width: 100%;
+}
+
+.event-detail-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.event-detail-item-card {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.event-detail-item-card:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.event-detail-item-card-text {
+  height: 80px;
+}
+
+.event-detail-item-card::before,
+.event-detail-item-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: "";
+  pointer-events: none;
+}
+.event-detail-item-card::before {
+  transform-origin: left top;
+}
+.event-detail-item-card::after {
+  transform-origin: right bottom;
+}
+.event-detail-item-card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+
+/* event details right card section starts */
+
+/* event details  social link hover effect  */
+
+.hovereffect:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+/* event details  social link hover effect  */
+
+/* Event,Event_detail, news and news_detail start*/
+
+/* carouse and card image size css start*/
+.carousel-item img {
+  object-fit: fill;
+  width: 100%;
+  height: 300px;
+}
+
+.small-card img {
+  object-fit: fill;
+  width: 100%;
+  height: 200px;
+}
+
+.large-card img {
+  object-fit: fill;
+  width: 100%;
+  height: 400px;
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel-item img {
+    object-fit: fill;
+    width: 100%;
+    height: 250px;
+  }
+  .small-card img {
+    object-fit: fill;
+    width: 100%;
+    height: 170px;
+  }
+
+  .large-card img {
+    object-fit: fill;
+    width: 100%;
+    height: 250px;
+  }
+
+  .carousel-caption {
+    font-size: 18px;
+    height: 190px !important;
+  }
+}
+
+/* image size css end*/
