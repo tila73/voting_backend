@@ -43,7 +43,7 @@ class Slider(models.Model):
 # About Model
 class About(models.Model):
     about_title = models.CharField(("Title"), max_length=50)
-    about_description = models.TextField(("Description"), max_length=500)
+    about_description = models.TextField(("Description"), max_length=255)
     about_img = models.ImageField(("Image"), upload_to='img/about/', height_field=None, width_field=None, max_length=None)
     status = models.BooleanField( default=True, help_text="0=inactive, 1=active")
 
@@ -68,7 +68,7 @@ class Testimonial(models.Model):
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
 
     def __str__(self):
-        return self.testmoni_name
+        return self.testmoni_name           
 class Company(models.Model):
     companyImg = models.ImageField(upload_to='img/', blank=False, null=False)
     title = models.CharField(max_length=150)
