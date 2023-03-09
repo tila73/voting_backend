@@ -7,6 +7,9 @@ class faq(models.Model):
     message = models.TextField()
     status = models.BooleanField(default=False, help_text="0=default, 1-Active")
 
+    def __str__(self):
+        return self.name
+
 class blog(models.Model):
     img = models.ImageField(upload_to="img/blogImg/", blank=False)
     title = models.CharField(max_length=200)
@@ -14,3 +17,6 @@ class blog(models.Model):
     author = models.CharField(max_length=200)
     author_img = models.ImageField(upload_to="img/authorImg/", blank=False)
     slug = models.CharField(max_length=150, null=False, blank=False)
+
+    def __str__(self):
+        return self.title
