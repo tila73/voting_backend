@@ -1,4 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import BaseAbstractUser
+# form auto generating username 
+from controller.auto_generate_username import *
+# for encrypting password with hash algorithm
+from django.contrib.auth.hashers import make_password
+
 
 # Create your models here.
 # model for event and event detail page
@@ -111,3 +117,26 @@ class Teams(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class User(models.Model):
+    name = models.CharField(("Name"), max_length=255)
+    username = models.CharField(("Username"), max_length=255, unique=True)
+    email = models.EmailField(("Email"), max_length=255, unique=True)
+    password = models.CharField(("Password"), max_length=128, default=make_password)
+    address = models.CharField(("Address"), max_length=255, null=True)
+    phone_number = models.CharField(("Phone Number"), max_length=255)
+    esewa_number = models.CharField(("Esewa Number"), max_length=255, null=True)
+    role = models.IntegerField(("User Role"), default=1, help_text="0=business user(owner), 1=admin, 2=sub business user(owner)")
+    status = models.BooleanField(default=True, help_text="0=inactive, 1=active" )
+    created_at = models.DateTimeField(("Created date"), auto_now=True, auto_now_add=True)
+    updated_at = models.DateTimeField(("Updated Date"), auto_now=False, auto_now_add=False)
+
+
+    def save(self, *args, **kwargs):
+        if not self.username:
+            self.username = generate_username(self) #generate_username function from the controller
+        super(User, self).save(*args, **kwargs)
+
+
+    
