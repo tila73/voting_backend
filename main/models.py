@@ -11,7 +11,7 @@ from django.contrib.auth.hashers import make_password
 # Create your models here.
 # model for event and event detail page
 class Event(models.Model):
-    event_title = models.CharField(("Title"), max_length=50)
+    event_title = models.CharField(("Title"), max_length=100)
     event_description =models.TextField(("Description"), max_length=None)
     event_date = models.DateTimeField(("Date"), auto_now=False, auto_now_add=False)
     event_img = models.ImageField(("Image"), upload_to='img/event/', height_field=None, width_field=None, max_length=None)
@@ -24,7 +24,7 @@ class Event(models.Model):
 
  # model for News and News detail page   
 class News(models.Model):
-    news_title = models.CharField(("Title"), max_length=50)
+    news_title = models.CharField(("Title"), max_length=5100)
     news_description =models.TextField(("Description"))
     news_author = models.CharField(("Written By"), max_length=50)
     news_date = models.DateTimeField(("News date"), auto_now=False, auto_now_add=False)
@@ -38,7 +38,7 @@ class News(models.Model):
 
 # Model for SLider
 class Slider(models.Model):
-    slider_title = models.CharField(("Title"), max_length=50)
+    slider_title = models.CharField(("Title"), max_length=100)
     slider_description = models.TextField(("Description"), max_length=255)
     slider_img = models.ImageField(("Image"), upload_to='img/slider/', height_field=None, width_field=None, max_length=None)
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
@@ -50,7 +50,7 @@ class Slider(models.Model):
 
 # About Model
 class About(models.Model):
-    about_title = models.CharField(("Title"), max_length=50)
+    about_title = models.CharField(("Title"), max_length=100)
     about_description = models.TextField(("Description"), max_length=255)
     about_img = models.ImageField(("Image"), upload_to='img/about/', height_field=None, width_field=None, max_length=None)
     status = models.BooleanField( default=True, help_text="0=inactive, 1=active")
@@ -110,11 +110,11 @@ class Teams(models.Model):
     title = models.CharField(max_length=150)
     sub_desc = models.TextField()
     img = models.ImageField(upload_to='img/teams', blank=False, null=False)
-    name = models.CharField(max_length=255)
-    post = models.CharField(max_length=255)
-    fb_link = models.CharField(max_length=255)
-    twitter_link = models.CharField(max_length=255)
-    insta_link = models.CharField(max_length=255)
+    name = models.CharField(max_length=60)
+    post = models.CharField(max_length=100)
+    fb_link = models.CharField(max_length=150)
+    twitter_link = models.CharField(max_length=150)
+    insta_link = models.CharField(max_length=150)
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
 
     def __str__(self):
@@ -135,9 +135,9 @@ class AdminUser(models.Model):
     username = models.CharField(("Username"), max_length=255, unique=True)
     email = models.EmailField(("Email"), max_length=255, unique=True)
     password = models.CharField(("Password"), max_length=128, default=hashed_password)
-    address = models.CharField(("Address"), max_length=255, null=True)
-    phone_number = models.CharField(("Phone Number"), max_length=255)
-    esewa_number = models.CharField(("Esewa Number"), max_length=255, null=True)
+    address = models.CharField(("Address"), max_length=100, null=True)
+    phone_number = models.CharField(("Phone Number"), max_length=100)
+    esewa_number = models.CharField(("Esewa Number"), max_length=100, null=True)
     role = models.IntegerField(("User Role"), default=1, help_text="0=business user(owner), 1=admin, 2=sub business user(owner)")
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active" )
     created_at = models.DateTimeField(("Created date"), auto_now_add=True)
@@ -170,3 +170,13 @@ class AdminUser(models.Model):
 #         super(AdminUser, self).save(*args, **kwargs)
 
 
+
+class Gallery(models.Model):
+    user_id = models.ForeignKey(AdminUser,on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='img/galleries', height_field=None, width_field=None, max_length=100)
+    top_title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=255)
+
+    def __str__(self):
+        return self.title
