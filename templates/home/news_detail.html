@@ -1,0 +1,157 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+
+<!-- main -->
+<section>
+  <div class="container">
+    <div class="row py-2 px-4">
+      <div class="col-2 breadcrumb-title-heading text-secondary">
+        <h3>News Details</h3>
+      </div>
+      <div class="col-10 d-flex align-items-center justify-content-end">
+        <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="news.html">News</a></li>
+            <li
+              class="breadcrumb-item text-secondary active"
+              aria-current="page"
+            >
+              News Detail
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- breadcrumb section end -->
+  </div>
+</section>
+
+<div class="container mb-3">
+  <div class="content-wrapper px-4 py-3">
+    <div class="text-center py-2 px-3 w-100 m-auto">
+      <div class="news_title">
+        <h2>News Title Lorem ipsum dolor sit amet.</h2>
+      </div>
+      <div
+        class="social_share d-flex justify-content-between align-items-center"
+      >
+        <a href="" class="text-decoration-none text-justify">
+          <h6>Author Name</h6>
+          <h6>Date:56/56/5555</h6>
+        </a>
+        <div class="py-2 px-3">
+          <a href="" class="text-decoration-none me-2"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="" class="text-decoration-none me-2"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="" class="text-decoration-none me-2"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="" class="text-decoration-none"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- liveEvent section start -->
+
+    <div class="w-100 text-justify p-3 m-auto">
+      <div class="large-card">
+        <img
+          src="./uploads/download.jpeg"
+          alt=""
+          class="d-block w-100"
+          style="max-height: 5000px"
+        />
+      </div>
+
+      <p class="pt-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+        voluptatum? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Autem officia minus quae impedit repudiandae quibusdam illum esse
+        tempore doloremque, laborum qui. Suscipit soluta ab corporis itaque! Cum
+        quibusdam magnam architecto. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Nostrum dolorem pariatur ipsum temporibus eos
+        excepturi veritatis praesentium omnis. Doloribus, id! Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Fugit, asperiores at et cum
+        laborum aliquid fuga nihil enim a vero, eum dolorum, in voluptates ea!
+        Quisquam, dolorum. Laboriosam, libero ut.
+      </p>
+
+      <div class="more_news mt-5">
+        <h3>Read Also:</h3>
+        <ul class="px-5">
+          <li>
+            <a href="#" class="text-decoration-none">
+              <h6>this is news heading</h6>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none">
+              <h6>this is news heading</h6>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-decoration-none">
+              <h6>this is news heading</h6>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row p-3">
+        <hr size="5" class="bg-dark" />
+        <h3 class="text-center">Additional News</h3>
+        <hr size="3" class="bg-dark" />
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card small-card" style="width: 100%">
+            <img src="./uploads/download.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body px-1">
+              <a href="#" class="text-decoration-none">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card small-card" style="width: 100%">
+            <img src="./uploads/download.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body px-1">
+              <a href="#" class="text-decoration-none">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card small-card" style="width: 100%">
+            <img src="./uploads/download.jpeg" class="card-img-top" alt="..." />
+            <div class="card-body px-1">
+              <a href="#" class="text-decoration-none">
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main ends -->
+
+{% endblock content %}

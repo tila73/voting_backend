@@ -1,0 +1,163 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+<!-- main -->
+<div class="container mb-3">
+  <!-- breadcrumb section start -->
+  <div class="row py-2 px-4">
+    <div class="col-3 breadcrumb-title-heading text-secondary">
+      <h3>Event Detail</h3>
+    </div>
+    <div class="col-9 d-flex align-items-center justify-content-end">
+      <nav
+        style="--bs-breadcrumb-divider: '>'"
+        aria-label="breadcrumb"
+        style="color: white"
+      >
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="event.html">Event</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Event Details
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- breadcrumb section end -->
+
+  <div class="row">
+    <!-- event detail body starts -->
+    <!-- event detail left section starts -->
+    <div
+      class="col-lg-8 col-md-8 col-sm-12 my-3 order-1 order-sm-1 order-md-0 order-lg-0"
+    >
+      <div class="card large-card mb-5" style="width: 100%">
+        <img
+          src="./uploads/gallery3.jpg"
+          class="card-img-top"
+          alt="..."
+          height="500px"
+        />
+        <div class="card-body">
+          <h5 class="card-title mt-2">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content. Some quick example text to build on the
+            card title and make up the bulk of the card's content.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- event detail left section ends -->
+
+    <!-- event detail right section starts -->
+
+    <div
+      class="col-lg-4 col-md-4 col-sm-12 my-3 order-0 order-sm-0 order-md-1 order-lg-1"
+    >
+      <!-- search section starts -->
+      <div
+        class="bg-light rounded rounded-pill shadow-sm mb-4"
+        style="width: 100%"
+      >
+        <div class="input-group">
+          <input
+            type="search"
+            placeholder="What're you searching for?"
+            aria-describedby="button-addon1"
+            class="form-control border-0 bg-light"
+          />
+          <div class="input-group-append">
+            <button
+              id="button-addon1"
+              type="submit"
+              class="btn item-card btn-link text-primary"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- search section ends -->
+
+      <!-- right card section starts -->
+      <div class="card_section order-last">
+        <div class="p-2">
+          <h4>Current Event</h4>
+        </div>
+
+        <!-- <a href="#"> If whole row to other link -->
+        <div class="mt-3">
+          <div class="event-detail-item">
+            <div class="card event-detail-item-card card-block p-3">
+              <!-- <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset"> -->
+              <h5 class="card-title">title</h5>
+              <p class="card-text">
+                Description Some quick example text to build on the card title
+              </p>
+              <h6 class="">Date</h6>
+            </div>
+          </div>
+        </div>
+        <!-- </a> -->
+        <!-- <a href="#"> If whole row to other link -->
+        <div class="mt-3">
+          <div class="event-detail-item">
+            <div class="card event-detail-item-card card-block p-3">
+              <!-- <img src="https    ://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset"> -->
+              <h5 class="card-title px-2">title</h5>
+              <p class="card-text px-2">
+                Description Some quick example text to build on the card title
+              </p>
+              <h6 class="px-2">Date</h6>
+            </div>
+          </div>
+        </div>
+        <!-- </a> -->
+        <!-- <a href="#"> If whole row to other link -->
+        <div class="mt-3">
+          <div class="event-detail-item">
+            <div class="card event-detail-item-card card-block p-3">
+              <!-- <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset"> -->
+              <h5 class="card-title px-2">title</h5>
+              <p class="card-text px-2">
+                Description Some quick example text to build on the card title
+              </p>
+              <h6 class="px-2">Date</h6>
+            </div>
+          </div>
+        </div>
+        <!-- </a> -->
+        <!-- Section: Tags -->
+        <div class="d-flex justify-content-center d-inline m-auto mt-3 p-1">
+          <a
+            class="btn hovereffect btn-link btn-floating btn-sm text-light bg-primary text-decoration-none border-rounded me-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            >Tag 1</a
+          >
+          <a
+            class="btn hovereffect btn-link btn-floating btn-sm text-light bg-primary text-decoration-none me-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            >Tag 2</a
+          >
+          <a
+            class="btn hovereffect btn-link btn-floating btn-sm text-light bg-primary text-decoration-none"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            >Tag 3</a
+          >
+        </div>
+        <!-- Section: TAgs -->
+      </div>
+      <!-- right card section ends -->
+    </div>
+    <!-- event detail right section ends -->
+  </div>
+  <!-- event detail body ends -->
+</div>
+
+{% endblock content %}

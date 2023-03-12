@@ -1,0 +1,167 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+
+<!-- main -->
+<section class="container">
+  <div class="row py-2 px-4">
+    <div class="col text-secondary">
+      <h3>News</h3>
+    </div>
+    <div class="col d-flex align-items-center justify-content-end">
+      <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item text-secondary active" aria-current="page">
+            News
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <!-- breadcrumb section end -->
+</section>
+
+<!-- breadcrumb section end -->
+
+<div class="container py-3 mb-3">
+  <div class="content-wrapper py-3">
+    <div class="row text-center py-2 w-100 m-auto">
+      <a href="" class="text-decoration-none">
+        <h2>News Title Lorem ipsum dolor sit amet.</h2>
+      </a>
+      <a href="" class="text-decoration-none">
+        <h6>Author Name</h6>
+      </a>
+    </div>
+
+    <!-- liveEvent section start -->
+
+    <div class="row w-100 text-center pb-3 m-auto">
+      <div>
+        <img
+          src="./uploads/4.png"
+          alt=""
+          class="d-block w-100"
+          style="height: 400px; position: relative"
+        />
+        <a
+          href="#"
+          class="text-decoration-none px-1"
+          style="
+            background-color: white;
+            position: absolute;
+            top: 300px;
+            left: 140px;
+          "
+          >HighLights</a
+        >
+      </div>
+
+      <p class="pt-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+        voluptatum?
+      </p>
+      <a href="" class="text-decoration-none">
+        <h6>Read More</h6>
+      </a>
+    </div>
+
+    <div class="row w-100 text-justify m-auto">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="highlight_news_section d-flex flex-column">
+          <div class="news_tags mb-3">
+            <h3>Highlights</h3>
+          </div>
+
+          <div class="highlight_news shadow-sm mb-3">
+            <a
+              href="news_detail.html"
+              class="btn btn-sm btn-outline-primary shadow mb-1"
+              >HightLight</a
+            >
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+              asperiores.
+            </p>
+          </div>
+          <div class="highlight_news shadow-sm mb-3">
+            <a
+              href="news_detail.html"
+              class="btn btn-sm btn-outline-primary shadow mb-1"
+              >HightLight</a
+            >
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+              asperiores.
+            </p>
+          </div>
+          <div class="highlight_news shadow-sm mb-3">
+            <a
+              href="news_detail.html"
+              class="btn btn-sm btn-outline-primary shadow mb-1"
+              >HightLight</a
+            >
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+              asperiores.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="row p-2">
+          <div class="col-4 small-card">
+            <img src="./uploads/download.jpeg" alt="" class="w-100" />
+          </div>
+
+          <div class="col-8">
+            <h4>News Heading</h4>
+            <a href="news_detail.html" class="text-decoration-none text-danger"
+              ><strong>News writer</strong>
+            </a>
+            <p>
+              brief news hello the weather is forcasted to be cloudy in most of
+              the parts of Gandaki province
+            </p>
+          </div>
+        </div>
+
+        <div class="row p-2">
+          <div class="col-4 small-card">
+            <img src="./uploads/download.jpeg" alt="" class="w-100" />
+          </div>
+
+          <div class="col-8">
+            <h4>News Heading</h4>
+            <a href="news_detail.html" class="text-decoration-none text-danger"
+              ><strong>News writer</strong>
+            </a>
+            <p>
+              brief news hello the weather is forcasted to be cloudy in most of
+              the parts of Gandaki province
+            </p>
+          </div>
+        </div>
+        <div class="row p-2">
+          <div class="col-4 small-card">
+            <img src="./uploads/download.jpeg" alt="" class="w-100" />
+          </div>
+
+          <div class="col-8">
+            <h4>News Heading</h4>
+            <a href="news_detail.html" class="text-decoration-none text-danger"
+              ><strong>News writer</strong>
+            </a>
+            <p>
+              brief news hello the weather is forcasted to be cloudy in most of
+              the parts of Gandaki province
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main ends -->
+
+{% endblock content %}

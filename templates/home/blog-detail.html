@@ -1,0 +1,87 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+<div class="my-5">
+  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+    <ol class="breadcrumb d-flex justify-content-center">
+      <li class="breadcrumb-item">
+        <a href="index.html" class="text-decoration-none">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="blog.html" class="text-decoration-none">Blog</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Blog Detail</li>
+    </ol>
+  </nav>
+  <li class="list-group-item text-center">
+    <h1 class="py-2">Blog Detail</h1>
+  </li>
+</div>
+
+<!-- first section -->
+<section class="container pb-5 mb-5">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="card" style="width: 80%">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="card-img-top img-fluid"
+          height="450px" alt="..." />
+      </div>
+      <div class="d-flex pt-5">
+        <div style="width: 8%">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+            class="card-img-top img-fluid rounded-circle" height="50px" alt="Responsive image" />
+        </div>
+        <div>
+          <p>Name</p>
+        </div>
+      </div>
+      <div class="card-body p-4">
+        <h5 class="card-title py-4">Title</h5>
+        <p class="card-text w-75">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
+          voluptatibus voluptas, vitae officia officiis temporibus nisi veniam
+          earum blanditiis molestias, possimus, ipsam cum assumenda expedita
+          porro consequuntur minus quidem facere dignissimos reprehenderit ea
+          ipsum libero consequatur placeat. Porro dignissimos quod officiis
+          consequuntur nam. Doloremque debitis quae doloribus hic tempora modi.
+          ome quick example text to build on the card title and make up the bulk
+          of the card's content.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-12 col-sm-12 py-2 shadow">
+      <form class="form-search d-flex pb-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      </form>
+      <h3 class="text-center">latest Blogs</h3>
+      <div class="blog-links">
+        <div class="text-justify p-4">
+          <p>Lorem,</p>
+          <p>Lorem,</p>
+          <p>Date</p>
+        </div>
+        <div class="text-justify p-4">
+          <p>Lorem,</p>
+          <p>Lorem,</p>
+          <p>Lorem,</p>
+        </div>
+        <div class="text-justify p-4">
+          <p>Lorem,</p>
+          <p>Lorem,</p>
+          <p>Lorem,</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-12 col-sm-12 text-center align-items-center">
+          <h3>Tags</h3>
+          <a href="#" class="twitter"><i class="bi p-1 bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi p-1 bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi p-1 bi-instagram"></i></a>
+          <a href="#" class="twitter"><i class="bi p-1 bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi p-1 bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi p-1 bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
