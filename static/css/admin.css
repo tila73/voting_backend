@@ -1,0 +1,9 @@
+
+
+
+@media screen and (max-width: 768px) {
+    .table_button{
+        font-size: 14px !important;
+        padding: 5px !important;
+    }
+  }
