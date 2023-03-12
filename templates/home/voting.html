@@ -1,0 +1,126 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+
+<!-- Breadcrumb -->
+<div
+  class="container py-2"
+  style="--bs-breadcrumb-divider: '>'"
+  aria-label="breadcrumb"
+>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Voting Page</li>
+  </ol>
+</div>
+
+<!-- Breadcrumb Ends Here -->
+
+<!-- Card Section -->
+<div class="container">
+  <h3 class="text-center p-2">
+    <span class="text-danger"> Vote</span>
+    <span class="text-primary">for your favorite contestants</span>
+  </h3>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m1.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(1)</p>
+          <h5 class="card-title">Sahara Malla</h5>
+          <a href="voting_detail.html" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m2.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(2)</p>
+          <h5 class="card-title">Ram Bahadur</h5>
+          <a href="#" class="btn btn-primary">Vote Now </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m3.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(3)</p>
+          <h5 class="card-title">Hari Lal</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m4.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(4)</p>
+          <h5 class="card-title">Shyam Ale</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m5.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(5)</p>
+          <h5 class="card-title">Nischal Adhikari</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m6.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(6)</p>
+          <h5 class="card-title">Ram Ale</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m7.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(7)</p>
+          <h5 class="card-title">Hari Ale</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card m-auto my-1">
+        <img src="./uploads/m8.png" class="card-img-top" alt="..." />
+        <div class="card-body text-center">
+          <p class="card-text">(8)</p>
+          <h5 class="card-title">Ale Til</h5>
+          <a href="#" class="btn btn-primary">Vote Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Card Section Ends here -->
+
+<!-- pagination -->
+<div class="mt-4">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
+</div>
+<!-- pagination Ends Here -->
+
+{% endblock content %}
