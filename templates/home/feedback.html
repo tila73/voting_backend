@@ -1,0 +1,110 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+<!-- Breadcrumb -->
+<div
+  class="container py-2"
+  style="--bs-breadcrumb-divider: '>'"
+  aria-label="breadcrumb"
+>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Voting Page</li>
+  </ol>
+</div>
+
+<!-- Breadcrumb Ends Here -->
+
+<!-- Feedback Section -->
+<div class="container">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 border-2 my-2 p-3 shadow-sm">
+            <div class="row justify-content-center">
+              <div class="col col-4 align-self-end">
+                <img src="./uploads/m2.png" width="70px" height="90px" alt="" />
+              </div>
+              <div class="col col-4 align-self-start">
+                <h5>Name</h5>
+                <h5>Post</h5>
+              </div>
+            </div>
+            <div class="p-3 text-justify">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
+                numquam repellendus id quia, iusto magni doloribus unde quos,
+                voluptates libero laborum porro similique? Quia veniam tempore
+                neque excepturi eligendi itaque.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 my-2 p-3 shadow-sm">
+            <div class="row justify-content-center">
+              <div class="col col-4 align-self-end">
+                <img src="./uploads/m2.png" width="70px" height="90px" alt="" />
+              </div>
+              <div class="col col-4 align-self-start">
+                <h5>Name</h5>
+                <h5>Post</h5>
+              </div>
+            </div>
+            <div class="p-3 text-justify">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
+                numquam repellendus id quia, iusto magni doloribus unde quos,
+                voluptates libero laborum porro similique? Quia veniam tempore
+                neque excepturi eligendi itaque.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- Feedback Section Ends Here -->
+{% endblock content %}

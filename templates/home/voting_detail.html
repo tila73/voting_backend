@@ -1,0 +1,57 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+
+<!-- Breadcrumb -->
+<div
+  class="container py-2"
+  style="--bs-breadcrumb-divider: '>'"
+  aria-label="breadcrumb"
+>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Voting Details</li>
+  </ol>
+</div>
+
+<!-- Breadcrumb Ends Here -->
+
+<!-- Section  -->
+<div class="container my-3">
+  <div class="row mt-2">
+    <div class="col-md-7 col-sm-12 col-lg-7">
+      <!-- Background image -->
+      <img class="w-100" src="./uploads/mn1.jpg" alt="" />
+      <!-- Background image -->
+    </div>
+    <div class="col-md-5 col-sm-12 col-lg-5">
+      <div class="content shadow p-3 mx-auto">
+        <div class="pb-4">
+          <h1 class="text-danger">Sahara Malla</h1>
+          <p>Sahara Malla</p>
+        </div>
+
+        <div class="mb-3 pb-4">
+          <label for="exampleFormControlInput1" class="form-label">
+            <b>Please Enter No. of Votes </b></label
+          >
+          <input
+            type="email"
+            class="form-control w-50"
+            id="exampleFormControlInput1"
+            placeholder=""
+          />
+        </div>
+        <div class="pb-4">
+          <label for="exampleFormControlInput1" class="form-label">
+            Total Amount</label
+          ><br />
+          <label for="exampleFormControlInput1" class="form-label"> 0</label>
+        </div>
+        <button class="btn btn-danger mb-4">Vote Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Ends Here -->
+
+{% endblock content %}

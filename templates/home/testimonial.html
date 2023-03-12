@@ -1,0 +1,135 @@
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
+
+<!-- Breadcrumb -->
+<div
+  class="container py-2"
+  style="--bs-breadcrumb-divider: '>'"
+  aria-label="breadcrumb"
+>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+  </ol>
+</div>
+
+<!-- Breadcrumb Ends Here -->
+
+<!-- Testimonials -->
+<section class="container">
+  <div class="mb-3 m-auto mb-5">
+    <div class="card-body">
+      <h2 class="card-title text-center p-4 me-5">Testimonials</h2>
+    </div>
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="m-auto" style="width: 18rem">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+              class="card-img-top rounded-circle"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title text-center">Name</h3>
+            </div>
+          </div>
+          <p class="card-text text-center p-3 container">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.Next, the
+            towel rack fell down when I reached for the one small bath towel.
+            This allowed the towel to fall halfway into the toilet. I tried to
+            watch a movie, but the remote control was sticky and wouldn’t stop
+            scrolling through the channels. I gave up for the night and crawled
+            into bed. I stretched out my leg and felt something furry by my
+            foot. Filled with fear, I reached down and to my surprise, I pulled
+            out a raccoon skin pair of underwear. After my initial relief that
+            it wasn’t alive, the image of a fat, ugly businessman wearing
+            raccoon skin briefs filled my brain. I jumped out of the bed,
+          </p>
+        </div>
+        <div class="carousel-item">
+          <div class="m-auto" style="width: 18rem">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+              class="card-img-top rounded-circle"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title text-center">Name</h3>
+            </div>
+          </div>
+          <p class="card-text text-center p-3">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.Next, the
+            towel rack fell down when I reached for the one small bath towel.
+            This allowed the towel to fall halfway into the toilet. I tried to
+            watch a movie, but the remote control was sticky and wouldn’t stop
+            scrolling through the channels. I gave up for the night and crawled
+            into bed. I stretched out my leg and felt something furry by my
+            foot. Filled with fear, I reached down and to my surprise, I pulled
+            out a raccoon skin pair of underwear. After my initial relief that
+            it wasn’t alive, the image of a fat, ugly businessman wearing
+            raccoon skin briefs filled my brain. I jumped out of the bed,
+          </p>
+        </div>
+        <div class="carousel-item">
+          <div class="m-auto" style="width: 18rem">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+              class="card-img-top rounded-circle"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title text-center">Name</h3>
+            </div>
+          </div>
+          <p class="card-text text-center p-3">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.Next, the
+            towel rack fell down when I reached for the one small bath towel.
+            This allowed the towel to fall halfway into the toilet. I tried to
+            watch a movie, but the remote control was sticky and wouldn’t stop
+            scrolling through the channels. I gave up for the night and crawled
+            into bed. I stretched out my leg and felt something furry by my
+            foot. Filled with fear, I reached down and to my surprise, I pulled
+            out a raccoon skin pair of underwear. After my initial relief that
+            it wasn’t alive, the image of a fat, ugly businessman wearing
+            raccoon skin briefs filled my brain. I jumped out of the bed,
+          </p>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon bg-dark"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon bg-dark"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Ends Here -->
+
+{% endblock content %}
