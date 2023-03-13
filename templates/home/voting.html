@@ -1,11 +1,7 @@
 {% extends 'inc/nav.html' %} {% load static %} {% block content %}
 
 <!-- Breadcrumb -->
-<div
-  class="container py-2"
-  style="--bs-breadcrumb-divider: '>'"
-  aria-label="breadcrumb"
->
+<div class="container py-2" style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Voting Page</li>
@@ -27,7 +23,7 @@
         <div class="card-body text-center">
           <p class="card-text">(1)</p>
           <h5 class="card-title">Sahara Malla</h5>
-          <a href="voting_detail.html" class="btn btn-primary">Vote Now</a>
+          <a href="{% url 'voting_detail' %}" class="btn btn-primary">Vote Now</a>
         </div>
       </div>
     </div>

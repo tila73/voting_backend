@@ -9,7 +9,7 @@
     <div class="col d-flex align-items-center justify-content-end">
       <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
         <ol class="breadcrumb m-0">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
           <li class="breadcrumb-item text-secondary active" aria-current="page">
             News
           </li>
@@ -37,23 +37,13 @@
 
     <div class="row w-100 text-center pb-3 m-auto">
       <div>
-        <img
-          src="./uploads/4.png"
-          alt=""
-          class="d-block w-100"
-          style="height: 400px; position: relative"
-        />
-        <a
-          href="#"
-          class="text-decoration-none px-1"
-          style="
+        <img src="./uploads/4.png" alt="" class="d-block w-100" style="height: 400px; position: relative" />
+        <a href="#" class="text-decoration-none px-1" style="
             background-color: white;
             position: absolute;
             top: 300px;
             left: 140px;
-          "
-          >HighLights</a
-        >
+          ">HighLights</a>
       </div>
 
       <p class="pt-3">
@@ -73,33 +63,21 @@
           </div>
 
           <div class="highlight_news shadow-sm mb-3">
-            <a
-              href="news_detail.html"
-              class="btn btn-sm btn-outline-primary shadow mb-1"
-              >HightLight</a
-            >
+            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
             </p>
           </div>
           <div class="highlight_news shadow-sm mb-3">
-            <a
-              href="news_detail.html"
-              class="btn btn-sm btn-outline-primary shadow mb-1"
-              >HightLight</a
-            >
+            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
             </p>
           </div>
           <div class="highlight_news shadow-sm mb-3">
-            <a
-              href="news_detail.html"
-              class="btn btn-sm btn-outline-primary shadow mb-1"
-              >HightLight</a
-            >
+            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
@@ -116,8 +94,7 @@
 
           <div class="col-8">
             <h4>News Heading</h4>
-            <a href="news_detail.html" class="text-decoration-none text-danger"
-              ><strong>News writer</strong>
+            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
             </a>
             <p>
               brief news hello the weather is forcasted to be cloudy in most of
@@ -133,8 +110,7 @@
 
           <div class="col-8">
             <h4>News Heading</h4>
-            <a href="news_detail.html" class="text-decoration-none text-danger"
-              ><strong>News writer</strong>
+            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
             </a>
             <p>
               brief news hello the weather is forcasted to be cloudy in most of
@@ -149,8 +125,7 @@
 
           <div class="col-8">
             <h4>News Heading</h4>
-            <a href="news_detail.html" class="text-decoration-none text-danger"
-              ><strong>News writer</strong>
+            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
             </a>
             <p>
               brief news hello the weather is forcasted to be cloudy in most of
