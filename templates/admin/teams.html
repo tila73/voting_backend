@@ -2,8 +2,24 @@
 {% load static %}
 {% block contents %}
 
+<div class="container-fluid">
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <h1 class="m-0">Teams</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Teams</li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+
 <div class="create_button mb-3">
     <a class="btn btn-success">Create</a>
+
   </div>
   
   
@@ -12,6 +28,7 @@
       <tr>
         <th scope="col">Title</th>
         <th scope="col">Name</th>
+        <th scope="col">img</th>
         <th scope="col">Post</th>
         <th scope="col">Status</th>
         <th scope="col">Actions</th>
@@ -19,8 +36,8 @@
     </thead>
     <tbody>
       <tr>
-       
         <td>Mark</td>
+        <td>Otto</td>
         <td>Otto</td>
         <td>@mdo</td>
         <td>Mark</td>

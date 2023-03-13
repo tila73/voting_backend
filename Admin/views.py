@@ -19,3 +19,9 @@ def services(request):
 
 def whychooseus(request):
     return render(request, 'admin/whychooseus.html')
+def event_detail(request):
+    return render(request, 'admin/event_detail.html')
+def news(request):
+    return render(request, 'admin/news.html')
+def news_detail(request):
+    return render(request, 'admin/news_detail.html')
