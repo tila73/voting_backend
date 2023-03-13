@@ -1,0 +1,18 @@
+
+
+
+@media screen and (max-width: 768px) {
+    .table_button{
+        font-size: 14px !important;
+        padding: 5px !important;
+    }
+  }
+
+  
+  @media only screen and (max-width: 600px) {
+    /* Responsive styles for screens with a maximum width of 600 pixels */
+    table, thead, tbody, td, tr {
+      display: block;
+    }
+
+  }
