@@ -4,7 +4,7 @@
   <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
     <ol class="breadcrumb d-flex justify-content-center">
       <li class="breadcrumb-item">
-        <a href="index.html" class="text-decoration-none">Home</a>
+        <a href="{% url 'home' %}" class="text-decoration-none">Home</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">Blog</li>
     </ol>
@@ -21,7 +21,7 @@
       <div class="row g-3 shadow mt-1 mb-1 pb-2" style="border-radius: 15px">
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
-            <a href="blog-detail.html" class="text-dark">
+            <a href="{% url 'blog_detail' %}" class="text-dark">
               <div class="card">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" class="card-img-top" alt="..." />
 
