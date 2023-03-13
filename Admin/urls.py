@@ -8,6 +8,20 @@ urlpatterns = [
     path('Event/details/', views.event_detail, name="event_detail"),  
     path('news/', views.news, name="news"),  
     path('news/details/', views.news_detail, name="news_detail"),  
+
+    # create section
+    path('news/create/', views.create_news, name="create_news"),  
+    path('news/create_detail/', views.create_news_details, name="create_news_details"),  
+
+
+# update section
+    path('news/update/', views.update_news, name="update_news"),  
+    path('news/update_details/', views.update_news_detail, name="update_news_detail"),  
+
+
+# delete
+    path('news/delete_news/<int:news_id>/', views.delete_news, name="delete_news"),  
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
