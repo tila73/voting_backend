@@ -32,7 +32,8 @@
   {% comment %} admin style {% endcomment %}
   <link rel="stylesheet" href="{% static 'css/admin.css' %}">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed " style="background-color:#ebf0fc">
@@ -339,7 +340,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'gallery' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Gallery
@@ -348,7 +349,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'slider' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Slider
@@ -358,7 +359,7 @@
 
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'about' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       About
@@ -367,7 +368,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'counts' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Counts
@@ -376,7 +377,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'testimonial' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Testimonials
@@ -385,7 +386,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'company' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Company
@@ -431,7 +432,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/gallery.html" class="nav-link">
+                  <a href="{% url 'blog' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
                       Blog
@@ -485,8 +486,8 @@
       <section class="content">
         <div class="container-fluid">
 
- {% block contents %}
-{% endblock contents %}
+          {% block contents %}
+          {% endblock contents %}
 
 
           <!-- /.row (main row) -->
@@ -520,7 +521,9 @@
     $.widget.bridge('uibutton', $.ui.button)
   </script>
   <!-- Bootstrap 4 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <!-- ChartJS -->
   <script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>

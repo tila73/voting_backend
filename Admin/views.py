@@ -45,9 +45,3 @@ def update_news(request):
 
 def update_news_detail(request):
     return render(request, 'admin/update_action/update_news_detail.html')
-
-def update_event(request):
-    return render(request, 'admin/update_action/update_event.html')
-
-def update_event_detail(request):
-    return render(request, 'admin/update_action/update_event_detail.html')

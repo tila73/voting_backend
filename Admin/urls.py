@@ -13,6 +13,20 @@ urlpatterns = [
     path('news/', views.news, name="admin_news"),  
     path('news/details/', views.news_detail, name="admin_news_detail"),  
 
+    path('', views.Dashboard, name="Dashboard"),  
+    path('Event', views.Event, name="Event"),  
+    path('faq/', views.faq, name="faq"),
+    path('teams/', views.teams, name="teams"),
+    path('services/', views.services, name="services"),
+    path('whychooseus/', views.whychooseus, name="whychooseus"),
+    path('Event/details/', views.event_detail, name="event_detail"),  
+    path('news/', views.news, name="news"),  
+    path('news/details/', views.news_detail, name="news_detail"),  
+    path('company/', views.company, name="company"),
+    path('gallery/', views.gallery, name="gallery"),
+    path('slider/', views.slider, name="slider"),
+    path('counts/', views.counts, name="counts"),
+    
         # create section
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
@@ -26,6 +40,12 @@ urlpatterns = [
     path('events/update/', views.update_event, name="update_event"),  
     path('events/update_details/', views.update_event_detail, name="update_event_detail"),  
 
+    path('about', views.about, name="about"),  
+    path('about/detail/', views.about_detail, name="about_detail"),  
+    path('blog', views.blog, name="blog"),  
+    path('blog/detail/', views.blog_detail, name="blog_detail"),  
+    path('testimonial', views.testimonial, name="testimonial"),  
+    path('testimonial/detail/', views.testimonial_detail, name="testimonial_detail"),  
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
