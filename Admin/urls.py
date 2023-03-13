@@ -12,7 +12,6 @@ urlpatterns = [
     path('Event/details/', views.event_detail, name="event_detail"),  
     path('news/', views.news, name="news"),  
     path('news/details/', views.news_detail, name="news_detail"),  
-<<<<<<< HEAD
     path('company/', views.company, name="company"),
     path('gallery/', views.gallery, name="gallery"),
     path('slider/', views.slider, name="slider"),
@@ -27,14 +26,12 @@ urlpatterns = [
     path('news/update/', views.update_news, name="update_news"),  
     path('news/update_details/', views.update_news_detail, name="update_news_detail"),  
 
-=======
     path('about', views.about, name="about"),  
     path('about/detail/', views.about_detail, name="about_detail"),  
     path('blog', views.blog, name="blog"),  
     path('blog/detail/', views.blog_detail, name="blog_detail"),  
     path('testimonial', views.testimonial, name="testimonial"),  
     path('testimonial/detail/', views.testimonial_detail, name="testimonial_detail"),  
->>>>>>> a09215e (this is from sujit)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

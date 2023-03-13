@@ -25,7 +25,6 @@ def news(request):
     return render(request, 'admin/news.html')
 def news_detail(request):
     return render(request, 'admin/news_detail.html')
-<<<<<<< HEAD
 
 
 def company(request):
@@ -55,7 +54,6 @@ def update_news(request):
 def update_news_detail(request):
     return render(request, 'admin/update_action/update_news_detail.html')
 
-=======
 def about(request):
     return render(request, 'admin/about.html')
 def about_detail(request):
@@ -68,4 +66,3 @@ def testimonial(request):
     return render(request, 'admin/testimonial.html')
 def testimonial_detail(request):
     return render(request, 'admin/testimonial_detail.html')
->>>>>>> a09215e (this is from sujit)

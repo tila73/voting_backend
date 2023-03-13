@@ -43,16 +43,3 @@ def login(request):
 
 def register(request):
     return render(request, "home/register.html")
-
-def blog_detail(request):
-    return render(request, "home/blog-detail.html")
-
-def event_details(request):
-    return render(request, "home/event_details.html")
-
-def news_detail(request):
-    return render(request, "home/news_detail.html")
-
-def voting_detail(request):
-    return render(request, "home/voting_detail.html")
-
