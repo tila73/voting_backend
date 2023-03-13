@@ -12,7 +12,11 @@ urlpatterns = [
     path('Event/details/', views.event_detail, name="event_detail"),  
     path('news/', views.news, name="news"),  
     path('news/details/', views.news_detail, name="news_detail"),  
-
+    path('company/', views.company, name="company"),
+    path('gallery/', views.gallery, name="gallery"),
+    path('slider/', views.slider, name="slider"),
+    path('counts/', views.counts, name="counts"),
+    
         # create section
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  

@@ -25,8 +25,20 @@ def news(request):
     return render(request, 'admin/news.html')
 def news_detail(request):
     return render(request, 'admin/news_detail.html')
-<<<<<<< HEAD
-=======
+
+
+def company(request):
+    return render(request, 'admin/company.html')
+
+def gallery(request):
+    return render(request, 'admin/gallery.html')
+
+def counts(request):
+    return render(request, 'admin/counts.html')
+
+def slider(request):
+    return render(request, 'admin/slider.html')
+
 
 def create_news(request):
     return render(request, 'admin/create_action/create_news.html')
@@ -41,4 +53,4 @@ def update_news(request):
 
 def update_news_detail(request):
     return render(request, 'admin/update_action/update_news_detail.html')
->>>>>>> fff7ba948d9ba55bf5f776c49fc5e03fd79df2f3
+
