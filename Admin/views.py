@@ -25,14 +25,18 @@ def news(request):
     return render(request, 'admin/news.html')
 def news_detail(request):
     return render(request, 'admin/news_detail.html')
-<<<<<<< HEAD
-=======
 
 def create_news(request):
     return render(request, 'admin/create_action/create_news.html')
 
 def create_news_details(request):
     return render(request, 'admin/create_action/create_news_detail.html')
+
+def create_event(request):
+    return render(request, 'admin/create_action/create_event.html')
+
+def create_event_details(request):
+    return render(request, 'admin/create_action/create_event_details.html')
 
 # update
 
@@ -41,4 +45,9 @@ def update_news(request):
 
 def update_news_detail(request):
     return render(request, 'admin/update_action/update_news_detail.html')
->>>>>>> fff7ba948d9ba55bf5f776c49fc5e03fd79df2f3
+
+def update_event(request):
+    return render(request, 'admin/update_action/update_event.html')
+
+def update_event_detail(request):
+    return render(request, 'admin/update_action/update_event_detail.html')
