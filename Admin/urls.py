@@ -27,18 +27,26 @@ urlpatterns = [
     path('testimonial', views.testimonial, name="admin_testimonial"),  
     path('testimonial/detail/', views.testimonial_detail, name="admin_testimonial_detail"),  
     
-        # create section
+    # create section
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  
-    path('events/create_detail/', views.create_event_details, name="create_event_details"),  
+    path('events/create_detail/', views.create_event_details, name="create_event_details"),
+    path('company/create/', views.create_company, name="create_company"),
+    path('counts/create/', views.create_counts, name="create_counts"),
+    path('gallery/create/', views.create_gallery, name="create_gallery"),
+    path('slider/create/', views.create_slider, name="create_slider"),
 
 
 # update section
     path('news/update/', views.update_news, name="update_news"),  
     path('news/update_details/', views.update_news_detail, name="update_news_detail"),  
     path('events/update/', views.update_event, name="update_event"),  
-    path('events/update_details/', views.update_event_detail, name="update_event_detail"),  
+    path('events/update_details/', views.update_event_detail, name="update_event_detail"), 
+    path('company/update/', views.update_company, name="update_company"),
+    path('counts/update/', views.update_counts, name="update_counts"),
+    path('gallery/update/', views.update_gallery, name="update_gallery"),
+    path('slider/update/', views.update_slider, name="update_slider"),
 
 
 ]

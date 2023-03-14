@@ -1,0 +1,43 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Update Slider</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-2 mt-2">
+            <label for="slider_title">Slider Title</label>
+            <input type="text" class="form-control" id="slider_title" name="slider_title" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="slider_description">Slider Description </label>
+            <textarea class="form-control" id="slider_description" name="status" rows="3"></textarea>
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="slider_img">Slider Img </label>
+            <input type="file" class="form-control" id="slider_img" name="slider_img" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="status">Status </label>
+            <textarea class="form-control" id="status" name="status" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+        <button class="btn btn-primary mb-3 mt-2">cancel</button>
+
+    </form>
+</div>
+
+{% endblock contents %}

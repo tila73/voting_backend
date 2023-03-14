@@ -38,6 +38,7 @@ def counts(request):
 def slider(request):
     return render(request, 'admin/slider.html')
 
+# Create
 def create_news(request):
     return render(request, 'admin/create_action/create_news.html')
 
@@ -49,6 +50,18 @@ def create_event(request):
 
 def create_event_details(request):
     return render(request, 'admin/create_action/create_event_details.html')
+
+def create_company(request):
+    return render(request, 'admin/create_action/create_company.html')
+
+def create_counts(request):
+    return render(request, 'admin/create_action/create_counts.html')
+
+def create_gallery(request):
+    return render(request, 'admin/create_action/create_gallery.html')
+
+def create_slider(request):
+    return render(request, 'admin/create_action/create_slider.html')
 
 #Sujit
 def about(request):
@@ -76,3 +89,15 @@ def update_event(request):
 
 def update_event_detail(request):
     return render(request, 'admin/update_action/update_event_detail.html')
+
+def update_company(request):
+    return render(request, 'admin/update_action/update_company.html')
+
+def update_counts(request):
+    return render(request, 'admin/update_action/update_counts.html')
+
+def update_gallery(request):
+    return render(request, 'admin/update_action/update_gallery.html')
+
+def update_slider(request):
+    return render(request, 'admin/update_action/update_slider.html')

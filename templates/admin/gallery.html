@@ -19,7 +19,7 @@
 <!-- /.container-fluid -->
 
 <div class="create_button mb-3">
-  <a class="btn btn-success">Create</a>
+  <a class="btn btn-success" href="{% url 'create_gallery' %}">Create</a>
 </div>
 
 <table class="table table-striped table-hover">
@@ -42,13 +42,8 @@
 
       <td>
         <a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary">Update</a>
-        <a
-          class="btn table_button btn-danger"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          >Delete</a
-        >
+        <a class="btn table_button btn-secondary" href="{% url 'update_gallery' %}">Update</a>
+        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
   </tbody>
