@@ -50,20 +50,7 @@ def create_event(request):
 def create_event_details(request):
     return render(request, 'admin/create_action/create_event_details.html')
 
-# update
-
-def update_news(request):
-    return render(request, 'admin/update_action/update_news.html')
-
-def update_news_detail(request):
-    return render(request, 'admin/update_action/update_news_detail.html')
-
-def update_news(request):
-    return render(request, 'admin/update_action/update_news.html')
-
-def update_news_detail(request):
-    return render(request, 'admin/update_action/update_news_detail.html')
-
+#Sujit
 def about(request):
     return render(request, 'admin/about.html')
 def about_detail(request):
@@ -76,6 +63,13 @@ def testimonial(request):
     return render(request, 'admin/testimonial.html')
 def testimonial_detail(request):
     return render(request, 'admin/testimonial_detail.html')
+
+# update
+def update_news(request):
+    return render(request, 'admin/update_action/update_news.html')
+
+def update_news_detail(request):
+    return render(request, 'admin/update_action/update_news_detail.html')
 
 def update_event(request):
     return render(request, 'admin/update_action/update_event.html')
