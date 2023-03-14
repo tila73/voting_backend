@@ -21,7 +21,7 @@
 
 <div class="create_button mb-3">
     <a class="btn btn-success" href="{% url 'create_news' %}">Create</a>
-    <a class="ms-3 btn btn-info" href="{% url 'news_detail' %} ">News Details</a>
+    <a class="ms-3 btn btn-info" href="{% url 'admin_news_detail' %} ">News Details</a>
   </div>
   
   
@@ -33,6 +33,7 @@
         <th scope="col">Date</th>
         <th scope="col">Image</th>
         <th scope="col">Description</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -42,6 +43,7 @@
         <td>Mark</td>
         <td>Otto</td>
         <td>@mdo</td>
+        <td>Mark</td>
         <td>Mark</td>
         <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_news' %}">Update</a>
