@@ -32,10 +32,10 @@ urlpatterns = [
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  
     path('events/create_detail/', views.create_event_details, name="create_event_details"),
-    path('company/create/', views.create_company, name="create_company"),
-    path('counts/create/', views.create_counts, name="create_counts"),
-    path('gallery/create/', views.create_gallery, name="create_gallery"),
-    path('slider/create/', views.create_slider, name="create_slider"),
+    path('faq/create/', views.create_faq, name="create_faq"),
+    path('services/create/', views.create_service, name="create_service"),
+    path('teams/create/', views.create_team, name="create_team"),
+    path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"),    
 
 
 # update section
@@ -47,6 +47,12 @@ urlpatterns = [
     path('counts/update/', views.update_counts, name="update_counts"),
     path('gallery/update/', views.update_gallery, name="update_gallery"),
     path('slider/update/', views.update_slider, name="update_slider"),
+    path('events/update_details/', views.update_event_detail, name="update_event_detail"),
+    path('faq/update/', views.update_faq, name="update_faq"),  
+    path('services/update/', views.update_service, name="update_service"),  
+    path('whychooseus/update/', views.update_whychooseus, name="update_whychooseus"),  
+    path('teams/update/', views.update_team, name="update_team"),  
+  
 
 
 ]

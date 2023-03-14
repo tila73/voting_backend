@@ -1,0 +1,52 @@
+{% extends 'admin/admin.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+    #create {
+      width: 60%;
+    }
+  
+    @media (max-width: 750px) {
+      #create {
+        width: 85% !important;
+      }
+    }
+  </style>
+  <div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Update Services</h1>
+    <form action="#" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group mb-2 mt-2">
+        <label for="">Image</label>
+        <input type="file" class="form-control" id="" name="servicesImg" placeholder="" />
+      </div>
+  
+      <div class="form-group mb-2 mt-2">
+        <label for="">Title</label>
+        <input type="text" class="form-control" id="" name="title" placeholder="" />
+      </div>
+  
+      <div class="form-group mb-2 mt-2">
+        <label for="">Description</label>
+        <textarea name="desc" class="form-control" id="" cols="30" rows="10"></textarea>
+      </div>
+      <div class="form-group mb-2 mt-2">
+        <label for="">Status</label>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio1">Inactive</label>
+  
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio2">Active</label>
+  
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+      <button class="btn btn-primary mb-3 mt-2">cancel</button>
+  
+    </form>
+  </div>
+
+{% endblock contents %}
