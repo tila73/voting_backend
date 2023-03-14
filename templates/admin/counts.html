@@ -1,55 +1,51 @@
-{% extends 'admin/admin.html' %}
-{% load static %}
-{% block contents %}
-
-
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
 
 <div class="container-fluid">
-    <div class="row mb-4">
-        <div class="col-sm-6">
-            <h1 class="m-0">Counts</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Counts</li>
-            </ol>
-        </div><!-- /.col -->
-    </div><!-- /.row -->
-</div><!-- /.container-fluid -->
-
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <h1 class="m-0">Counts</h1>
+    </div>
+    <!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Counts</li>
+      </ol>
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
 
 <div class="create_button mb-3">
-    <a class="btn btn-success">Create</a>
-
+  <a class="btn btn-success">Create</a>
 </div>
 
-
 <table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th scope="col">Count Number</th>
-            <th scope="col">Count Title</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
+  <thead>
+    <tr>
+      <th scope="col">Count Number</th>
+      <th scope="col">Count Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
 
-            <td><a class="btn table_button btn-primary">Details</a>
-                <a class="btn table_button btn-secondary">Update</a>
-                <a class="btn table_button btn-danger">Delete</a>
-            </td>
-        </tr>
-
-
-
-
-
-    </tbody>
+      <td>
+        <a class="btn table_button btn-primary">Details</a>
+        <a class="btn table_button btn-secondary">Update</a>
+        <a
+          class="btn table_button btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-
 
 {% endblock contents %}

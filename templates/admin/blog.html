@@ -9,7 +9,7 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'admin_Dashboard' %}">Home</a></li>
         <li class="breadcrumb-item active">Blog</li>
       </ol>
     </div><!-- /.col -->
@@ -19,7 +19,7 @@
 
 <div class="create_button mb-3">
     <a class="btn btn-success">Create</a>
-    <a class="ms-3 btn btn-info" href="{% url 'blog_detail' %} ">Blogs Details</a>
+    <a class="ms-3 btn btn-info" href="{% url 'admin_blog_detail' %} ">Blogs Details</a>
 
   </div>
   
@@ -45,8 +45,7 @@
         <td>@mdo</td>
         <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary">Update</a>
-        <a class="btn table_button btn-danger">Delete</a>
-        </td>
+        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>        </td>
       </tr>
 
 
