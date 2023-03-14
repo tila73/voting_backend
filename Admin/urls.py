@@ -35,7 +35,12 @@ urlpatterns = [
     path('faq/create/', views.create_faq, name="create_faq"),
     path('services/create/', views.create_service, name="create_service"),
     path('teams/create/', views.create_team, name="create_team"),
-    path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"),    
+    path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"), 
+    path('company/create/', views.create_company, name="create_company"),
+    path('counts/create/', views.create_counts, name="create_counts"),
+    path('gallery/create/', views.create_gallery, name="create_gallery"),
+    path('slider/create/', views.create_slider, name="create_slider"),
+         
 
 
 # update section

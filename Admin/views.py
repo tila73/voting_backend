@@ -63,6 +63,22 @@ def create_team(request):
 def create_whychooseus(request):
     return render(request, 'admin/create_action/create_whychooseus.html')
 
+
+def create_company(request):
+    return render(request, 'admin/create_action/create_company.html')
+
+
+def create_counts(request):
+    return render(request, 'admin/create_action/create_counts.html')
+
+
+def create_gallery(request):
+    return render(request, 'admin/create_action/create_gallery.html')
+
+
+def create_slider(request):
+    return render(request, 'admin/create_action/create_slider.html')
+
 #Sujit
 def about(request):
     return render(request, 'admin/about.html')
@@ -101,3 +117,19 @@ def update_service(request):
 
 def update_whychooseus(request):
     return render(request, 'admin/update_action/update_whychooseus.html')
+
+
+def update_company(request):
+    return render(request, 'admin/update_action/update_company.html')
+
+
+def update_counts(request):
+    return render(request, 'admin/update_action/update_counts.html')
+
+
+def update_gallery(request):
+    return render(request, 'admin/update_action/update_gallery.html')
+
+
+def update_slider(request):
+    return render(request, 'admin/update_action/update_slider.html')
