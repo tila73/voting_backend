@@ -50,6 +50,18 @@ def create_event(request):
 def create_event_details(request):
     return render(request, 'admin/create_action/create_event_details.html')
 
+def create_faq(request):
+    return render(request, 'admin/create_action/create_faq.html')
+
+def create_service(request):
+    return render(request, 'admin/create_action/create_service.html')
+
+def create_team(request):
+    return render(request, 'admin/create_action/create_team.html')
+
+def create_whychooseus(request):
+    return render(request, 'admin/create_action/create_whychooseus.html')
+
 #Sujit
 def about(request):
     return render(request, 'admin/about.html')
@@ -76,3 +88,15 @@ def update_event(request):
 
 def update_event_detail(request):
     return render(request, 'admin/update_action/update_event_detail.html')
+
+def update_faq(request):
+    return render(request, 'admin/update_action/update_faq.html')
+
+def update_team(request):
+    return render(request, 'admin/update_action/update_team.html')
+
+def update_service(request):
+    return render(request, 'admin/update_action/update_service.html')
+
+def update_whychooseus(request):
+    return render(request, 'admin/update_action/update_whychooseus.html')

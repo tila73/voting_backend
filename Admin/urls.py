@@ -31,14 +31,23 @@ urlpatterns = [
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  
-    path('events/create_detail/', views.create_event_details, name="create_event_details"),  
+    path('events/create_detail/', views.create_event_details, name="create_event_details"),
+    path('faq/create/', views.create_faq, name="create_faq"),
+    path('services/create/', views.create_service, name="create_service"),
+    path('teams/create/', views.create_team, name="create_team"),
+    path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"),    
 
 
 # update section
     path('news/update/', views.update_news, name="update_news"),  
     path('news/update_details/', views.update_news_detail, name="update_news_detail"),  
     path('events/update/', views.update_event, name="update_event"),  
-    path('events/update_details/', views.update_event_detail, name="update_event_detail"),  
+    path('events/update_details/', views.update_event_detail, name="update_event_detail"),
+    path('faq/update/', views.update_faq, name="update_faq"),  
+    path('services/update/', views.update_service, name="update_service"),  
+    path('whychooseus/update/', views.update_whychooseus, name="update_whychooseus"),  
+    path('teams/update/', views.update_team, name="update_team"),  
+  
 
 
 ]
