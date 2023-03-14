@@ -46,6 +46,18 @@ def create_news(request):
 def create_news_details(request):
     return render(request, 'admin/create_action/create_news_detail.html')
 
+def create_faq(request):
+    return render(request, 'admin/create_action/create_faq.html')
+
+def create_service(request):
+    return render(request, 'admin/create_action/create_service.html')
+
+def create_team(request):
+    return render(request, 'admin/create_action/create_team.html')
+
+def create_whychooseus(request):
+    return render(request, 'admin/create_action/create_whychooseus.html')
+
 # update
 
 def update_news(request):

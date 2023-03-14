@@ -19,7 +19,11 @@ urlpatterns = [
     
         # create section
     path('news/create/', views.create_news, name="create_news"),  
-    path('news/create_detail/', views.create_news_details, name="create_news_details"),  
+    path('news/create_detail/', views.create_news_details, name="create_news_details"),
+    path('faq/create/', views.create_faq, name="create_faq"),
+    path('services/create/', views.create_service, name="create_service"),
+    path('teams/create/', views.create_team, name="create_team"),
+    path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"),  
 
 
 # update section
