@@ -45,7 +45,9 @@
         <td>Mark</td>
         <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_news' %}">Update</a>
-        <a class="btn table_button btn-danger" onclick="document.getElementById('id01').style.display='block'" >Delete</a>
+        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+
+
 
         </td>
       </tr>
