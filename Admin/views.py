@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import *
 
 # Create your views here.
 def Dashboard(request):
@@ -27,7 +28,8 @@ def news_detail(request):
     return render(request, 'admin/news_detail.html')
 
 def company(request):
-    return render(request, 'admin/company.html')
+    company_object = Company.objects.all()
+    return render(request, 'admin/company.html', {'company':company_object})
 
 def gallery(request):
     return render(request, 'admin/gallery.html')
@@ -65,8 +67,15 @@ def create_whychooseus(request):
 
 
 def create_company(request):
-    return render(request, 'admin/create_action/create_company.html')
-
+    if request.method=="GET":
+        company_form = CompanyForm
+        return render(request, 'admin/create_action/create_company.html', context={'form':company_form})
+    else:
+        company_form = CompanyForm(request.POST, request.FILES)
+        if company_form.is_valid():
+            company_form.save()
+            return redirect('admin_company')
+    return render(request, 'admin/create_action/create_company.html', context={'form':company_form})
 
 def create_counts(request):
     return render(request, 'admin/create_action/create_counts.html')
