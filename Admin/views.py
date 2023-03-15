@@ -42,28 +42,92 @@ def slider(request):
 
 # Create
 def create_news(request):
-    return render(request, 'admin/create_action/create_news.html')
+    if request.method == "GET":
+        news = NewsForm
+        return render(request, 'admin/create_action/create_news.html', context={'form': news})
+    else:
+        news = NewsForm(request.POST, request.FILES)
+        if news.is_valid():
+            news.save()
+            return redirect('admin_news')
+    return render(request, 'admin/create_action/create_news.html', context={'form': news})
 
 def create_news_details(request):
+    if request.method == "GET":
+        news_detail = NewsDetailsForm
+        return render(request, 'admin/create_action/create_news_detail.html', context={'form': news_detail})
+    else:
+        news_detail = NewsDetailsForm(request.POST, request.FILES)
+        if news_detail.is_valid():
+            news_detail.save()
+            return redirect('admin_news_detail')
     return render(request, 'admin/create_action/create_news_detail.html')
 
 def create_event(request):
-    return render(request, 'admin/create_action/create_event.html')
+    if request.method == "GET":
+        event = EventForm
+        return render(request, 'admin/create_action/create_event.html', context={'form': event})
+    else:
+        event = EventForm(request.POST, request.FILES)
+        if event.is_valid():
+            event.save()
+            return redirect('admin_Event')
+    return render(request, 'admin/create_action/create_event.html', context={'form': event})
 
 def create_event_details(request):
-    return render(request, 'admin/create_action/create_event_details.html')
+    if request.method == "GET":
+        event_details = EventDetailsForm
+        return render(request, 'admin/create_action/create_event_details.html', context={'form': event_details})
+    else:
+        event_details = EventDetailsForm(request.POST, request.FILES)
+        if event_details.is_valid():
+            event_details.save()
+            return redirect('admin_event_detail')
+    return render(request, 'admin/create_action/create_event_details.html', context={'form': event_details})
 
 def create_faq(request):
-    return render(request, 'admin/create_action/create_faq.html')
+    if request.method == "GET":
+        faq = faqForm
+        return render(request, 'admin/create_action/create_faq.html', context={'form': faq})
+    else:
+        faq = faqForm(request.POST, request.FILES)
+        if faq.is_valid():
+            faq.save()
+            return redirect('admin_faq')
+    return render(request, 'admin/create_action/create_faq.html', context={'form': faq})
 
 def create_service(request):
-    return render(request, 'admin/create_action/create_service.html')
+    if request.method == "GET":
+        service = ServiceForm
+        return render(request, 'admin/create_action/create_service.html', context={'form': service})
+    else:
+        service = ServiceForm(request.POST, request.FILES)
+        if service.is_valid():
+            service.save()
+            return redirect('admin_service')
+    return render(request, 'admin/create_action/create_service.html', context={'form': service})
 
 def create_team(request):
-    return render(request, 'admin/create_action/create_team.html')
+    if request.method == "GET":
+        team = TeamsForm
+        return render(request, 'admin/create_action/create_team.html', context={'form': team})
+    else:
+        team = TeamsForm(request.POST, request.FILES)
+        if team.is_valid():
+            team.save()
+            return redirect('admin_team')
+    return render(request, 'admin/create_action/create_team.html', context={'form': team})
 
 def create_whychooseus(request):
-    return render(request, 'admin/create_action/create_whychooseus.html')
+    if request.method == "GET":
+        whychooseus_form = WhyChooseUsForm
+        return render(request, 'admin/create_action/create_whychooseus.html', context={'form': whychooseus_form})
+    else:
+        whychooseus_form = WhyChooseUsForm(request.POST, request.FILES)
+        if whychooseus_form.is_valid():
+            whychooseus_form.save()
+            return redirect('admin_whychooseus')
+    return render(request, 'admin/create_action/create_whychooseus.html', context={'form': whychooseus_form})
 
 
 def create_company(request):
@@ -78,15 +142,39 @@ def create_company(request):
     return render(request, 'admin/create_action/create_company.html', context={'form':company_form})
 
 def create_counts(request):
-    return render(request, 'admin/create_action/create_counts.html')
+    if request.method == "GET":
+        counts_form = CountsForm
+        return render(request, 'admin/create_action/create_counts.html', context={'form': counts_form})
+    else:
+        counts_form = CountsForm(request.POST, request.FILES)
+        if counts_form.is_valid():
+            counts_form.save()
+            return redirect('admin_counts')
+    return render(request, 'admin/create_action/create_counts.html', context= {'form':counts_form})
 
 
 def create_gallery(request):
-    return render(request, 'admin/create_action/create_gallery.html')
+    if request.method == "GET":
+        gallery_form = GalleryForm
+        return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form})
+    else:
+        gallery_form = GalleryForm(request.POST, request.FILES)
+        if gallery_form.is_valid():
+            gallery_form.save()
+            return redirect('admin_gallery')
+    return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form})
 
 
 def create_slider(request):
-    return render(request, 'admin/create_action/create_slider.html')
+    if request.method == "GET":
+        slider_form = SliderForm
+        return render(request, 'admin/create_action/create_slider.html', context={'form': slider_form})
+    else:
+        slider_form = SliderForm(request.POST, request.FILES)
+        if slider_form.is_valid():
+            slider_form.save()
+            return redirect('admin_slider')
+    return render(request, 'admin/create_action/create_slider.html', context={'form': slider_form})
 
 #Sujit
 def about(request):

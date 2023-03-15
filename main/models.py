@@ -11,23 +11,21 @@ from django.contrib.auth.hashers import make_password
 # Create your models here.
 # model for event and event detail page
 class Event(models.Model):
-    event_title = models.CharField(("Title"), max_length=100)
-    event_description =models.TextField(("Description"), max_length=None)
-    event_date = models.DateTimeField(("Date"), auto_now=False, auto_now_add=False)
-    event_img = models.ImageField(("Image"), upload_to='img/event/', height_field=None, width_field=None, max_length=None)
-    slug = models.SlugField((""))
+    event_title = models.CharField(max_length=150)
+    event_description = models.TextField()
+    event_date = models.DateField(("Date"), auto_now=False, auto_now_add=False)
+    event_img = models.ImageField(upload_to='img/', blank=False, null=False)
+    slug = models.CharField((""), max_length=100)
 
     def __str__(self):
        return self.event_title
-    
-
 
  # model for News and News detail page   
 class News(models.Model):
     news_title = models.CharField(("Title"), max_length=5100)
     news_description =models.TextField(("Description"))
     news_author = models.CharField(("Written By"), max_length=50)
-    news_date = models.DateTimeField(("News date"), auto_now=False, auto_now_add=False)
+    news_date = models.DateField(("News date"), auto_now=False, auto_now_add=False)
     news_img = models.ImageField(("Image"), upload_to='img/news/', height_field=None, width_field=None, max_length=None)
     slug = models.SlugField()
 
@@ -200,3 +198,28 @@ class blog(models.Model):
 
     def __str__(self):
         return self.title
+    
+# model for event detail page
+class EventDetails(models.Model):
+    event_title = models.CharField(max_length=150)
+    event_description = models.TextField()
+    event_date = models.DateField(("Date"), auto_now=False, auto_now_add=False)
+    event_img = models.ImageField(upload_to='img/', blank=False, null=False)
+    slug = models.CharField((""), max_length=100)
+
+    def __str__(self):
+       return self.event_title
+
+ # News detail page
+class NewsDetails(models.Model):
+    news_title = models.CharField(("Title"), max_length=5100)
+    news_description = models.TextField(("Description"))
+    news_author = models.CharField(("Written By"), max_length=50)
+    news_date = models.DateField(
+        ("News date"), auto_now=False, auto_now_add=False)
+    news_img = models.ImageField(
+        ("Image"), upload_to='img/news/', height_field=None, width_field=None, max_length=None)
+    slug = models.SlugField()
+
+    def __str__(self):
+       return self.news_title

@@ -17,62 +17,34 @@
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="news_title">News Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="news_title"
-        name="news_title"
-        placeholder=""
-      />
+      <input type="text" class="form-control" id="news_title" name="news_title" placeholder="" />
     </div>
 
     <div class="form-group mb-2 mt-2">
       <label for="news_author">News Author</label>
-      <input
-        type="text"
-        class="form-control"
-        id="news_author"
-        name="news_author"
-        placeholder="Enter Author Name"
-      />
+      <input type="text" class="form-control" id="news_author" name="news_author" placeholder="Enter Author Name" />
     </div>
 
     <div class="form-group mb-2 mt-2">
       <label for="news_date">News Date</label>
-      <input
-        type="date"
-        class="form-control"
-        id="news_date"
-        name="news_date"
-      />
+      <input type="date" class="form-control" id="news_date" name="news_date" />
     </div>
 
     <div class="form-group mb-2 mt-2">
-        <label for="slug">Slug</label>
-        <input
-          type="text"
-          class="form-control"
-          id="slug"
-          name="slug"
-          placeholder=""
-        />
-      </div>
+      <label for="slug">Slug</label>
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="" />
+    </div>
     <div class="form-group mb-2 mt-2">
       <label for="news_img">Image</label>
       <input type="file" class="form-control" id="news_img" name="news_img" />
     </div>
 
-      <div class="form-group mb-2 mt-2">
-        <label for="message">News Description</label>
-        <textarea
-          class="form-control"
-          id="task_description"
-          name="task_description"
-          rows="3"
-        ></textarea>
-      </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="news_description">News Description</label>
+      <textarea class="form-control" id="news_description" name="news_description" rows="3"></textarea>
+    </div>
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-    <button  class="btn btn-primary mb-3 mt-2">cancel</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
 
   </form>
 </div>

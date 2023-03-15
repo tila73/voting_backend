@@ -61,3 +61,15 @@ class blogForm(forms.ModelForm):
     class Meta:
         model = blog
         fields = '__all__'
+        
+
+class NewsDetailsForm(forms.ModelForm):
+    class Meta:
+        model = NewsDetails
+        fields = '__all__'
+
+
+class EventDetailsForm(forms.ModelForm):
+    class Meta:
+        model = EventDetails
+        fields = '__all__'
