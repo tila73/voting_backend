@@ -25,7 +25,6 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Img</th>
       <th scope="col">Title</th>
       <th scope="col">Decription</th>
@@ -35,18 +34,19 @@
     </tr>
   </thead>
   <tbody>
+    {% for items in blogd %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td>{{items.img}}</td>
+      <td>{{items.title}}</td>
+      <td>{{items.description}}</td>
+      <td>{{items.author}}</td>
+      <td>{{items.author_img.url}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_blog_detail' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
+    {% endfor %}
 
 
 

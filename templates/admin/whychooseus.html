@@ -33,15 +33,16 @@
       </tr>
     </thead>
     <tbody>
+      {% for items in whychooseus %}
       <tr>
-       
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{items.title}}</td>
+        <td>{{items.img.url}}</td>
+        <td>{{items.status}}</td>
         <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_whychooseus' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>        </td>
-      </tr>  
+      </tr>
+      {% endfor %}  
     </tbody>
   </table>
 

@@ -32,10 +32,11 @@
     </tr>
   </thead>
   <tbody>
+    {% for items in services %}
     <tr>
-      <td>Mark</td>
-      <td>@mdo</td>
-      <td>Mark</td>
+      <td>{{items.title}}</td>
+      <td>{{items.servicesImg.url}}</td>
+      <td>{{items.status}}</td>
       <td>
         <a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_service' %}">Update</a>
@@ -47,6 +48,7 @@
         >
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 

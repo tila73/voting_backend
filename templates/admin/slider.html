@@ -32,14 +32,16 @@
             <th scope="col">Slider Description</th>
             <th scope="col">Slider Img</th>
             <th scope="col">Status</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
+        {% for items in slider %}
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{{items.slider_title}}</td>
+            <td>{{items.slider_description}}</td>
+            <td>{{items.slider_img.url}}</td>
+            <td>{{items.status}}</td>
 
             <td><a class="btn table_button btn-primary">Details</a>
                 <a class="btn table_button btn-secondary" href="{% url 'update_slider' %}">Update</a>
@@ -47,6 +49,7 @@
                     data-bs-target="#staticBackdrop">Delete</a>
             </td>
         </tr>
+        {% endfor %}
 
 
 

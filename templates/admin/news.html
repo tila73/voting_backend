@@ -37,19 +37,19 @@
     </tr>
   </thead>
   <tbody>
-
+    {% for items in news %}
     <tr>
-
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Mark</td>
+      <td>{{items.news_title}}</td>
+      <td>{{items.news_author}}</td>
+      <td>{{items.news_date}}</td>
+      <td>{{items.news_img.url}}</td>
+      <td>{{items.news_description}}</td>
       <td>
         <a class="btn table_button btn-secondary" href="{% url 'update_news' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
+    {% endfor %}
 
 
 

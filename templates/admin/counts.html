@@ -27,12 +27,14 @@
     <tr>
       <th scope="col">Count Number</th>
       <th scope="col">Count Title</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    {% for items in counts %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
+      <td>{{items.count_number}}</td>
+      <td>{{items.count_title}}</td>
 
       <td>
         <a class="btn table_button btn-primary">Details</a>
@@ -40,6 +42,7 @@
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 

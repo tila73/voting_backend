@@ -1,68 +1,87 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import *
+
 
 # Create your views here.
 def Dashboard(request):
     return render(request, 'admin/admin.html')
 
 
-def Event(request):
-    return render(request, 'admin/event.html')
+def event(request):
+    event_object = Event.objects.all()
+    return render(request, 'admin/event.html',{'event': event_object})
 
-def faq(request):
-    return render(request, 'admin/faq.html')
+def faqq(request):
+    faq_object = faq.objects.all()
+    return render(request, 'admin/faq.html', {'faq':faq_object})
 
 def teams(request):
-    return render(request, 'admin/teams.html')
+    team_object = Teams.objects.all()
+    return render(request, 'admin/teams.html',{'teams': team_object})
 
 def services(request):
-    return render(request, 'admin/services.html')
+    service_objects = Service.objects.all()
+    return render(request, 'admin/services.html',{'services': service_objects})
 
 def whychooseus(request):
-    return render(request, 'admin/whychooseus.html')
+    whychooseus_object = WhyChooseUs.objects.all()
+    return render(request, 'admin/whychooseus.html',{'whychooseus': whychooseus_object})
 def event_detail(request):
-    return render(request, 'admin/event_detail.html')
+    event_details_object = EventDetails.objects.all()
+    return render(request, 'admin/event_detail.html',{'eventd': event_details_object})
 def news(request):
-    return render(request, 'admin/news.html')
+    news_object = News.objects.all()
+    return render(request, 'admin/news.html', {'news': news_object})
 def news_detail(request):
-    return render(request, 'admin/news_detail.html')
+    news_detail_object = NewsDetails.objects.all()
+    return render(request, 'admin/news_detail.html',{'newsd': news_detail_object})
 
 def company(request):
     company_object = Company.objects.all()
     return render(request, 'admin/company.html', {'company':company_object})
 
 def gallery(request):
-    return render(request, 'admin/gallery.html')
+    gallery_object = Gallery.objects.all()
+    return render(request, 'admin/gallery.html', {'gallery': gallery_object})
 
 def counts(request):
-    return render(request, 'admin/counts.html')
+    count_object = Counts.objects.all()
+    return render(request, 'admin/counts.html', {'counts': count_object})
 
 def slider(request):
-    return render(request, 'admin/slider.html')
+    slider_object = Slider.objects.all()
+    return render(request, 'admin/slider.html', {'slider': slider_object})
 
 
 def about(request):
-    return render(request, 'admin/about.html')
+    about_object = About.objects.all()
+    return render(request, 'admin/about.html', {'about': about_object})
 
 
 def about_detail(request):
-    return render(request, 'admin/about_detail.html')
+    about_detail_object = AboutDetails.objects.all()
+    return render(request, 'admin/about_detail.html', {'aboutd': about_detail_object})
 
 
-def blog(request):
-    return render(request, 'admin/blog.html')
+def Blog(request):
+    blog_object = blog.objects.all()
+    return render(request, 'admin/blog.html', {'blog': blog_object})
 
 
 def blog_detail(request):
-    return render(request, 'admin/blog_detail.html')
+    blog_detail_objects = blogDetails.objects.all()
+    return render(request, 'admin/blog_detail.html',{'blogd': blog_detail_objects})
 
 
 def testimonial(request):
-    return render(request, 'admin/testimonial.html')
+    testimonial_object = Testimonial.objects.all()
+    return render(request, 'admin/testimonial.html',{'testimonial': testimonial_object})
 
 
 def testimonial_detail(request):
-    return render(request, 'admin/testimonial_detail.html')
+    testimonial_detail_object = TestimonialDetails.objects.all()
+    return render(request, 'admin/testimonial_detail.html', {'testimoniald': testimonial_detail_object})
 
 # Create
 def create_news(request):

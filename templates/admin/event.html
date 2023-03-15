@@ -34,13 +34,16 @@
       <th scope="col">Event Date</th>
       <th scope="col">Image</th>
       <th scope="col">Description</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    {% for items in event %}
     <tr>
-      <td>Mark</td>
-      <td>@mdo</td>
-      <td>Mark</td>
+      <td>{{items.event_title}}</td>
+      <td>{{items.event_date}}</td> 
+      <td>{{items.event_img.url}}</td>
+      <td>{{items.event_description}}</td>
       <td>
         <a class="btn table_button btn-primary">Details</a>
         <a
@@ -56,6 +59,7 @@
         >
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 

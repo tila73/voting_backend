@@ -25,7 +25,6 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Testimonial name</th>
       <th scope="col">Testimonial desiganation</th>
       <th scope="col">Testimonial message</th>
@@ -34,17 +33,18 @@
     </tr>
   </thead>
   <tbody>
+    {% for items in testimoniald %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <td>{{items.testimoni_name}}</td>
+      <td>{{items.testimoni_designation}}</td>
+      <td>{{items.testimoni_message}}</td>
+      <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_testimonial_detail' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 
