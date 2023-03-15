@@ -1,0 +1,71 @@
+{% extends 'admin/admin.html' %} 
+{% load static %} 
+{% block contents %}
+
+<style>
+  #create {
+    width: 60%;
+  }
+
+  @media (max-width: 750px) {
+    #create {
+      width: 85% !important;
+    }
+  }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+  <h1 class="text-center">Create blog</h1>
+  <form action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2 mt-2">
+      <label for="blog_title">blog Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="blog_title"
+        name="blog_title"
+        placeholder=""
+      />
+    </div>
+
+
+    <div class="form-group mb-2 mt-2">
+      <label for="blog_date">blog Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="blog_date"
+        name="blog_date"
+      />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="slug">Slug</label>
+      <input
+        type="text"
+        class="form-control"
+        id="slug"
+        name="slug"
+        placeholder=""
+      />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="blog_img">Image</label>
+      <input type="file" class="form-control" id="blog_img" name="blog_img" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="message"> Description</label>
+      <textarea
+        class="form-control"
+        id="task_description"
+        name="task_description"
+        rows="3"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button  class="btn btn-primary mb-3 mt-2">cancel</button>
+
+  </form>
+</div>
+
+{% endblock contents %}

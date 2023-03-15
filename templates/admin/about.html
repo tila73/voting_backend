@@ -18,36 +18,37 @@
 
 
 <div class="create_button mb-3">
-    <a class="btn btn-success">Create</a>
-    <a class="ms-3 btn btn-info" href="{% url 'admin_about_detail' %} ">About Details</a>
+  <a class="btn btn-success" href="{% url 'create_about' %}">Create</a>
+  <a class="ms-3 btn btn-info" href="{% url 'admin_about_detail' %} ">About Details</a>
 
-  </div>
-  
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">about title</th>
-        <th scope="col">about description</th>
-        <th scope="col">about img</th>
-        <th scope="col">status</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td><a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary">Update</a>
-        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>        </td>
-      </tr>
-    </tbody>
-  </table>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">about title</th>
+      <th scope="col">about description</th>
+      <th scope="col">about img</th>
+      <th scope="col">status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td><a class="btn table_button btn-primary">Details</a>
+        <a class="btn table_button btn-secondary" href="{% url 'update_about' %}">Update</a>
+        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
-  
+
 {% endblock contents %}

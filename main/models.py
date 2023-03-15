@@ -223,3 +223,40 @@ class NewsDetails(models.Model):
 
     def __str__(self):
        return self.news_title
+
+
+# About Details Model
+class AboutDetails(models.Model):
+    about_title = models.CharField(("Title"), max_length=100)
+    about_description = models.TextField(("Description"), max_length=255)
+    about_img = models.ImageField(
+        ("Image"), upload_to='img/about/', height_field=None, width_field=None, max_length=None)
+    status = models.BooleanField(
+        default=True, help_text="0=inactive, 1=active")
+
+    def __str__(self):
+        return self.about_title
+
+# blogDetails model
+class blogDetails(models.Model):
+    img = models.ImageField(upload_to="img/blogImg/", blank=False)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    author = models.CharField(max_length=200)
+    author_img = models.ImageField(upload_to="img/authorImg/", blank=False)
+    slug = models.CharField(max_length=150, null=False, blank=False)
+
+    def __str__(self):
+        return self.title
+
+
+# Testimonials DetailsModel
+class TestimonialDetails(models.Model):
+    testmoni_name = models.CharField(("Name"), max_length=50)
+    testmoni_designation = models.CharField(("Designation"), max_length=30)
+    testmoni_message = models.TextField(("Message"))
+    status = models.BooleanField(
+        default=True, help_text="0=inactive, 1=active")
+
+    def __str__(self):
+        return self.testmoni_name

@@ -40,6 +40,30 @@ def counts(request):
 def slider(request):
     return render(request, 'admin/slider.html')
 
+
+def about(request):
+    return render(request, 'admin/about.html')
+
+
+def about_detail(request):
+    return render(request, 'admin/about_detail.html')
+
+
+def blog(request):
+    return render(request, 'admin/blog.html')
+
+
+def blog_detail(request):
+    return render(request, 'admin/blog_detail.html')
+
+
+def testimonial(request):
+    return render(request, 'admin/testimonial.html')
+
+
+def testimonial_detail(request):
+    return render(request, 'admin/testimonial_detail.html')
+
 # Create
 def create_news(request):
     if request.method == "GET":
@@ -176,19 +200,40 @@ def create_slider(request):
             return redirect('admin_slider')
     return render(request, 'admin/create_action/create_slider.html', context={'form': slider_form})
 
-#Sujit
-def about(request):
-    return render(request, 'admin/about.html')
-def about_detail(request):
-    return render(request, 'admin/about_detail.html')
-def blog(request):
-    return render(request, 'admin/blog.html')
-def blog_detail(request):
-    return render(request, 'admin/blog_detail.html')
-def testimonial(request):
-    return render(request, 'admin/testimonial.html')
-def testimonial_detail(request):
-    return render(request, 'admin/testimonial_detail.html')
+# sujit create wala
+
+
+def create_about(request):
+    if request.method == "GET":
+        create_about = AboutForm
+        return render(request, 'admin/create_action/create_about.html', context={'form': create_about})
+    else:
+        create_about = AboutForm(request.POST, request.FILES)
+        if create_about.is_valid():
+            create_about.save()
+            return redirect('admin_about')
+    return render(request, 'admin/create_action/create_about.html', context={'form': create_about})
+
+
+def create_about_details(request):
+    return render(request, 'admin/create_action/create_about_detail.html')
+
+
+def create_blog(request):
+    return render(request, 'admin/create_action/create_blog.html')
+
+
+def create_blog_details(request):
+    return render(request, 'admin/create_action/create_blog_detail.html')
+
+
+def create_testimonial(request):
+    return render(request, 'admin/create_action/create_testimonial.html')
+
+
+def create_testimonial_details(request):
+    return render(request, 'admin/create_action/create_testimonial_detail.html')
+
 
 # update
 def update_news(request):
@@ -230,3 +275,29 @@ def update_gallery(request):
 
 def update_slider(request):
     return render(request, 'admin/update_action/update_slider.html')
+
+# sujit update wala
+
+
+def update_about(request):
+    return render(request, 'admin/update_action/update_about.html')
+
+
+def update_about_detail(request):
+    return render(request, 'admin/update_action/update_about_detail.html')
+
+
+def update_blog(request):
+    return render(request, 'admin/update_action/update_blog.html')
+
+
+def update_blog_detail(request):
+    return render(request, 'admin/update_action/update_blog_detail.html')
+
+
+def update_testimonial(request):
+    return render(request, 'admin/update_action/update_testimonial.html')
+
+
+def update_testimonial_detail(request):
+    return render(request, 'admin/update_action/update_testimonial_detail.html')

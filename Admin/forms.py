@@ -73,3 +73,21 @@ class EventDetailsForm(forms.ModelForm):
     class Meta:
         model = EventDetails
         fields = '__all__'
+
+
+class AboutDetailsForm(forms.ModelForm):
+    class Meta:
+        model = AboutDetails
+        fields = '__all__'
+        
+
+class TestimonialDetailsForm(forms.ModelForm):
+    class Meta:
+        model = TestimonialDetails
+        fields = '__all__'
+
+
+class blogDetailsForm(forms.ModelForm):
+    class Meta:
+        model = blogDetails
+        fields = '__all__'

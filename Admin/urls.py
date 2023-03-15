@@ -40,7 +40,17 @@ urlpatterns = [
     path('counts/create/', views.create_counts, name="create_counts"),
     path('gallery/create/', views.create_gallery, name="create_gallery"),
     path('slider/create/', views.create_slider, name="create_slider"),
-         
+    # .  sujit create walako
+    path('about/create/', views.create_about, name="create_about"),
+    path('about/create_detail/', views.create_about_details,
+         name="create_about_details"),
+    path('blog/create/', views.create_blog, name="create_blog"),
+    path('blog/create_detail/', views.create_blog_details,
+         name="create_blog_details"),
+    path('testimonial/create/', views.create_testimonial,
+         name="create_testimonial"),
+    path('testimonial/create_detail/', views.create_testimonial_details,
+         name="create_testimonial_details"),
 
 
 # update section
@@ -57,7 +67,17 @@ urlpatterns = [
     path('services/update/', views.update_service, name="update_service"),  
     path('whychooseus/update/', views.update_whychooseus, name="update_whychooseus"),  
     path('teams/update/', views.update_team, name="update_team"),  
-  
+    # sujit update walla ko
+    path('about/update/', views.update_about, name="update_about"),
+    path('about/update_details/', views.update_about_detail,
+         name="update_about_detail"),
+    path('blog/update/', views.update_blog, name="update_blog"),
+    path('blog/update_details/', views.update_blog_detail,
+         name="update_blog_detail"),
+    path('testimonial/update/', views.update_testimonial,
+         name="update_testimonial"),
+    path('testimonial/update_details/', views.update_testimonial_detail,
+         name="update_testimonial_detail"),
 
 
 ]
