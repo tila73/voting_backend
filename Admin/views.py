@@ -8,8 +8,12 @@ from .models import *
 def Dashboard(request):
     return render(request, 'admin/admin.html')
 
+def Users(request):
+    users = User.objects.all()
+    return render(request, 'admin/user.html', {'users':users})
 
-def event(request):
+
+def adminevent(request):
     event_object = Event.objects.all()
     return render(request, 'admin/event.html',{'event': event_object})
 
@@ -84,6 +88,18 @@ def testimonial_detail(request):
     return render(request, 'admin/testimonial_detail.html', {'testimoniald': testimonial_detail_object})
 
 # Create
+def create_user(request):
+    if request.method == "GET":
+        users = UserForm
+        return render(request, 'admin/create_action/create_user.html', context={'form': users})
+    else:
+        users = UserForm(request.POST, request.FILES)
+        if users.is_valid():
+            users.save()
+            return redirect('User')
+    return render(request, 'admin/create_action/create_user.html', context={'form': users})
+
+
 def create_news(request):
     if request.method == "GET":
         news = NewsForm
@@ -94,6 +110,7 @@ def create_news(request):
             news.save()
             return redirect('admin_news')
     return render(request, 'admin/create_action/create_news.html', context={'form': news})
+
 
 def create_news_details(request):
     if request.method == "GET":
@@ -147,7 +164,7 @@ def create_service(request):
         service = ServiceForm(request.POST, request.FILES)
         if service.is_valid():
             service.save()
-            return redirect('admin_service')
+            return redirect('admin_services')
     return render(request, 'admin/create_action/create_service.html', context={'form': service})
 
 def create_team(request):
@@ -360,3 +377,103 @@ def update_testimonial(request):
 
 def update_testimonial_detail(request):
     return render(request, 'admin/update_action/update_testimonial_detail.html')
+
+
+
+#delete
+def delete_news(request, news_id):
+    newsobj = News.objects.get(id=news_id)
+    if request.method=="POST":
+        newsobj.delete()
+        return redirect('admin_news')
+
+
+
+def delete_news_details(request, id):
+    obj = NewsDetails.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_news_detail')
+
+def delete_event(request, id):
+    obj = Event.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_Event')
+
+
+
+def delete_event_details(request, id):
+    obj = EventDetails.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_event_detail')
+
+
+
+def delete_faq(request, id):
+    obj = faq.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_faq')
+
+
+
+def delete_service(request, service_id):
+    obj = Service.objects.get(id=service_id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_services')
+
+
+
+def delete_team(request, id):
+    obj = Teams.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_teams')
+
+
+
+def delete_whychooseus(request, id):
+    obj = WhyChooseUs.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_whychooseus')
+
+
+
+
+def delete_company(request, id):
+    obj = Company.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_company')
+
+
+
+def delete_counts(request, id):
+    obj = Counts.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_counts')
+
+
+
+
+def delete_gallery(request, id):
+    obj = Gallery.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_gallery')
+
+
+
+
+def delete_slider(request, id):
+    obj = Slider.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_slider')
+
+

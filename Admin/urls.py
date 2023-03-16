@@ -4,8 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
     path('', views.Dashboard, name="admin_Dashboard"),  
-    path('Event', views.Event, name="admin_Event"),  
-    path('faq/', views.faq, name="admin_faq"),
+    path('User/', views.Users, name="User"),  
+    path('Event', views.adminevent, name="admin_Event"),  
+    path('faq/', views.faqq, name="admin_faq"),
     path('teams/', views.teams, name="admin_teams"),
     path('services/', views.services, name="admin_services"),
     path('whychooseus/', views.whychooseus, name="admin_whychooseus"),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('testimonial/detail/', views.testimonial_detail, name="admin_testimonial_detail"),  
     
     # create section
+    path('user/create/', views.create_user, name="create_user"),  
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  
@@ -79,6 +81,23 @@ urlpatterns = [
     path('testimonial/update_details/', views.update_testimonial_detail,
          name="update_testimonial_detail"),
 
+
+
+        #! delete section
+        path('news/delete/<int:news_id>/', views.delete_news, name="delete_news"),  
+        path('news/delete_detail/<int:id>/', views.delete_news_details, name="delete_news_details"),  
+        path('events/delete/<int:id>/', views.delete_event, name="delete_event"),  
+        path('events/delete_detail/<int:id>/', views.delete_event_details, name="delete_event_details"),
+        path('faq/delete/<int:id>/', views.delete_faq, name="delete_faq"),
+        path('services/delete/<int:service_id>/', views.delete_service, name="delete_service"),
+        path('teams/delete/<int:id>/', views.delete_team, name="delete_team"),
+        path('whychooseus/delete/<int:id>/', views.delete_whychooseus, name="delete_whychooseus"), 
+        path('company/delete/<int:id>/', views.delete_company, name="delete_company"),
+        path('counts/delete/<int:id>/', views.delete_counts, name="delete_counts"),
+        path('gallery/delete/<int:id>/', views.delete_gallery, name="delete_gallery"),
+        path('slider/delete/<int:id>/', views.delete_slider, name="delete_slider"),
+           
+    
 
 ]
 if settings.DEBUG:
