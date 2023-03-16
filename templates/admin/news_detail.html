@@ -44,7 +44,7 @@
         <td>{{items.news_date}}</td>
         <td>{{items.news_img.url}}</td>
         <td>{{items.news_description}}</td>
-        <td><a class="btn table_button btn-primary">Details</a>
+        <td><a class="btn table_button btn-primary" href="{% url 'view_admin_news_detail' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_news_detail' %}">Update</a>
 
              <!-- Button trigger modal -->

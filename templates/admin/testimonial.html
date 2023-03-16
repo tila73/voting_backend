@@ -40,7 +40,7 @@
       <td>{{items.testimoni_designation}}</td>
       <td>{{items.testmoni_message}}</td>
       <td>{{items.status}}</td>
-      <td><a class="btn table_button btn-primary">Details</a>
+      <td><a class="btn table_button btn-primary" href="{% url 'view_admin_testimonial' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_testimonial' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>

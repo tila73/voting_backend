@@ -54,7 +54,7 @@
       <td>{{items.status}}</td>
       <td>{{items.created_at}}</td>
       <td>{{items.updated_at}}</td>
-      <td><a class="btn table_button btn-primary mb-1"> Details </a>
+      <td><a class="btn table_button btn-primary mb-1" href="{% url 'view_User' id=items.id %}"> Details </a>
         <a class="btn table_button btn-secondary mb-1" href="{% url 'update_blog' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Delete </a>
       </td>

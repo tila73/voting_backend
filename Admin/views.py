@@ -435,5 +435,92 @@ def delete_slider(request, id):
     if request.method=="POST":
         obj.delete()
         return redirect('admin_slider')
+    
+
+# detail views
+
+def view_Users(request,id):
+    users = User.objects.get(id=id)
+    return render(request, 'admin/view_action/view_user.html', {'users':users})
+
+
+def view_adminevent(request,id):
+    event_object = Event.objects.get(id=id)
+    return render(request, 'admin/view_action/view_event.html',{'event': event_object})
+
+def view_faqq(request,id):
+    faq_object = faq.objects.get(id=id)
+    return render(request, 'admin/view_action/view_faq.html', {'faq':faq_object})
+
+def view_teams(request,id):
+    team_object = Teams.objects.get(id=id)
+    return render(request, 'admin/view_action/view_teams.html',{'teams': team_object})
+
+def view_services(request,id):
+    service_objects = Service.objects.get(id=id)
+    return render(request, 'admin/view_action/view_services.html',{'services': service_objects})
+
+def view_whychooseus(request,id):
+    whychooseus_object = WhyChooseUs.objects.get(id=id)
+    return render(request, 'admin/view_action/view_whychooseus.html',{'whychooseus': whychooseus_object})
+
+def view_event_detail(request,id):
+    event_details_object = EventDetails.objects.get(id=id)
+    return render(request, 'admin/view_action/view_event_detail.html',{'eventd': event_details_object})
+
+def view_news(request,id):
+    news_object = News.objects.get(id=id)
+    return render(request, 'admin/view_action/view_news.html', {'news': news_object})
+
+def view_news_detail(request,id):
+    news_detail_object = NewsDetails.objects.get(id=id)
+    return render(request, 'admin/view_action/view_news_detail.html',{'newsd': news_detail_object})
+
+def view_company(request,id):
+    company_object = Company.objects.get(id=id)
+    return render(request, 'admin/view_action/view_company.html', {'company':company_object})
+
+def view_gallery(request,id):
+    gallery_object = Gallery.objects.get(id=id)
+    return render(request, 'admin/view_action/view_gallery.html', {'gallery': gallery_object})
+
+def view_counts(request,id):
+    count_object = Counts.objects.get(id=id)
+    return render(request, 'admin/view_action/view_counts.html', {'counts': count_object})
+
+def view_slider(request,id):
+    slider_object = Slider.objects.get(id=id)
+    return render(request, 'admin/view_action/view_slider.html', {'slider': slider_object})
+
+
+def view_about(request,id):
+    about_object = About.objects.get(id=id)
+    return render(request, 'admin/view_action/view_about.html', {'about': about_object})
+
+
+def view_about_detail(request,id):
+    about_detail_object = AboutDetails.objects.get(id=id)
+    return render(request, 'admin/view_action/view_about_detail.html', {'aboutd': about_detail_object})
+
+
+def view_Blog(request,id):
+    blog_object = blog.objects.get(id=id)
+    return render(request, 'admin/view_action/view_blog.html', {'blog': blog_object})
+
+
+def view_blog_detail(request,id):
+    blog_detail_objects = blogDetails.objects.get(id=id)
+    return render(request, 'admin/view_action/view_blog_detail.html',{'blogd': blog_detail_objects})
+
+
+def view_testimonial(request,id):
+    testimonial_object = Testimonial.objects.get(id=id)
+    return render(request, 'admin/view_action/view_testimonial.html',{'testimonial': testimonial_object})
+
+
+def view_testimonial_detail(request):
+    testimonial_detail_object = TestimonialDetails.objects.get(id=id)
+    return render(request, 'admin/view_action/view_testimonial_detail.html', {'testimoniald': testimonial_detail_object})
+
 
 

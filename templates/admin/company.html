@@ -46,7 +46,7 @@
             <td>{{ items.mission }}</td>
             <td>{{ items.vision }}</td>
             <td>{{ items.status }}</td>
-            <td><a class="btn table_button btn-primary">Details</a>
+            <td><a class="btn table_button btn-primary" href="{% url 'view_admin_company' id=items.id %}">Details</a>
                 <a class="btn table_button btn-secondary" href="{% url 'update_company' %}">Update</a>
                                      <!-- Button trigger modal -->
        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">

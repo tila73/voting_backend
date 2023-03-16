@@ -38,7 +38,7 @@
       <td>{{items.servicesImg.url}}</td>
       <td>{{items.status}}</td>
       <td>
-        <a class="btn table_button btn-primary">Details</a>
+        <a class="btn table_button btn-primary" href="{% url 'view_admin_services' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_service' %}">Update</a>
 
 
