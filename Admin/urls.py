@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
     path('', views.Dashboard, name="admin_Dashboard"),  
-    path('Event', views.event, name="admin_Event"),  
-    path('faq/', views.faqq, name="admin_faq"),
+    path('Event', views.Event, name="admin_Event"),  
+    path('faq/', views.faq, name="admin_faq"),
     path('teams/', views.teams, name="admin_teams"),
     path('services/', views.services, name="admin_services"),
     path('whychooseus/', views.whychooseus, name="admin_whychooseus"),
@@ -22,7 +22,7 @@ urlpatterns = [
     #sujit
     path('about', views.about, name="admin_about"),  
     path('about/detail/', views.about_detail, name="admin_about_detail"),  
-    path('blog', views.Blog, name="admin_blog"),  
+    path('blog', views.blog, name="admin_blog"),  
     path('blog/detail/', views.blog_detail, name="admin_blog_detail"),  
     path('testimonial', views.testimonial, name="admin_testimonial"),  
     path('testimonial/detail/', views.testimonial_detail, name="admin_testimonial_detail"),  

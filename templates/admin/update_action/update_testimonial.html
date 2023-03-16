@@ -16,62 +16,26 @@
   <form action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
-      <label for="testimonial_title">testimonial Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="testimonial_title"
-        name="testimonial_title"
-        placeholder=""
-      />
+      <label for="testmoni_name">Title</label>
+      <input type="text" class="form-control" id="testmoni_name" name="testmoni_name" placeholder="" />
+    </div>
+
+
+    <div class="form-group mb-2 mt-2">
+      <label for="testmoni_designation">Designation</label>
+      <textarea class="form-control" name="testmoni_designation" id="testmoni_designation" cols="30"
+        rows="10"></textarea>
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="testmoni_message">Message</label>
+      <input type="file" class="form-control" id="testmoni_message" name="testmoni_message" placeholder="message" />
     </div>
 
     <div class="form-group mb-2 mt-2">
-      <label for="testimonial_author">testimonial Author</label>
-      <input
-        type="text"
-        class="form-control"
-        id="testimonial_author"
-        name="testimonial_author"
-        placeholder="Enter Author Name"
-      />
-    </div>
-
-    <div class="form-group mb-2 mt-2">
-      <label for="testimonial_date">testimonial Date</label>
-      <input
-        type="date"
-        class="form-control"
-        id="testimonial_date"
-        name="testimonial_date"
-      />
-    </div>
-    <div class="form-group mb-2 mt-2">
-      <label for="slug">Slug</label>
-      <input
-        type="text"
-        class="form-control"
-        id="slug"
-        name="slug"
-        placeholder=""
-      />
-    </div>
-
-    <div class="form-group mb-2 mt-2">
-      <label for="testimonial_img">Image</label>
-      <input type="file" class="form-control" id="testimonial_img" name="testimonial_img" />
-    </div>
-    <div class="form-group mb-2 mt-2">
-      <label for="message">testimonial Description</label>
-      <textarea
-        class="form-control"
-        id="task_description"
-        name="task_description"
-        rows="3"
-      ></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary mb-3 mt-2">Update</button>
-    <button  class="btn btn-primary mb-3 mt-2">cancel</button>
+      <label for="status"> status</label>
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+      <button class="btn btn-primary mb-3 mt-2">cancel</button>
 
   </form>
 </div>
