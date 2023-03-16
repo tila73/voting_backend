@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
@@ -67,10 +68,9 @@ def about_detail(request):
     about_detail_object = AboutDetails.objects.all()
     return render(request, 'admin/about_detail.html', {'aboutd': about_detail_object})
 
-
-def Blog(request):
-    blog_object = blog.objects.all()
-    return render(request, 'admin/blog.html', {'blog': blog_object})
+def blogs(request):
+    blog_obj = blog.objects.all()
+    return render(request, 'admin/blog.html', {'blog_obj': blog_obj})
 
 
 def blog_detail(request):
@@ -252,23 +252,63 @@ def create_about(request):
 
 
 def create_about_details(request):
-    return render(request, 'admin/create_action/create_about_detail.html')
+    if request.method == "GET":
+        create_about_details = AboutDetailsForm
+        return render(request, 'admin/create_action/create_about_detail.html', context={'form': create_about_details})
+    else:
+        create_about_details = AboutDetailsForm(request.POST, request.FILES)
+        if create_about_details.is_valid():
+            create_about_details.save()
+            return redirect('admin_about_detail')
+    return render(request, 'admin/create_action/create_about_detail.html', context={'form': create_about_details})
 
 
 def create_blog(request):
-    return render(request, 'admin/create_action/create_blog.html')
+    if request.method == "GET":
+        create_blogs = blogForm
+        return render(request, 'admin/create_action/create_blog.html', context={'form': create_blogs})
+    else:
+        create_blogs = blogForm(request.POST, request.FILES)
+        if create_blogs.is_valid():
+            create_blogs.save()
+            return redirect('admin_blog')
+    return render(request, 'admin/create_action/create_blog.html', context={'form': create_blogs})
 
 
 def create_blog_details(request):
-    return render(request, 'admin/create_action/create_blog_detail.html')
+    if request.method == "GET":
+        create_blog_details = blogDetailsForm
+        return render(request, 'admin/create_action/create_blog_detail.html', context={'form': create_blog_details})
+    else:
+        create_blog_details = blogDetailsForm(request.POST, request.FILES)
+        if create_blog_details.is_valid():
+            create_blog_details.save()
+            return redirect('admin_blog_detail')
+    return render(request, 'admin/create_action/create_blog_detail.html', context={'form': create_blog_details})
 
 
 def create_testimonial(request):
-    return render(request, 'admin/create_action/create_testimonial.html')
+    if request.method == "GET":
+        create_testimonial = TestimonialForm
+        return render(request, 'admin/create_action/create_testimonial.html', context={'form': create_testimonial})
+    else:
+        create_testimonial = TestimonialForm(request.POST, request.FILES)
+        if create_testimonial.is_valid():
+            create_testimonial.save()
+            return redirect('admin_testimonial')
+    return render(request, 'admin/create_action/create_testimonial.html', context={'form': create_testimonial})
 
 
 def create_testimonial_details(request):
-    return render(request, 'admin/create_action/create_testimonial_detail.html')
+    if request.method == "GET":
+        create_testimonial_details = TestimonialDetailsForm
+        return render(request, 'admin/create_action/create_testimonial_detail.html', context={'form': create_testimonial_details})
+    else:
+        create_testimonial_details = TestimonialDetailsForm(request.POST, request.FILES)
+        if create_testimonial_details.is_valid():
+            create_testimonial_details.save()
+            return redirect('admin_testimonial_detail')
+    return render(request, 'admin/create_action/create_testimonial_detail.html', context={'form': create_testimonial_details})
 
 
 # update
@@ -298,6 +338,7 @@ def update_whychooseus(request):
 
 
 def update_company(request):
+    
     return render(request, 'admin/update_action/update_company.html')
 
 
@@ -521,6 +562,12 @@ def view_testimonial(request,id):
 def view_testimonial_detail(request):
     testimonial_detail_object = TestimonialDetails.objects.get(id=id)
     return render(request, 'admin/view_action/view_testimonial_detail.html', {'testimoniald': testimonial_detail_object})
+
+
+
+
+
+# ! details section
 
 
 
