@@ -298,6 +298,7 @@ def update_whychooseus(request):
 
 
 def update_company(request):
+    
     return render(request, 'admin/update_action/update_company.html')
 
 
@@ -435,5 +436,11 @@ def delete_slider(request, id):
     if request.method=="POST":
         obj.delete()
         return redirect('admin_slider')
+
+
+
+
+# ! details section
+
 
 
