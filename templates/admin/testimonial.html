@@ -18,7 +18,7 @@
 
 
 <div class="create_button mb-3">
-  <a class="btn btn-success">Create</a>
+  <a class="btn btn-success" href="{% url 'create_testimonial' %}">Create</a>
   <a class="ms-3 btn btn-info" href="{% url 'admin_testimonial_detail' %} ">Testimonial Details</a>
 
 </div>
@@ -37,8 +37,8 @@
     {% for items in testimonial %}
     <tr>
       <td>{{items.testimoni_name}}</td>
-      <td>{{items.testimoni_designation}}</td>
       <td>{{items.testmoni_message}}</td>
+      <td>{{items.testimoni_designation}}</td>
       <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_testimonial' %}">Update</a>
