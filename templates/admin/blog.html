@@ -18,7 +18,7 @@
 
 
 <div class="create_button mb-3">
-  <a class="btn btn-success">Create</a>
+  <a class="btn btn-success" href="{% url 'create_blog' %}">Create</a>
   <a class="ms-3 btn btn-info" href="{% url 'admin_blog_detail' %} ">Blogs Details</a>
 
 </div>
@@ -35,13 +35,14 @@
     </tr>
   </thead>
   <tbody>
-    {% for items in blog %}
+    {% for items in blog_obj %}
     <tr>
       <td>{{items.img}}</td>
       <td>{{items.title}}</td>
       <td>{{items.description}}</td>
       <td>{{items.author}}</td>
-      <td>@{{items.author_img.url}}</td>
+      <td>{{items.author_img.url}}</td>
+      <td>{{items.slug.url}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_blog' %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>

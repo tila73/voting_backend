@@ -23,7 +23,7 @@ urlpatterns = [
     #sujit
     path('about', views.about, name="admin_about"),  
     path('about/detail/', views.about_detail, name="admin_about_detail"),  
-    path('blog', views.blog, name="admin_blog"),  
+    path('blogs/', views.blogs, name="admin_blog"),
     path('blog/detail/', views.blog_detail, name="admin_blog_detail"),  
     path('testimonial', views.testimonial, name="admin_testimonial"),  
     path('testimonial/detail/', views.testimonial_detail, name="admin_testimonial_detail"),  
@@ -45,7 +45,7 @@ urlpatterns = [
     # .  sujit create walako
     path('about/create/', views.create_about, name="create_about"),
     path('about/create_detail/', views.create_about_details,
-         name="create_about_details"),
+         name="create_about_detail"),
     path('blog/create/', views.create_blog, name="create_blog"),
     path('blog/create_detail/', views.create_blog_details,
          name="create_blog_details"),

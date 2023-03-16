@@ -12,29 +12,32 @@
   }
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
-  <h1 class="text-center">Create about</h1>
+  <h1 class="text-center">Create About Details</h1>
   <form action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+
     <div class="form-group mb-2 mt-2">
-      <label for="about_title">about Title</label>
+      <label for="about_title">About Title</label>
       <input type="text" class="form-control" id="about_title" name="about_title" placeholder="" />
     </div>
 
-
     <div class="form-group mb-2 mt-2">
-      <label for="about_description">Description</label>
+      <label for="about_description"> About Description</label>
       <textarea class="form-control" name="about_description" id="about_description" cols="30" rows="10"></textarea>
     </div>
+
     <div class="form-group mb-2 mt-2">
       <label for="about_img">Image</label>
       <input type="file" class="form-control" id="about_img" name="about_img" placeholder="Image" />
     </div>
 
     <div class="form-group mb-2 mt-2">
-      <label for="status"> status</label>
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
-      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-      <button class="btn btn-primary mb-3 mt-2">cancel</button>
+      <label for="status"> Status</label>
+      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked />
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
 
   </form>
 </div>
