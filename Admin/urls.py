@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
     path('', views.Dashboard, name="admin_Dashboard"),  
+    path('User/', views.Users, name="User"),  
     path('Event', views.adminevent, name="admin_Event"),  
     path('faq/', views.faqq, name="admin_faq"),
     path('teams/', views.teams, name="admin_teams"),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('testimonial/detail/', views.testimonial_detail, name="admin_testimonial_detail"),  
     
     # create section
+    path('user/create/', views.create_user, name="create_user"),  
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  

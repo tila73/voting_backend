@@ -7,6 +7,10 @@ from .models import *
 def Dashboard(request):
     return render(request, 'admin/admin.html')
 
+def Users(request):
+    users = User.objects.all()
+    return render(request, 'admin/user.html', {'users':users})
+
 
 def adminevent(request):
     event_object = Event.objects.all()
@@ -84,6 +88,18 @@ def testimonial_detail(request):
     return render(request, 'admin/testimonial_detail.html', {'testimoniald': testimonial_detail_object})
 
 # Create
+def create_user(request):
+    if request.method == "GET":
+        users = UserForm
+        return render(request, 'admin/create_action/create_user.html', context={'form': users})
+    else:
+        users = UserForm(request.POST, request.FILES)
+        if users.is_valid():
+            users.save()
+            return redirect('User')
+    return render(request, 'admin/create_action/create_user.html', context={'form': users})
+
+
 def create_news(request):
     if request.method == "GET":
         news = NewsForm
@@ -94,6 +110,7 @@ def create_news(request):
             news.save()
             return redirect('admin_news')
     return render(request, 'admin/create_action/create_news.html', context={'form': news})
+
 
 def create_news_details(request):
     if request.method == "GET":
