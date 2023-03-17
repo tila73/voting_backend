@@ -18,7 +18,7 @@
 
 
 <div class="create_button mb-3">
-  <a class="btn btn-success">Create</a>
+  <a class="btn btn-success" href="{% url 'create_blog_details' %}">Create</a>
 
 </div>
 
@@ -43,7 +43,35 @@
       <td>{{items.author_img.url}}</td>
       <td><a class="btn table_button btn-primary" href="{% url 'view_admin_blog_detail' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_blog_detail' %}">Update</a>
-        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+
+             <!-- Button trigger modal -->
+             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              Delete
+            </button>
+      
+            <!-- Modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete?
+                  </div>
+                  <div class="modal-footer">
+                    <form method="POST" action="{% url 'delete_blog_details' id=items.id %}">
+                      {% csrf_token %}
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
       </td>
     </tr>
     {% endfor %}

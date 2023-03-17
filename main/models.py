@@ -120,10 +120,6 @@ class Teams(models.Model):
 
 
 
-
-
-
-
 # # for hashed password
 raw_password = 'Insert password12'
 hashed_password = make_password(raw_password)

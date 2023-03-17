@@ -476,7 +476,48 @@ def delete_slider(request, id):
     if request.method=="POST":
         obj.delete()
         return redirect('admin_slider')
-    
+
+
+def delete_about(request, id):
+    obj = About.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_about')
+
+
+def delete_about_details(request,id):
+    obj = AboutDetails.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_about_detail')
+
+
+def delete_blog(request,id):    
+    obj = blog.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_blog')
+
+
+def delete_blog_details(request,id):
+    obj = blogDetails.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_blog_detail')
+
+
+def delete_testimonial(request,id):
+    obj = Testimonial.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_testimonial')
+
+
+def delete_testimonial_details(request,id):
+    obj = TestimonialDetails.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_testimonial_detail')
 
 # detail views
 

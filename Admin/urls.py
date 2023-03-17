@@ -21,7 +21,7 @@ urlpatterns = [
     path('counts/', views.counts, name="admin_counts"),
 
     #sujit
-    path('about', views.about, name="admin_about"),  
+    path('about/', views.about, name="admin_about"),  
     path('about/detail/', views.about_detail, name="admin_about_detail"),  
     path('blogs/', views.blogs, name="admin_blog"),
     path('blog/detail/', views.blog_detail, name="admin_blog_detail"),  
@@ -96,6 +96,14 @@ urlpatterns = [
         path('counts/delete/<int:id>/', views.delete_counts, name="delete_counts"),
         path('gallery/delete/<int:id>/', views.delete_gallery, name="delete_gallery"),
         path('slider/delete/<int:id>/', views.delete_slider, name="delete_slider"),
+        
+        path('about/delete/<int:id>/', views.delete_about, name="delete_about"),
+        path('about/delete_detail/<int:id>/', views.delete_about_details, name="delete_about_detail"),
+        path('blog/delete/<int:id>/', views.delete_blog, name="delete_blog"),
+        path('blog/delete_detail/<int:id>/', views.delete_blog_details, name="delete_blog_details"),
+        path('testimonial/delete/<int:id>/', views.delete_testimonial, name="delete_testimonial"),
+        path('testimonial/delete_detail/<int:id>/', views.delete_testimonial_details, name="delete_testimonial_details"),
+    
            
      # detail section
 
