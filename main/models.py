@@ -120,15 +120,12 @@ class Teams(models.Model):
 
 
 
-# # for hashed password
-raw_password = 'Insert password12'
-hashed_password = make_password(raw_password)
 
 class User(models.Model):
     name = models.CharField(("Name"), max_length=255)
     username = models.CharField(("Username"), max_length=255, unique=True)
     email = models.EmailField(("Email"), max_length=255, unique=True)
-    password = models.CharField(("Password"), max_length=128, default=hashed_password)
+    password = models.CharField(("Password"), max_length=128)
     address = models.CharField(("Address"), max_length=100, null=True)
     phone_number = models.CharField(("Phone Number"), max_length=100)
     esewa_number = models.CharField(("Esewa Number"), max_length=100, null=True)
@@ -139,30 +136,6 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-# def generate_username(instance):
-#     username = slugify(instance.name)
-#     counter = 1
-#     while instance.__class__.objects.filter(username=username).exists():
-#         username = f'{username}-{counter}'
-#         counter += 1
-#         return username
-    
-
-
-# @receiver(pre_save, sender=AdminUser)
-# def set_username(sender, instance, **kwargs):
-#             if not instance.username:
-#                 instance.username = generate_username(instance)
-
-
-# def save(self, *args, **kwargs):
-#         if not self.username:
-#             self.username = generate_username(self) #generate_username function from the controller
-#         super(AdminUser, self).save(*args, **kwargs)
-
 
 
 class Gallery(models.Model):

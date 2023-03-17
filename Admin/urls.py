@@ -93,6 +93,7 @@ urlpatterns = [
 
 
         #! delete section
+        path('user/delete/<int:user_id>/', views.delete_user, name="delete_user"),  
         path('news/delete/<int:news_id>/', views.delete_news, name="delete_news"),  
         path('news/delete_detail/<int:id>/', views.delete_news_details, name="delete_news_details"),  
         path('events/delete/<int:id>/', views.delete_event, name="delete_event"),  
