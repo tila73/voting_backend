@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def home(request):
@@ -12,7 +12,11 @@ def about(request):
     return render(request, "home/about.html")
 
 def company(request):
-    return render(request, "home/company.html")
+    company = Company.objects.all()
+    services = Service.objects.all()
+    whychooseus = WhyChooseUs.objects.all()
+    context = {'company':company, 'services':services, 'whychooseus':whychooseus}
+    return render(request, "home/company.html", context)
 
 def team(request):
     return render(request, "home/team.html")

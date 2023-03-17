@@ -3,36 +3,31 @@
 <!-- Heading and breadcrumb -->
 <div class="d-flex flex-column align-items-center">
   <h1 class="mt-1">Company</h1>
-  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb" class="mt-1">
+  <nav
+    style="--bs-breadcrumb-divider: '>'"
+    aria-label="breadcrumb"
+    class="mt-1"
+  >
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Company</li>
     </ol>
   </nav>
 </div>
 <!-- End heading and breadcrumb -->
 
+{% for item in company %}
 <!-- Introduction  -->
 <section class="bg-light container">
   <div class="p-5">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="../uploads/intro.jpg" class="img-fluid" alt="Image" />
+        <img src="{{ item.companyImg.url }}" class="img-fluid" alt="Image" />
       </div>
       <div class="col-md-6">
-        <h3>Introduction</h3>
-        <p>
-          Welcome to our online voting system! Our platform allows you to easily
-          participate in voting for your favorite events and competitions from
-          the comfort of your own home. With our user-friendly interface, you
-          can quickly and easily cast your vote for a wide range of events,
-          including dance competitions, live shows, and more. Our system is
-          designed to be simple and secure, ensuring that your vote is counted
-          accurately and fairly. Whether you're a die-hard fan or simply looking
-          to support your favorite performers, our online voting system makes it
-          easy to participate and have your voice heard. Join us today and start
-          voting!
-        </p>
+        <h3>{{ item.title }}</h3>
+
+        <p>{{ item.desc }}</p>
       </div>
     </div>
   </div>
@@ -45,198 +40,130 @@
     <div class="col-md-6">
       <div class="card p-3 shadow border-0">
         <h2 class="card-title">Our Mission</h2>
-        <p class="card-text">
-          We strive to provide a fair and reliable online voting platform that
-          empowers users to vote for their favorite events and competitions. Our
-          mission is to make the voting process simple, transparent, and
-          accessible to everyone.
-        </p>
+        <p class="card-text">{{ item.mission }}</p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card p-3 shadow border-0">
         <h2 class="card-title">Our Vision</h2>
-        <p class="card-text">
-          Our vision is to become the go-to platform for online voting, trusted
-          by users and event organizers alike. We aim to continually improve our
-          system to better serve our users and provide the most accurate and
-          fair results possible.
-        </p>
+        <p class="card-text">{{ item.vision }}</p>
       </div>
     </div>
   </div>
 </div>
+{% endfor %}
 <!-- Our mission and vision section ends here -->
 
 <!-- Our services section -->
 <section class="container">
-  <h1>Our Services</h1>
-  <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-mdb-ride="carousel">
-    <!-- Controls -->
-    <div class="d-flex justify-content-center mb-4">
-      <button class="carousel-control-prev position-relative" type="button" data-mdb-target="#carouselMultiItemExample"
-        data-mdb-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <div class="mb-3 m-auto mb-5">
+    <div class="card-body">
+      <h2 class="card-title text-center p-4 me-5">Our Services</h2>
+    </div>
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        {% for item in services %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="m-auto" style="width: 12rem">
+            <img
+              src="{{ item.servicesImg.url }}"
+              class="card-img-top rounded-circle"
+              alt="{{ item.title }}"
+              style="
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: auto;
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title text-center md:text-nowrap">{{ item.title }}</h3>
+            </div>
+          </div>
+          <p class="card-text text-center p-3 container">{{ item.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon bg-dark"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next position-relative" type="button" data-mdb-target="#carouselMultiItemExample"
-        data-mdb-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon bg-dark"
+          aria-hidden="true"
+        ></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <!-- Inner -->
-    <div class="carousel-inner py-4">
-      <!-- Single item -->
-      <div class="carousel-item active">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <img class="rounded-circle shadow-1-strong mb-4" src="../uploads/service1.png"
-                alt="User Registration Logo" style="width: 150px" />
-              <h5 class="mb-3">User Registration</h5>
-              <p>
-                Enable users to register and create accounts to participate in
-                voting.
-              </p>
-            </div>
-
-            <div class="col-lg-4 d-none d-lg-block">
-              <img class="rounded-circle shadow-1-strong mb-4" src="../uploads/service2.png" alt="Voting Management"
-                style="width: 150px" />
-              <h5 class="mb-3">Voting Management</h5>
-              <p>
-                Provide a platform to manage and monitor voting activity,
-                including vote counting and results.
-              </p>
-            </div>
-
-            <div class="col-lg-4 d-none d-lg-block">
-              <img class="rounded-circle shadow-1-strong mb-4" src="../uploads/service3.png" alt="Real-Time Reporting"
-                style="width: 150px" />
-              <h5 class="mb-3">Real-Time Reporting</h5>
-              <p>
-                Provide real-time reporting on the voting results to the event
-                organizers and participants.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Single item -->
-      <div class="carousel-item">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <img class="rounded-circle shadow-1-strong mb-4" src="../uploads/service4.png"
-                alt="Security and Fraud Prevention" style="width: 150px" />
-              <h5 class="mb-3">Security and Fraud Prevention</h5>
-              <p>
-                Ensure the voting process is secure and free from fraudulent
-                activity, such as vote manipulation and impersonation.
-              </p>
-            </div>
-
-            <div class="col-lg-4 d-none d-lg-block">
-              <img class="rounded-circle shadow-1-strong mb-4" src="../uploads/service5.png" alt="Technical Support"
-                style="width: 150px" />
-              <h5 class="mb-3">Technical Support</h5>
-              <p>
-                Provide technical support to both event organizers and users in
-                case of any issues with the voting platform.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Inner -->
   </div>
 </section>
-<!-- Our services section ends here -->
 
 <!-- Why choose us section -->
 <section class="container mb-5">
-  <h1 class="text-center mt-2">Why choose us?</h1>
+  <h1 class="text-center mt-2">Why Choose us?</h1>
   <div class="accordion accordion-flush my-4 shadow" id="accordionFlushExample">
+    {% for item in whychooseus %}
     <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Easy to Use
+      <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+        <button
+          class="accordion-button"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#collapse{{ forloop.counter }}"
+          aria-expanded="true"
+          aria-controls="collapse{{ forloop.counter }}"
+        >
+          {{ item.title }}
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-        data-mdb-parent="#accordionExample">
+      <div
+        id="collapse{{ forloop.counter }}"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading{{ forloop.counter }}"
+        data-mdb-parent="#accordionExample"
+      >
         <div class="accordion-body">
           <div class="row">
             <div class="col-md-3 text-center">
-              <img src="../uploads/11.png" alt="Easy to Use" class="img-fluid" />
+              <img
+                src="{{ item.img.url }}"
+                alt="{{ item.title }}"
+                class="img-fluid"
+              />
             </div>
             <div class="col-md-9">
-              <p>
-                Our online voting system is designed to be user-friendly and
-                intuitive, making it easy for anyone to cast their vote and
-                participate in the event.
-              </p>
+              <p>{{ item.desc }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Secure and Reliable
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-        data-mdb-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-md-3 text-center">
-              <img src="../uploads/12.jpg" alt="Secure and Reliable" class="img-fluid" />
-            </div>
-            <div class="col-md-9">
-              <p>
-                We use the latest security measures and protocols to ensure that
-                your data are safe and secure, and that the voting results are
-                accurate and reliable.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
-          data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Real-Time Results
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-        data-mdb-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <div class="col-md-3 text-center">
-              <img src="../uploads/13.jpg" alt="Real-Time Results" class="img-fluid" />
-            </div>
-            <div class="col-md-9">
-              <p>
-                With our online voting system, you can see the results of the
-                voting in real-time, which adds excitement and engagement to the
-                event.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </section>
 <!-- Why choose us section ends here-->
 
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
 {% endblock content %}
