@@ -39,35 +39,37 @@
       <td>{{items.testimoni_designation}}</td>
       <td>{{items.testimoni_message}}</td>
       <td>{{items.status}}</td>
-      <td><a class="btn table_button btn-primary" href="{% url 'view_admin_testimonial_detail' id=items.id %}">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_testimonial_detail' %}">Update</a>
+      <td><a class="btn table_button btn-primary"
+          href="{% url 'view_admin_testimonial_detail' id=items.id %}">Details</a>
+        <a class="btn table_button btn-secondary"
+          href="{% url 'update_testimonial_detail' testimonial_detail_id=items.id %}">Update</a>
 
-             <!-- Button trigger modal -->
-             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-              Delete
-            </button>
-      
-            <!-- Modal -->
-            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete {{items.testmoni_name}} ?
-                  </div>
-                  <div class="modal-footer">
-                    <form method="POST" action="{% url 'delete_testimonial_details' id=items.id %}">
-                      {% csrf_token %}
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" value="delete" class="btn btn-danger">Delete</button>
-                    </form>
-                  </div>
-                </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete {{items.testmoni_name}} ?
+              </div>
+              <div class="modal-footer">
+                <form method="POST" action="{% url 'delete_testimonial_details' id=items.id %}">
+                  {% csrf_token %}
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                </form>
               </div>
             </div>
+          </div>
+        </div>
       </td>
     </tr>
     {% endfor %}

@@ -17,16 +17,22 @@
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="about_title">about Title</label>
-      <input type="text" class="form-control" id="about_title" name="about_title" placeholder="" />
+      <input type="text" class="form-control" id="about_title" name="about_title" placeholder=""
+        value="{{ about_detail.about_title }}" />
     </div>
 
 
     <div class="form-group mb-2 mt-2">
       <label for="about_description">Description</label>
-      <textarea class="form-control" name="about_description" id="about_description" cols="30" rows="10"></textarea>
+      <textarea class="form-control" name="about_description" id="about_description" cols="30"
+        rows="10">{{ about_detail.about_description }}</textarea>
     </div>
     <div class="form-group mb-2 mt-2">
       <label for="about_img">Image</label>
+      <br>
+      {% if about_detail.about_img %}
+      <img src="{{ about_detail.about_img.url }}" alt="Company Image" style="max-width: 100px">
+      {% endif %}
       <input type="file" class="form-control" id="about_img" name="about_img" placeholder="Image" />
     </div>
 

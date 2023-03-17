@@ -12,31 +12,38 @@
   }
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
-  <h1 class="text-center">Update blog</h1>
+  <h1 class="text-center">Update Blog Details </h1>
   <form action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
-      <label for="blog_title">blog Title</label>
-      <input type="text" class="form-control" id="blog_title" name="title" placeholder="" />
+      <label for="blog_title">Blog Title</label>
+      <input type="text" class="form-control" id="blog_title" name="title" placeholder=""
+        value="{{blog_detail.title}}" />
     </div>
 
     <div class="form-group mb-2 mt-2">
-      <label for="blog_author">blog Author</label>
-      <input type="text" class="form-control" id="blog_author" name="author" placeholder="Enter Author Name" />
+      <label for="blog_author">Blog Author</label>
+      <input type="text" class="form-control" id="blog_author" name="author" placeholder="Enter Author Name"
+        value="{{blog_detail.author}}" />
     </div>
 
     <div class="form-group mb-2 mt-2">
       <label for="slug">Slug</label>
-      <input type="text" class="form-control" id="slug" name="slug" placeholder="" />
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="" value="{{blog_detail.slug}}" />
     </div>
     <div class="form-group mb-2 mt-2">
       <label for="author_img">Image</label>
+      <br>
+      {% if blog_detail.author_img %}
+      <img src="{{ blog_detail.author_img.url }}" alt="Company Image" style="max-width: 100px">
+      {% endif %}
       <input type="file" class="form-control" id="author_img" name="author_img" />
     </div>
 
     <div class="form-group mb-2 mt-2">
-      <label for="message">blog Description</label>
-      <textarea class="form-control" id="task_description" name="description" rows="3"></textarea>
+      <label for="message">Blog Description</label>
+      <textarea class="form-control" id="task_description" name="description"
+        rows="3">{{blog_detail.description}}</textarea>
     </div>
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>
