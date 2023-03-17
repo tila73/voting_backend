@@ -396,6 +396,7 @@ def delete_news_details(request, id):
         obj.delete()
         return redirect('admin_news_detail')
 
+
 def delete_event(request, id):
     obj = Event.objects.get(id=id)
     if request.method=="POST":
