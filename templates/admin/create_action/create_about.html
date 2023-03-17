@@ -15,28 +15,32 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create About</h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form name="aboutform" action="#" method="post" enctype="multipart/form-data" onsubmit="return aboutFormValidation()">
     {% csrf_token %}
 
     <div class="form-group mb-2 mt-2">
       <label for="about_title">About Title</label>
-      <input type="text" class="form-control" id="about_title" name="about_title" placeholder="" />
+      <input type="text" class="form-control" id="about_title" name="about_title" placeholder="" onclick="return removeAboutValidation()"/>
     </div>
+    <p id="atitle" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="about_description"> About Description</label>
-      <textarea class="form-control" name="about_description" id="about_description" cols="30" rows="10"></textarea>
+      <textarea class="form-control" name="about_description" id="about_description" cols="30" rows="10" onclick="return removeAboutValidation()"></textarea>
     </div>
+    <p id="adesc" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="about_img">Image</label>
-      <input type="file" class="form-control" id="about_img" name="about_img" placeholder="Image" />
+      <input type="file" class="form-control" id="about_img" name="about_img" placeholder="Image" onclick="return removeAboutValidation()" />
     </div>
+    <p id="aimg" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="status"> Status</label>
-      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked />
+      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked onclick="return removeAboutValidation()" />
     </div>
+    <p id="astatus" class="text-danger"></p>
 
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>
