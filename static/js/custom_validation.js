@@ -447,35 +447,51 @@ function faqValidation() {
 
 //! blog form validaition
 
-function removefaqValidation(){
-  document.getElementById("img").innerHTML = "";
+function removeblogValidation(){
+  document.getElementById("imgs").innerText = " ";
   document.getElementById("title").innerText = " ";
-  document.getElementById("desc").innerText = " ";
-  document.getElementById("statuss").innerText = "";
+  document.getElementById("desc").innerHTML = "";
+  document.getElementById("athname").innerText = "";
+  document.getElementById("athimg").innerText = "";
+  document.getElementById("slugs").innerText = "";
 
+  
 }
 
-function faqValidation() {
-  var namess = document.faqform.name.value;
-  var emails = document.faqform.email.value;
-  var messages = document.faqform.message.value;
-  var statuss = document.faqform.btnradio.value;
+function blogValidation() {
+  var imgs = document.blogform.img.value;
+  var title = document.blogform.title.value;
+  var desc = document.blogform.description.value;
+  var athname = document.blogform.author.value;
+  var athimg = document.blogform.author_img.value;
+  var slugs = document.blogform.slug.value;
   
 
-  if (namess == null || namess == "") {
-    document.getElementById("namess").innerHTML = "Fill in the fields";
-    return false;
-  }
-  else if (emails == null || emails == "") {
-    document.getElementById("emails").innerText = "required ";
-    return false;
-  }
-  else if (messages == null || messages == "") {
-    document.getElementById("messages").innerText = "required ";
+
+  if (imgs == null || imgs == "") {
+    document.getElementById("imgs").innerText = "required ";
     return false;
   } 
-  else if (statuss == null || statuss == "") {
-    document.getElementById("statuss").innerText = "required";
+
+  else if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if(desc == null || desc == "") {
+    document.getElementById("desc").innerHTML = "Fill in the fields";
+    return false;
+  }
+
+  else if (athname == null || athname == "") {
+    document.getElementById("athname").innerText = "required";
+    return false;
+  } 
+  else if (athimg == null || athimg == "") {
+    document.getElementById("athimg").innerText = "required";
+    return false;
+  } 
+  else if (slugs == null || slugs == "") {
+    document.getElementById("slugs").innerText = "required";
     return false;
   } 
 
