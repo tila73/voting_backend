@@ -44,7 +44,7 @@
       <td>{{items.author_img.url}}</td>
       <td>{{items.slug.url}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_blog' %}">Update</a>
+        <a class="btn table_button btn-secondary" href="{% url 'update_blog' blogg_id=items.id %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>

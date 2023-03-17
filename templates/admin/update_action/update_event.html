@@ -12,56 +12,45 @@
   }
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
-  <h1 class="text-center">Update events</h1>
+  <h1 class="text-center">Update Event</h1>
   <form action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
-      <label for="news_title">Event Title</label>
-      <input
-        type="text"
-        class="form-control"
-        id="news_title"
-        name="news_title"
-        placeholder=""
-      />
+      <label for="event_title">Event Title</label>
+      <input type="text" class="form-control" id="event_title" name="event_title" placeholder=""
+        value="{{event.event_title}}" />
     </div>
 
 
     <div class="form-group mb-2 mt-2">
-      <label for="news_date">Event Date</label>
-      <input
-        type="date"
-        class="form-control"
-        id="news_date"
-        name="news_date"
-      />
+      <label for="event_date">Event Date</label>
+
+      <input class="form-control" id="event_date" name="event_date" value="{{event.event_date}}" />
+      {% if event.event_date %}
+      <input type="date" class="form-control" id="event_date" name="event_date" value="{{event.event_date}}" />
+      {% endif %}
+
     </div>
     <div class="form-group mb-2 mt-2">
       <label for="slug">Slug</label>
-      <input
-        type="text"
-        class="form-control"
-        id="slug"
-        name="slug"
-        placeholder=""
-      />
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="" value="{{event.slug}}" />
     </div>
 
     <div class="form-group mb-2 mt-2">
       <label for="news_img">Image</label>
-      <input type="file" class="form-control" id="news_img" name="news_img" />
+      <br>
+      {% if event.event_img %}
+      <img src="{{ event.event_img.url }}" alt="Company Image" style="max-width: 100px">
+      {% endif %}
+      <input type="file" class="form-control" id="event_img" name="event_img" />
     </div>
     <div class="form-group mb-2 mt-2">
       <label for="message">Event Description</label>
-      <textarea
-        class="form-control"
-        id="task_description"
-        name="task_description"
-        rows="3"
-      ></textarea>
+      <textarea class="form-control" id="event_description" name="event_description"
+        rows="3">{{event.event_description}}</textarea>
     </div>
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-    <button  class="btn btn-primary mb-3 mt-2">cancel</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
 
   </form>
 </div>

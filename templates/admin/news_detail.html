@@ -4,81 +4,82 @@
 
 
 <div class="container-fluid">
-    <div class="row mb-4">
-      <div class="col-sm-6">
-        <h1 class="m-0">News Details</h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">News</a></li>
-          <li class="breadcrumb-item active">News Detail</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <h1 class="m-0">News Details</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">News</a></li>
+        <li class="breadcrumb-item active">News Detail</li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div><!-- /.container-fluid -->
 
 
 <div class="create_button mb-3">
-    <a class="btn btn-success" href="{% url 'create_news_details' %}">Create</a>
-  </div>
-  
- 
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Date</th>
-        <th scope="col">Image</th>
-        <th scope="col">Description</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for items in newsd %}
-      <tr>
+  <a class="btn btn-success" href="{% url 'create_news_details' %}">Create</a>
+</div>
 
-        <td>{{items.news_title}}</td>
-        <td>{{items.news_author}}</td>
-        <td>{{items.news_date}}</td>
-        <td>{{items.news_img.url}}</td>
-        <td>{{items.news_description}}</td>
-        <td><a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_news_detail' %}">Update</a>
 
-             <!-- Button trigger modal -->
-             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-              Delete
-            </button>
-      
-            <!-- Modal -->
-            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete?
-                  </div>
-                  <div class="modal-footer">
-                    <form method="POST" action="{% url 'delete_news_details' id=items.id %}">
-                      {% csrf_token %}
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" value="delete" class="btn btn-danger">Delete</button>
-                    </form>
-                  </div>
-                </div>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Date</th>
+      <th scope="col">Image</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for items in newsd %}
+    <tr>
+
+      <td>{{items.news_title}}</td>
+      <td>{{items.news_author}}</td>
+      <td>{{items.news_date}}</td>
+      <td>{{items.news_img.url}}</td>
+      <td>{{items.news_description}}</td>
+      <td><a class="btn table_button btn-primary">Details</a>
+        <a class="btn table_button btn-secondary"
+          href="{% url 'update_news_detail' news_detail_id=items.id %}">Update</a>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete?
+              </div>
+              <div class="modal-footer">
+                <form method="POST" action="{% url 'delete_news_details' id=items.id %}">
+                  {% csrf_token %}
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                </form>
               </div>
             </div>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+          </div>
+        </div>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 
 
-  
+
 {% endblock contents %}

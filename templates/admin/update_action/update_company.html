@@ -13,38 +13,49 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
     <h1 class="text-center">Update Company Information</h1>
+
     <form action="#" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group mb-2 mt-2">
             <label for="companyImg">Company Image</label>
-            <input type="file" class="form-control" id="companyImg" name="companyImg" placeholder="" />
+            <br>
+            {% if company.companyImg %}
+            <img src="{{ company.companyImg.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
+            <input type="file" class="form-control mt-3" id="companyImg" name="companyImg" placeholder="" />
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="" />
+            <input type="text" class="form-control" id="title" name="title" placeholder=""
+                value="{{ company.title }}" />
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="desc">Description </label>
-            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+            <textarea class="form-control" id="desc" name="desc" rows="3">{{ company.desc }}</textarea>
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="mission">Mission</label>
-            <input type="text" class="form-control" id="mission" name="mission" />
+            <textarea class="form-control" id="mission" name="mission" rows="3">{{ company.mission }}</textarea>
         </div>
         <div class="form-group mb-2 mt-2">
             <label for="vision">Vision </label>
-            <textarea class="form-control" id="vision" name="vision" rows="3"></textarea>
+            <textarea class="form-control" id="vision" name="vision" rows="3">{{ company.vision }}</textarea>
         </div>
         <div class="form-group mb-2 mt-2">
-            <label for="status">Status </label>
-            <textarea class="form-control" id="status" name="status" rows="3"></textarea>
+            <label for="news_date">Status</label>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+                <label class="btn btn-outline-primary" for="btnradio1">Active</label>
+
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+                <label class="btn btn-outline-primary" for="btnradio2">Inactive</label>
+            </div>
         </div>
         <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
         <button class="btn btn-primary mb-3 mt-2">cancel</button>
-
     </form>
 </div>
 

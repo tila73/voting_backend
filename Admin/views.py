@@ -312,71 +312,222 @@ def create_testimonial_details(request):
 
 
 # update
-def update_news(request):
-    return render(request, 'admin/update_action/update_news.html')
-
-def update_news_detail(request):
-    return render(request, 'admin/update_action/update_news_detail.html')
-
-def update_event(request):
-    return render(request, 'admin/update_action/update_event.html')
-
-def update_event_detail(request):
-    return render(request, 'admin/update_action/update_event_detail.html')
-
-def update_faq(request):
-    return render(request, 'admin/update_action/update_faq.html')
-
-def update_team(request):
-    return render(request, 'admin/update_action/update_team.html')
-
-def update_service(request):
-    return render(request, 'admin/update_action/update_service.html')
-
-def update_whychooseus(request):
-    return render(request, 'admin/update_action/update_whychooseus.html')
+def update_news(request, news_id):
+    news = News.objects.get(id=news_id)
+    if request.method == "POST":
+        form = NewsForm(request.POST, request.FILES, instance=news)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_news')
+    else:
+        form = NewsForm(instance=news)
+    return render(request, 'admin/update_action/update_news.html', {'form': form, "news": news})
 
 
-def update_company(request):
-    return render(request, 'admin/update_action/update_company.html')
+def update_news_detail(request, news_detail_id):
+    news_detail = NewsDetails.objects.get(id=news_detail_id)
+    if request.method =="POST":
+        form = NewsDetailsForm(request.POST, request.FILES, instance=news_detail)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_news_detail')
+    else:
+        form = NewsDetailsForm(instance=news_detail)
+    return render(request, 'admin/update_action/update_news_detail.html', {'form':form, 'news_detail':news_detail})
 
 
-def update_counts(request):
-    return render(request, 'admin/update_action/update_counts.html')
+def update_event(request, event_id):
+    event = Event.objects.get(id=event_id)
+    if request.method =='POST':
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_event')
+    else:
+        form = EventForm(instance=event)
+    return render(request, 'admin/update_action/update_event.html', {'form':form, 'event':event})
+
+def update_event_detail(request, event_detail_id):
+    event_detail= EventDetails.objects.get(id=event_detail_id)
+    if request.method =='POST':
+        form = EventDetailsForm(request.POST, request.FILES, instance=event_detail)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_event_detail')
+    else:
+        form = EventDetailsForm(instance=event_detail)
+    return render(request, 'admin/update_action/update_event_detail.html', {'from':form, 'event_detail':event_detail})
 
 
-def update_gallery(request):
-    return render(request, 'admin/update_action/update_gallery.html')
+def update_faq(request, faaq_id):
+    faaq = faq.objects.get(id=faaq_id)
+    if request.method == 'POST':
+        form = faqForm(request.POST, request.FILES, instance=faaq)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_faq')
+    else:
+        form = faqForm(instance=faaq)
+    return render(request, 'admin/update_action/update_faq.html', {'form': form, 'faaq': faaq})
 
 
-def update_slider(request):
-    return render(request, 'admin/update_action/update_slider.html')
+def update_team(request, team_id):
+    team=Teams.objects.get(id=team_id)
+    if request.method =='POST':
+        form = TeamsForm(request.POST, request.FILES, instance=team)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_team')
+    else:
+        form = TeamsForm(instance=team)
+    return render(request, 'admin/update_action/update_team.html', {'form':form, 'team':team})
+
+def update_service(request, service_id):
+    service = Service.objects.get(id=service_id)
+    if request.method =='POST':
+        form = ServiceForm(request.POST, request.FILES, instance=service)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_service')
+    else:
+        form= ServiceForm(instance=service)
+    return render(request, 'admin/update_action/update_service.html', {'form':form, 'service':service})
+
+def update_whychooseus(request, whychooseus_id):
+    whychooseus = WhyChooseUs.objects.get(id=whychooseus_id)
+    if request.method == 'POST':
+        form = WhyChooseUsForm(request.POST, request.FILES, instance=whychooseus)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_whychooseus')
+    else:
+        form = WhyChooseUsForm(instance=whychooseus)
+    return render(request, 'admin/update_action/update_whychooseus.html', {"form":form, 'whychooseus':whychooseus})
+
+
+def update_company(request, company_id):
+    company = Company.objects.get(id=company_id)
+    if request.method=="POST":
+        form=CompanyForm(request.POST, request.FILES, instance=company)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_company')
+    else:
+        form = CompanyForm(instance=company)
+    return render(request, 'admin/update_action/update_company.html', {'form':form, "company":company})
+
+
+def update_counts(request, counts_id):
+    counts = Counts.objects.get(id=counts_id)
+    if request.method == "POST":
+        form = CountsForm(request.POST, request.FILES, instance=counts)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_counts')
+    else:
+        form = CountsForm(instance=counts)
+    return render(request, 'admin/update_action/update_counts.html', {'form': form, "counts": counts})
+
+
+def update_gallery(request, gallery_id):
+    gallery = Gallery.objects.get(id=gallery_id)
+    if request.method == "POST":
+        form = GalleryForm(request.POST, request.FILES, instance=gallery)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_gallery')
+    else:
+        form = GalleryForm(instance=gallery)
+    return render(request, 'admin/update_action/update_gallery.html', {'form': form, "gallery": gallery})
+
+
+def update_slider(request, slider_id):
+    slider = Slider.objects.get(id=slider_id)
+    if request.method == "POST":
+        form = SliderForm(request.POST, request.FILES, instance=slider)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_slider')
+    else:
+        form = SliderForm(instance=slider)
+    return render(request, 'admin/update_action/update_slider.html', {'form': form, "slider": slider})
 
 # sujit update wala
 
 
-def update_about(request):
-    return render(request, 'admin/update_action/update_about.html')
+def update_about(request, about_id):
+    about = About.objects.get(id=about_id)
+    if request.method == "POST":
+        form = AboutForm(request.POST, request.FILES, instance=about)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_about')
+    else:
+        form = AboutForm(instance=about)
+    return render(request, 'admin/update_action/update_about.html', {'form': form, "about": about})
 
 
-def update_about_detail(request):
-    return render(request, 'admin/update_action/update_about_detail.html')
+def update_about_detail(request, about_detail_id):
+    about_detail = AboutDetails.objects.get(id=about_detail_id)
+    if request.method == "POST":
+        form = AboutDetailsForm(request.POST, request.FILES, instance=about_detail)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_about_detail')
+    else:
+        form = AboutDetailsForm(instance=about_detail)
+    return render(request, 'admin/update_action/update_about_detail.html', {'form': form, "about_detail": about_detail})
+
+# not done cause models name and the variable name are same, faq, blog, 
+def update_blog(request, blogg_id):
+    blogg = blog.objects.get(id=blogg_id)
+    if request.method == "POST":
+        form = blogForm(request.POST, request.FILES, instance=blogg)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_blog')
+    else:
+        form = blogForm(instance=blogg)
+    return render(request, 'admin/update_action/update_blog.html', {'form': form, "blogg": blogg})
 
 
-def update_blog(request):
-    return render(request, 'admin/update_action/update_blog.html')
+def update_blog_detail(request, blog_detail_id):
+    blog_detail = blogDetails.objects.get(id=blog_detail_id)
+    if request.method == "POST":
+        form = blogDetailsForm(
+            request.POST, request.FILES, instance=blog_detail)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_blog_detail')
+    else:
+        form = blogDetailsForm(instance=blog_detail)
+    return render(request, 'admin/update_action/update_blog_detail.html', {'form': form, "blog_detail": blog_detail})
 
 
-def update_blog_detail(request):
-    return render(request, 'admin/update_action/update_blog_detail.html')
+def update_testimonial(request, testimonial_id):
+    testimonial = Testimonial.objects.get(id=testimonial_id)
+    if request.method == "POST":
+        form = TestimonialForm(request.POST, request.FILES, instance=testimonial)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_testimonial')
+    else:
+        form = TestimonialForm(instance=testimonial)
+    return render(request, 'admin/update_action/update_testimonial.html', {'form': form, "testimonial": testimonial})
 
 
-def update_testimonial(request):
-    return render(request, 'admin/update_action/update_testimonial.html')
-
-
-def update_testimonial_detail(request):
-    return render(request, 'admin/update_action/update_testimonial_detail.html')
+def update_testimonial_detail(request, testimonial_detail_id):
+    testimonial_detail = TestimonialDetails.objects.get(
+        id=testimonial_detail_id)
+    if request.method == "POST":
+        form = TestimonialDetailsForm(
+            request.POST, request.FILES, instance=testimonial_detail)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_testimonial_detail')
+    else:
+        form = TestimonialDetailsForm(instance=testimonial_detail)
+    return render(request, 'admin/update_action/update_testimonial_detail.html', {'form': form, "testimonial_detail": testimonial_detail})
 
 
 

@@ -3,73 +3,74 @@
 {% block contents %}
 
 <div class="container-fluid">
-    <div class="row mb-4">
-      <div class="col-sm-6">
-        <h1 class="m-0">Why Choose Us</h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">WhyChooseUs</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-  
-  
-  <div class="create_button mb-3">
-      <a class="btn btn-success" href="{% url 'create_whychooseus' %}">Create</a>
-  
-    </div>
-  
-  
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Img</th>
-        <th scope="col">Status</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for items in whychooseus %}
-      <tr>
-        <td>{{items.title}}</td>
-        <td>{{items.img.url}}</td>
-        <td>{{items.status}}</td>
-        <td><a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_whychooseus' %}">Update</a>
-             <!-- Button trigger modal -->
-             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-              Delete
-            </button>
-      
-            <!-- Modal -->
-            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete?
-                  </div>
-                  <div class="modal-footer">
-                    <form method="POST" action="{% url 'delete_whychooseus' id=items.id %}">
-                      {% csrf_token %}
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" value="delete" class="btn btn-danger">Delete</button>
-                    </form>
-                  </div>
-                </div>
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <h1 class="m-0">Why Choose Us</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">WhyChooseUs</li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+
+<div class="create_button mb-3">
+  <a class="btn btn-success" href="{% url 'create_whychooseus' %}">Create</a>
+
+</div>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Img</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for items in whychooseus %}
+    <tr>
+      <td>{{items.title}}</td>
+      <td>{{items.img.url}}</td>
+      <td>{{items.status}}</td>
+      <td><a class="btn table_button btn-primary">Details</a>
+        <a class="btn table_button btn-secondary"
+          href="{% url 'update_whychooseus' whychooseus_id=items.id %}">Update</a>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          Delete
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete?
+              </div>
+              <div class="modal-footer">
+                <form method="POST" action="{% url 'delete_whychooseus' id=items.id %}">
+                  {% csrf_token %}
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                </form>
               </div>
             </div>
+          </div>
+        </div>
 
-      </tr>
-      {% endfor %}  
-    </tbody>
-  </table>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% endblock contents %}

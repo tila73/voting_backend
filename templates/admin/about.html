@@ -41,7 +41,7 @@
       <td>{{items.about_img.url}}</td>
       <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_about' %}">Update</a>
+        <a class="btn table_button btn-secondary" href="{% url 'update_about' about_id=items.id %}">Update</a>
         <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
       </td>
     </tr>
