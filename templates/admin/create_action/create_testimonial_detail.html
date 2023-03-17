@@ -13,29 +13,31 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create Testimonial Details</h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form name="tesimonialform" action="#" method="post" enctype="multipart/form-data" onsubmit="return testimonialValidation()">
     {% csrf_token %}
-
     <div class="form-group mb-2 mt-2">
       <label for="testmoni_name">Title</label>
-      <input type="text" class="form-control" id="testmoni_name" name="testmoni_name" placeholder="" />
+      <input type="text" class="form-control" id="testmoni_name" name="testmoni_name" placeholder="" onclick="removetestimonialValidation()"/>
     </div>
-
+    <p id="names" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="testmoni_designation">Designation</label>
-      <input type="text" class="form-control" name="testmoni_designation" id="testmoni_designation" placeholder="" />
-
+      <input type="text" class="form-control" name="testmoni_designation" id="testmoni_designation" placeholder="" onclick="removetestimonialValidation()"/>
     </div>
+    <p id="designation" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="testmoni_message">Message</label>
-      <textarea class="form-control" id="testmoni_message" name="testmoni_message" cols="30" rows="3"></textarea>
+      <textarea class="form-control" id="testmoni_message" name="testmoni_message" cols="30" rows="3" onclick="removetestimonialValidation()"></textarea>
     </div>
+    <p id="message" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="status"> status</label>
-      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked />
+      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked onclick="removetestimonialValidation()"/>
     </div>
+    <p id="statuss" class="text-danger"></p>
 
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>

@@ -1,3 +1,5 @@
+
+//! news and news details form validaition
 function removevalidation() {
   document.getElementById("title").innerHTML = "";
   document.getElementById("nauthor").innerHTML = "";
@@ -39,6 +41,7 @@ function validateform() {
 }
 
 
+//! event and event details form validaition
 
 function removeEventValidation(){
   document.getElementById("etitle").innerHTML = "";
@@ -81,6 +84,7 @@ function eventFormValidation() {
 
 
 
+//! about and about details form validaition
 
 function removeAboutValidation(){
   document.getElementById("atitle").innerHTML = "*";
@@ -110,6 +114,384 @@ function aboutFormValidation() {
   } 
   else if (astatus == null || astatus == "") {
     document.getElementById("astatus").innerText = "required";
+    return false;
+  } 
+
+}
+ 
+
+
+//! slider form validaition
+
+function removesliderValidation(){
+  document.getElementById("title").innerHTML = "*";
+  document.getElementById("desc").innerText = "*";
+  document.getElementById("img").innerText = "*";
+  document.getElementById("statuss").innerText = "*";
+
+}
+
+function aboutSliderValidation() {
+  var title = document.sliderform.slider_title.value;
+  var desc = document.sliderform.slider_description.value;
+  var img = document.sliderform.slider_img.value;
+  var statuss = document.sliderform.status.value;
+  
+
+  if (title == null || title == "") {
+    document.getElementById("title").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (desc == null || desc == "") {
+    document.getElementById("desc").innerText = "required ";
+    return false;
+  } else if (img == null || img == "") {
+    document.getElementById("img").innerText = "required";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+//! counts form validaition
+
+function removeCountValidation(){
+  document.getElementById("cnumber").innerHTML = "*";
+  document.getElementById("ctitle").innerText = "* ";
+
+}
+
+function CountFormValidation() {
+  var cnumber = document.countform.count_number.value;
+  var ctitle = document.countform.count_title.value;
+
+  
+
+  if (cnumber == null || cnumber == "") {
+    document.getElementById("cnumber").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (ctitle == null || ctitle == "") {
+    document.getElementById("ctitle").innerText = "required ";
+    return false;
+  } 
+
+}
+ 
+
+//! Testimonials and Testimonials details form validaition
+
+function removetestimonialValidation(){
+  document.getElementById("names").innerHTML = "";
+  document.getElementById("designation").innerText = " ";
+  document.getElementById("message").innerText = "";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function testimonialValidation() {
+  var names = document.tesimonialform.testmoni_name.value;
+  var designation = document.tesimonialform.testmoni_designation.value;
+  var message = document.tesimonialform.testmoni_message.value;
+  var statuss = document.tesimonialform.status.value;
+  
+
+  if (names == null || names == "") {
+    document.getElementById("names").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (designation == null || designation == "") {
+    document.getElementById("designation").innerText = "required ";
+    return false;
+  } else if (message == null || message == "") {
+    document.getElementById("message").innerText = "required";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+
+//! Company form validaition
+
+function removecompanyValidation(){
+  document.getElementById("img").innerHTML = "";
+  document.getElementById("title").innerText = " ";
+  document.getElementById("desc").innerText = " ";
+  document.getElementById("missions").innerText = "";
+  document.getElementById("visions").innerText = "";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function companyValidation() {
+  var img = document.companyform.companyImg.value;
+  var title = document.companyform.title.value;
+  var desc = document.companyform.desc.value;
+  var missions = document.companyform.mission.value;
+  var visions = document.companyform.vision.value;
+  var statuss = document.companyform.btnradio.value;
+  
+
+  if (img == null || img == "") {
+    document.getElementById("img").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if (desc == null || desc == "") {
+    document.getElementById("desc").innerText = "required ";
+    return false;
+  } else if (missions == null || missions == "") {
+    document.getElementById("missions").innerText = "required";
+    return false;
+  } 
+  else if (visions == null || visions == "") {
+    document.getElementById("visions").innerText = "required";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+//! Services form validaition
+
+function removeserviceValidation(){
+  document.getElementById("img").innerHTML = "";
+  document.getElementById("title").innerText = " ";
+  document.getElementById("desc").innerText = " ";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function serviceValidation() {
+  var img = document.serviceform.servicesImg.value;
+  var title = document.serviceform.title.value;
+  var desc = document.serviceform.desc.value;
+  var statuss = document.serviceform.btnradio.value;
+  
+
+  if (img == null || img == "") {
+    document.getElementById("img").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if (desc == null || desc == "") {
+    document.getElementById("desc").innerText = "required ";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+
+//! whychoose form validaition
+
+function removewhyValidation(){
+  document.getElementById("title").innerText = " ";
+  document.getElementById("img").innerHTML = "";
+  document.getElementById("desc").innerText = " ";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function whyValidation() {
+  var title = document.whyform.title.value;
+  var img = document.whyform.img.value;
+  var desc = document.whyform.desc.value;
+  var statuss = document.whyform.btnradio.value;
+  
+
+  if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if(img == null || img == "") {
+    document.getElementById("img").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (desc == null || desc == "") {
+    document.getElementById("desc").innerText = "required ";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+
+//! Teams form validaition
+
+function removeteamValidation(){
+  document.getElementById("title").innerText = " ";
+  document.getElementById("img").innerHTML = "";
+  document.getElementById("desc").innerText = " ";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function teamValidation() {
+  var title = document.teamform.title.value;
+  var desc = document.teamform.sub_desc.value;
+  var img = document.teamform.img.value;
+  var names = document.teamform.name.value;
+  var posts = document.teamform.post.value;
+  var fbl = document.teamform.fb_link.value;
+  var twt = document.teamform.twitter_link.value;
+  var igm = document.teamform.insta_link.value;
+  
+
+  if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if(desc == null || desc == "") {
+    document.getElementById("desc").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (img == null || img == "") {
+    document.getElementById("img").innerText = "required ";
+    return false;
+  } 
+  else if (names == null || names == "") {
+    document.getElementById("names").innerText = "required";
+    return false;
+  } 
+  else if (posts == null || posts == "") {
+    document.getElementById("posts").innerText = "required";
+    return false;
+  } 
+  else if (fbl == null || fbl == "") {
+    document.getElementById("fbl").innerText = "required";
+    return false;
+  } 
+  else if (twt == null || twt == "") {
+    document.getElementById("twt").innerText = "required";
+    return false;
+  } 
+  else if (igm == null || igm == "") {
+    document.getElementById("igm").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+//! faqs form validaition
+
+function removefaqValidation(){
+  document.getElementById("img").innerHTML = "";
+  document.getElementById("title").innerText = " ";
+  document.getElementById("desc").innerText = " ";
+  document.getElementById("statuss").innerText = "";
+
+}
+
+function faqValidation() {
+  var namess = document.faqform.name.value;
+  var emails = document.faqform.email.value;
+  var messages = document.faqform.message.value;
+  var statuss = document.faqform.btnradio.value;
+  
+
+  if (namess == null || namess == "") {
+    document.getElementById("namess").innerHTML = "Fill in the fields";
+    return false;
+  }
+  else if (emails == null || emails == "") {
+    document.getElementById("emails").innerText = "required ";
+    return false;
+  }
+  else if (messages == null || messages == "") {
+    document.getElementById("messages").innerText = "required ";
+    return false;
+  } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
+
+}
+
+
+
+
+//! blog form validaition
+
+function removeblogValidation(){
+  document.getElementById("imgs").innerText = " ";
+  document.getElementById("title").innerText = " ";
+  document.getElementById("desc").innerHTML = "";
+  document.getElementById("athname").innerText = "";
+  document.getElementById("athimg").innerText = "";
+  document.getElementById("slugs").innerText = "";
+
+  
+}
+
+function blogValidation() {
+  var imgs = document.blogform.img.value;
+  var title = document.blogform.title.value;
+  var desc = document.blogform.description.value;
+  var athname = document.blogform.author.value;
+  var athimg = document.blogform.author_img.value;
+  var slugs = document.blogform.slug.value;
+  
+
+
+  if (imgs == null || imgs == "") {
+    document.getElementById("imgs").innerText = "required ";
+    return false;
+  } 
+
+  else if (title == null || title == "") {
+    document.getElementById("title").innerText = "required ";
+    return false;
+  }
+  else if(desc == null || desc == "") {
+    document.getElementById("desc").innerHTML = "Fill in the fields";
+    return false;
+  }
+
+  else if (athname == null || athname == "") {
+    document.getElementById("athname").innerText = "required";
+    return false;
+  } 
+  else if (athimg == null || athimg == "") {
+    document.getElementById("athimg").innerText = "required";
+    return false;
+  } 
+  else if (slugs == null || slugs == "") {
+    document.getElementById("slugs").innerText = "required";
     return false;
   } 
 
