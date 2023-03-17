@@ -13,39 +13,81 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create News</h1>
-  <form action="#" method="POST" enctype="multipart/form-data">
+
+  <form
+    name="myform"
+    action="#"
+    method="POST"
+    enctype="multipart/form-data"
+    onsubmit="return validateform()"
+  >
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="news_title">News Title</label>
-      <input type="text" class="form-control" id="news_title" name="news_title" placeholder="" />
+      <input
+        type="text"
+        class="form-control"
+        id="news_title"
+        name="news_title"
+        placeholder=""
+        onclick="removevalidation()"
+      />
     </div>
-
+    <p id="title" class="text-danger"></p>
     <div class="form-group mb-2 mt-2">
       <label for="news_author">News Author</label>
-      <input type="text" class="form-control" id="news_author" name="news_author" placeholder="Enter Author Name" />
+      <input
+        type="text"
+        class="form-control"
+        id="news_author"
+        name="news_author"
+        placeholder="Enter Author Name"
+        onclick="removevalidation()"
+      />
     </div>
-
+    <p id="nauthor" class="text-danger"></p>
     <div class="form-group mb-2 mt-2">
       <label for="news_date">News Date</label>
-      <input type="date" class="form-control" id="news_date" name="news_date" />
+      <input type="date" class="form-control" id="news_date" name="news_date" onclick="removevalidation()"/>
     </div>
+    <p id="ndate" class="text-danger"></p>
+
 
     <div class="form-group mb-2 mt-2">
       <label for="slug">Slug</label>
-      <input type="text" class="form-control" id="slug" name="slug" placeholder="" />
+      <input
+        type="text"
+        class="form-control"
+        id="slug"
+        name="slug"
+        placeholder=""
+        onclick="removevalidation()"
+      />
+      <p id="nslug" class="text-danger"></p>
+
     </div>
     <div class="form-group mb-2 mt-2">
       <label for="news_img">Image</label>
-      <input type="file" class="form-control" id="news_img" name="news_img" />
+      <input type="file" class="form-control" id="news_img" name="news_img" onclick="removevalidation()"/>
     </div>
+    <p id="nimage" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="news_description">News Description</label>
-      <textarea class="form-control" id="news_description" name="news_description" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-    <button class="btn btn-primary mb-3 mt-2">cancel</button>
+      <textarea
+        class="form-control"
+        id="news_description"
+        name="news_description"
+        rows="3"
+        onclick="removevalidation()"
+      ></textarea>
+      <p id="ndesc" class="text-danger"></p>
 
+    </div>
+    <button id="subbtn" type="submit" class="btn btn-primary mb-3 mt-2" >
+      Submit
+    </button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
   </form>
 </div>
 

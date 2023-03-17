@@ -43,8 +43,8 @@
       <td>{{items.event_img.url}}</td>
       <td>{{items.event_description}}</td>
       <td>
-        <a class="btn table_button btn-primary">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_event' event_id=items.id %}">Update</a>
+        <a class="btn table_button btn-primary" href="{% url 'view_admin_Event' id=items.id %}">Details</a>
+        <a class="btn table_button btn-secondary" href="{% url 'update_event' %}">Update</a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
           Delete
@@ -59,7 +59,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                Are you sure you want to delete?
+                Are you sure you want to delete {{items.event_title}} ?
               </div>
               <div class="modal-footer">
                 <form method="POST" action="{% url 'delete_event' id=items.id %}">

@@ -21,7 +21,7 @@ urlpatterns = [
     path('counts/', views.counts, name="admin_counts"),
 
     #sujit
-    path('about', views.about, name="admin_about"),  
+    path('about/', views.about, name="admin_about"),  
     path('about/detail/', views.about_detail, name="admin_about_detail"),  
     path('blogs/', views.blogs, name="admin_blog"),
     path('blog/detail/', views.blog_detail, name="admin_blog_detail"),  
@@ -77,6 +77,19 @@ urlpatterns = [
     path('whychooseus/update/<int:whychooseus_id>/',
          views.update_whychooseus, name="update_whychooseus"),
     path('teams/update/<int:team_id>/', views.update_team, name="update_team"),
+    path('news/update/', views.update_news, name="update_news"),  
+    path('news/update_details/', views.update_news_detail, name="update_news_detail"),  
+    path('events/update/', views.update_event, name="update_event"),  
+    path('events/update_details/', views.update_event_detail, name="update_event_detail"), 
+    path('company/update/<int:company_id>/', views.update_company, name="update_company"),
+    path('counts/update/', views.update_counts, name="update_counts"),
+    path('gallery/update/', views.update_gallery, name="update_gallery"),
+    path('slider/update/', views.update_slider, name="update_slider"),
+    path('events/update_details/', views.update_event_detail, name="update_event_detail"),
+    path('faq/update/', views.update_faq, name="update_faq"),  
+    path('services/update/', views.update_service, name="update_service"),  
+    path('whychooseus/update/', views.update_whychooseus, name="update_whychooseus"),  
+    path('teams/update/', views.update_team, name="update_team"),  
     # sujit update walla ko
     path('about/update/<int:about_id>/',
          views.update_about, name="update_about"),
@@ -105,7 +118,37 @@ urlpatterns = [
         path('counts/delete/<int:id>/', views.delete_counts, name="delete_counts"),
         path('gallery/delete/<int:id>/', views.delete_gallery, name="delete_gallery"),
         path('slider/delete/<int:id>/', views.delete_slider, name="delete_slider"),
+        
+        path('about/delete/<int:id>/', views.delete_about, name="delete_about"),
+        path('about/delete_detail/<int:id>/', views.delete_about_details, name="delete_about_detail"),
+        path('blog/delete/<int:id>/', views.delete_blog, name="delete_blog"),
+        path('blog/delete_detail/<int:id>/', views.delete_blog_details, name="delete_blog_details"),
+        path('testimonial/delete/<int:id>/', views.delete_testimonial, name="delete_testimonial"),
+        path('testimonial/delete_detail/<int:id>/', views.delete_testimonial_details, name="delete_testimonial_details"),
+    
            
+     # detail section
+
+    path('User/view/<int:id>/', views.view_Users, name="view_User"),  
+    path('Event/view/<int:id>/', views.view_adminevent, name="view_admin_Event"),  
+    path('faq/view/<int:id>/', views.view_faqq, name="view_admin_faq"),
+    path('teams/view/<int:id>/', views.view_teams, name="view_admin_teams"),
+    path('services/view/<int:id>/', views.view_services, name="view_admin_services"),
+    path('whychooseus/view/<int:id>/', views.view_whychooseus, name="view_admin_whychooseus"),
+    path('Event/detail/view/<int:id>/', views.view_event_detail, name="view_admin_event_detail"),  
+    path('news/view/<int:id>/', views.view_news, name="view_admin_news"),  
+    path('news/detail/view/<int:id>/', views.view_news_detail, name="view_admin_news_detail"),  
+    path('company/view/<int:id>/', views.view_company, name="view_admin_company"),
+    path('gallery/view/<int:id>/', views.view_gallery, name="view_admin_gallery"),
+    path('slider/view/<int:id>/', views.view_slider, name="view_admin_slider"),
+    path('counts/view/<int:id>/', views.view_counts, name="view_admin_counts"),
+    path('about/view/<int:id>/', views.view_about, name="view_admin_about"),  
+    path('about/detail/view/<int:id>/', views.view_about_detail, name="view_admin_about_detail"),  
+    path('blog/view/<int:id>/', views.view_Blog, name="view_admin_blog"),  
+    path('blog/detail/view/<int:id>/', views.view_blog_detail, name="view_admin_blog_detail"),  
+    path('testimonial/view/<int:id>/', views.view_testimonial, name="view_admin_testimonial"),  
+    path('testimonial/detail/view/<int:id>/', views.view_testimonial_detail, name="view_admin_testimonial_detail"),
+
     
 
 ]

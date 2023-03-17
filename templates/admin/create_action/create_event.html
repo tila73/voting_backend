@@ -13,31 +13,39 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create events</h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form name="eventform" action="#" method="post" enctype="multipart/form-data" onsubmit="return eventFormValidation()">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
-      <label for="news_title">Event Title</label>
-      <input type="text" class="form-control" id="news_title" name="event_title" placeholder="" />
+      <label for="event_title">Event Title</label>
+      <input type="text" class="form-control" id="event_title" name="event_title" placeholder="" onclick="return removeEventValidation()" />
     </div>
+    <p id="etitle" class="text-danger"></p>
 
 
     <div class="form-group mb-2 mt-2">
-      <label for="news_date">Event Date</label>
-      <input type="date" class="form-control" id="news_date" name="event_date" />
+      <label for="event_date">Event Date</label>
+      <input type="date" class="form-control" id="event_date" name="event_date" onclick="return removeEventValidation()"/>
     </div>
+    <p id="edate" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="slug">Slug</label>
-      <input type="text" class="form-control" id="slug" name="slug" placeholder="" />
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="" onclick="return removeEventValidation()"/>
     </div>
+    <p id="eslug" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
-      <label for="news_img">Image</label>
-      <input type="file" class="form-control" id="news_img" name="event_img" />
+      <label for="event_img">Image</label>
+      <input type="file" class="form-control" id="event_img" name="event_img" onclick="return removeEventValidation()"/>
     </div>
+    <p id="eimg" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
-      <label for="message">Event Description</label>
-      <textarea class="form-control" id="task_description" name="event_description" rows="3"></textarea>
+      <label for="event_description">Event Description</label>
+      <textarea class="form-control" id="event_description" name="event_description" rows="3" onclick="return removeEventValidation()"></textarea>
     </div>
+    <p id="edesc" class="text-danger"></p>
+
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>
 
