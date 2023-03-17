@@ -3,7 +3,7 @@
 {% block contents %}
 
 <style>
-  #create {
+  #create { 
     width: 60%;
   }
 
@@ -15,33 +15,39 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create FAQ</h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form name="faqform" action="#" method="post" enctype="multipart/form-data" onsubmit="return faqValidation()" >
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="">Name</label>
-      <input type="text" class="form-control" id="" name="name" placeholder="" />
+      <input type="text" class="form-control" id="" name="name" placeholder="" onclick="removefaqValidation()"/>
     </div>
+    <p id="namess" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="">Email</label>
-      <input type="email" class="form-control" id="" name="email" placeholder="" />
+      <input type="email" class="form-control" id="" name="email" placeholder="" onclick="removefaqValidation()" />
     </div>
+    <p id="emails" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="news_date">Message</label>
-      <textarea name="message" class="form-control" id="" cols="30" rows="10"></textarea>
+      <textarea name="message" class="form-control" id="" cols="30" rows="10" onclick="removefaqValidation()"></textarea>
     </div>
+    <p id="messages" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="news_date">Status</label>
       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
         <label class="btn btn-outline-primary" for="btnradio1">Default</label>
 
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" onclick="removefaqValidation()">
         <label class="btn btn-outline-primary" for="btnradio2">Active</label>
 
       </div>
     </div>
+    <p id="statuss" class="text-danger"></p>
+
 
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>

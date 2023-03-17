@@ -15,43 +15,55 @@
   </style>
   <div id="create" class="m-auto my-5 p-4 shadow">
     <h1 class="text-center">Create Team</h1>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form name="teamform" action="#" method="post" enctype="multipart/form-data" onsubmit="return teamValidation()" >
       {% csrf_token %}
       <div class="form-group mb-2 mt-2">
         <label for="">Title</label>
-        <input type="text" class="form-control" id="" name="title" placeholder="" />
+        <input type="text" class="form-control" id="" name="title" placeholder="" onclick="removeteamValidation()" />
       </div>
-      
+      <p id="title" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="news_date">Sub Description</label>
-        <textarea name="sub_desc" class="form-control" id="" cols="30" rows="10"></textarea>
+        <textarea name="sub_desc" class="form-control" id="" cols="30" rows="10" onclick="removeteamValidation()"></textarea>
       </div>
+      <p id="desc" class="text-danger"></p>
 
       <div class="form-group mb-2 mt-2">
         <label for="">Image</label>
-        <input type="file" class="form-control" id="" name="img" placeholder="" />
+        <input type="file" class="form-control" id="" name="img" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="img" class="text-danger"></p>
 
       <div class="form-group mb-2 mt-2">
         <label for="">Name</label>
-        <input type="text" class="form-control" id="" name="name" placeholder="" />
+        <input type="text" class="form-control" id="" name="name" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="names" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Post</label>
-        <input type="text" class="form-control" id="" name="post" placeholder="" />
+        <input type="text" class="form-control" id="" name="post" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="posts" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Facebook Link</label>
-        <input type="text" class="form-control" id="" name="fb_link" placeholder="" />
+        <input type="text" class="form-control" id="" name="fb_link" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="fbl" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Twitter link</label>
-        <input type="text" class="form-control" id="" name="twitter_link" placeholder="" />
+        <input type="text" class="form-control" id="" name="twitter_link" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="twt" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Instagram link</label>
-        <input type="text" class="form-control" id="" name="insta_link" placeholder="" />
+        <input type="text" class="form-control" id="" name="insta_link" placeholder="" onclick="removeteamValidation()"/>
       </div>
+      <p id="igm" class="text-danger"></p>
   
       <div class="form-group mb-2 mt-2">
         <label for="status">Status</label>
