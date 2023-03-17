@@ -1,0 +1,99 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+  #create {
+    width: 60%;
+  }
+
+  @media (max-width: 750px) {
+    #create {
+      width: 85% !important;
+    }
+  }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+  <h1 class="text-center">Create User</h1>
+  <form action="#" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2 mt-2">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="username">UserName</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" name="address" placeholder="" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="phone_number">Phone</label>
+      <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="esewa_number">Esewa Number</label>
+      <input type="number" class="form-control" id="esewa_number" name="esewa_number" placeholder="" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="role">Role</label>
+      <input type="number" class="form-control" id="role" name="role" placeholder="" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+        <label for="news_date">Status</label>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-outline-primary" for="btnradio1">Active</label>
+  
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+          />
+          <label class="btn btn-outline-primary" for="btnradio2">Inactive</label>
+        </div>
+      </div>
+      
+
+    <div class="form-group mb-2 mt-2">
+      <label for="created_at">Created date</label>
+      <input type="date" class="form-control" id="created_at" name="created_at" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="updated_at">Updated date</label>
+      <input type="date" class="form-control" id="updated_at" name="updated_at" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
+
+  </form>
+</div>
+
+{% endblock contents %}

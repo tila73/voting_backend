@@ -120,15 +120,11 @@ class Teams(models.Model):
 
 
 
-
-
-
-
 # # for hashed password
 raw_password = 'Insert password12'
 hashed_password = make_password(raw_password)
 
-class AdminUser(models.Model):
+class User(models.Model):
     name = models.CharField(("Name"), max_length=255)
     username = models.CharField(("Username"), max_length=255, unique=True)
     email = models.EmailField(("Email"), max_length=255, unique=True)
@@ -170,7 +166,7 @@ class AdminUser(models.Model):
 
 
 class Gallery(models.Model):
-    user_id = models.ForeignKey(AdminUser,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User,on_delete=models.CASCADE)
     img = models.ImageField(upload_to='img/galleries', height_field=None, width_field=None, max_length=100)
     top_title = models.CharField(max_length=100)
     title = models.CharField(max_length=100)

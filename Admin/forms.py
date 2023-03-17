@@ -2,6 +2,12 @@ from django import forms
 # from ..main.models import *
 from .models import *
 
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
 class CompanyForm(forms.ModelForm):
     class Meta:
         model = Company

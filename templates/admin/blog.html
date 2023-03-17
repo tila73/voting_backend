@@ -18,7 +18,7 @@
 
 
 <div class="create_button mb-3">
-  <a class="btn btn-success">Create</a>
+  <a class="btn btn-success" href="{% url 'create_blog' %}">Create</a>
   <a class="ms-3 btn btn-info" href="{% url 'admin_blog_detail' %} ">Blogs Details</a>
 
 </div>
@@ -35,16 +35,43 @@
     </tr>
   </thead>
   <tbody>
-    {% for items in blog %}
+    {% for items in blog_obj %}
     <tr>
       <td>{{items.img}}</td>
       <td>{{items.title}}</td>
       <td>{{items.description}}</td>
       <td>{{items.author}}</td>
-      <td>@{{items.author_img.url}}</td>
-      <td><a class="btn table_button btn-primary">Details</a>
+      <td>{{items.author_img.url}}</td>
+      <td>{{items.slug.url}}</td>
+        <td><a class="btn table_button btn-primary" href="{% url 'view_admin_blog' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_blog' %}">Update</a>
-        <a class="btn table_button btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                      Delete
+                    </button>
+              
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Are you sure you want to delete {{items.title}} ?
+                          </div>
+                          <div class="modal-footer">
+                            <form method="POST" action="{% url 'delete_blog' id=items.id %}">
+                              {% csrf_token %}
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
       </td>
     </tr>
     {% endfor %}
