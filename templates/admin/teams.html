@@ -43,7 +43,7 @@
       <td>{{items.post}}</td>
       <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary" href="{% url 'view_admin_teams' id=items.id %}">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_team' %}">Update</a>
+        <a class="btn table_button btn-secondary" href="{% url 'update_team' team_id=items.id %}">Update</a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
           Delete

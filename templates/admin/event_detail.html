@@ -42,7 +42,8 @@
       <td>{{items.event_img.url}}</td>
       <td>{{items.event_description}}</td>
       <td><a class="btn table_button btn-primary" href="{% url 'view_admin_event_detail' id=items.id %}">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_event_detail' %}">Update</a>
+        <a class="btn table_button btn-secondary"
+          href="{% url 'update_event_detail' event_detail_id=items.id %}">Update</a>
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">

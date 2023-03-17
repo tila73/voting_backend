@@ -405,9 +405,16 @@ def update_whychooseus(request, whychooseus_id):
     return render(request, 'admin/update_action/update_whychooseus.html', {"form":form, 'whychooseus':whychooseus})
 
 
-def update_company(request):
-    
-    return render(request, 'admin/update_action/update_company.html')
+def update_company(request, company_id):
+    company = Company.objects.get(id=company_id)
+    if request.method == "POST":
+        form = CompanyForm(request.POST, request.FILES, instance=company)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_company')
+    else:
+        form = CompanyForm(instance=company)
+    return render(request, 'admin/update_action/update_company.html', {'form': form, "company": company})
 
 
 def update_counts(request, counts_id):
