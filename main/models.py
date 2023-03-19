@@ -49,7 +49,7 @@ class Slider(models.Model):
 # About Model
 class About(models.Model):
     about_title = models.CharField(("Title"), max_length=100)
-    about_description = models.TextField(("Description"), max_length=255)
+    about_description = models.TextField()
     about_img = models.ImageField(("Image"), upload_to='img/about/', height_field=None, width_field=None, max_length=None)
     status = models.BooleanField( default=True, help_text="0=inactive, 1=active")
 
@@ -68,6 +68,7 @@ class Counts(models.Model):
 
 # Testimonials Model
 class Testimonial(models.Model):
+    testimonial_img = models.ImageField(upload_to='img/testimonial', null=True)
     testmoni_name = models.CharField(("Name"), max_length=50)
     testmoni_designation = models.CharField(("Designation"), max_length=30)
     testmoni_message = models.TextField(("Message"))
@@ -107,6 +108,11 @@ class WhyChooseUs(models.Model):
 class Teams(models.Model):
     title = models.CharField(max_length=150)
     sub_desc = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class TeamMembers(models.Model):
     img = models.ImageField(upload_to='img/teams', blank=False, null=False)
     name = models.CharField(max_length=60)
     post = models.CharField(max_length=100)
@@ -116,10 +122,7 @@ class Teams(models.Model):
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
 
     def __str__(self):
-        return self.title
-
-
-
+        return self.name
 
 class User(models.Model):
     name = models.CharField(("Name"), max_length=255)

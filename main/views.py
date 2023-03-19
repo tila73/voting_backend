@@ -3,13 +3,20 @@ from .models import *
 # Create your views here.
 
 def home(request):
-    return render(request, "home/index.html")
+    event = Event.objects.all()
+    slider = Slider.objects.all()
+    context = {'event':event, 'slider':slider,}
+    return render(request, "home/index.html", context)
 
 def voting(request):
     return render(request, "home/voting.html")
 
 def about(request):
-    return render(request, "home/about.html")
+    about = About.objects.all()
+    counts = Counts.objects.all()
+    testimonial = Testimonial.objects.all()
+    context = {'about':about,'counts':counts, 'testimonial':testimonial}
+    return render(request, "home/about.html", context)
 
 def company(request):
     company = Company.objects.all()
@@ -19,13 +26,19 @@ def company(request):
     return render(request, "home/company.html", context)
 
 def team(request):
-    return render(request, "home/team.html")
+    team = Teams.objects.all()
+    team_member = TeamMembers.objects.all()
+    context = {'team':team, 'team_member':team_member}
+    return render(request, "home/team.html",context)
 
 def testimonial(request):
-    return render(request, "home/testimonial.html")
+    testimonial = Testimonial.objects.all()
+    context = {'testimonial':testimonial}
+    return render(request, "home/testimonial.html", context)
 
 def event(request):
-    return render (request,'home/event.html')
+    event_objs = Event.objects.all()
+    return render (request,'home/event.html',{'event_objs':event_objs})
 
 def blog(request):
     return render(request, "home/blog.html")

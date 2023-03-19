@@ -27,6 +27,10 @@ def teams(request):
     team_object = Teams.objects.all()
     return render(request, 'admin/teams.html',{'teams': team_object})
 
+def team_member(request):
+    team_member = TeamMembers.objects.all()
+    return render(request, 'admin/team-member.html',{'team_member': team_member})
+
 def services(request):
     service_objects = Service.objects.all()
     return render(request, 'admin/services.html',{'services': service_objects})
@@ -193,6 +197,17 @@ def create_team(request):
             team.save()
             return redirect('admin_teams')
     return render(request, 'admin/create_action/create_team.html', context={'form': team})
+
+def create_team_member(request):
+    if request.method == "GET":
+        team_member = TeamMemberForm
+        return render(request, 'admin/create_action/create_team-member.html', context={'form': team_member})
+    else:
+        team_member = TeamMemberForm(request.POST, request.FILES)
+        if team_member.is_valid():
+            team_member.save()
+            return redirect('admin_team_member')
+    return render(request, 'admin/create_action/create_team-member.html', context={'form': team_member})
 
 def create_whychooseus(request):
     if request.method == "GET":

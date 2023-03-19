@@ -375,7 +375,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a  class="nav-link">
+                    <a class="nav-link">
                       <i class="nav-icon fas fa-circle"></i>
                       <p>
                         Business admin
@@ -499,9 +499,16 @@
                   </li>
 
                   <li class="nav-item">
+                    <a href="{% url 'admin_team_member' %}" class="nav-link">
+                      <i class="nav-icon far fa-image"></i>
+                      <p>Team Members</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
                     <a href="{% url 'admin_faq' %}" class="nav-link">
                       <i class="nav-icon far fa-image"></i>
-                      <p>faqs</p>
+                      <p>FAQs</p>
                     </a>
                   </li>
 
@@ -658,7 +665,5 @@
     <script src="{% static 'dist/js/demo.js' %}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{% static 'dist/js/pages/dashboard.js' %} "></script>
-
-
   </body>
 </html>

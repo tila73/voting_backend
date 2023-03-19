@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row mb-4">
     <div class="col-sm-6">
-      <h1 class="m-0">Teams</h1>
+      <h1 class="m-0">Teams Members</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
@@ -18,7 +18,7 @@
 
 
 <div class="create_button mb-3">
-  <a class="btn btn-success" href="{% url 'create_team' %}">Create</a>
+  <a class="btn btn-success" href="{% url 'create_team_member' %}">Create</a>
 
 </div>
 
@@ -26,20 +26,28 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Post</th>
+      <th scope="col">Facebook</th>
+      <th scope="col">Instagram</th>
+      <th scope="col">Twitter</th>
       <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-    {% for items in teams %}
+    {% for items in team_member %}
     <tr>
-      <td>{{items.title}}</td>
-      <td>{{items.sub_desc}}</td>
+      <td>{{items.name}}</td>
+      <td>{{items.img.url}}</td>
+      <td>{{items.post}}</td>
+      <td>{{items.fb_link}}</td>
+      <td>{{items.twitter_link}}</td>
+      <td>{{items.insta_link}}</td>
       <td>{{items.status}}</td>
-      <td><a class="btn table_button btn-primary" href="{% url 'view_admin_teams' id=items.id %}">Details</a>
-        <a class="btn table_button btn-secondary" href="{% url 'update_team' team_id=items.id %}">Update</a>
+      <td><a class="btn table_button btn-primary" href="">Details</a>
+        <a class="btn table_button btn-secondary" href="">Update</a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
           Delete

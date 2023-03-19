@@ -1,6 +1,4 @@
-{% extends 'inc/nav.html' %}
-{% load static %}
-{% block content %}
+{% extends 'inc/nav.html' %} {% load static %} {% block content %}
 <!-- main section -->
 <section class="container">
   <div class="row py-2 px-4">
@@ -42,92 +40,82 @@
 
     <!-- Slides -->
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'img/download.jpeg' %}" class="d-block w-100" alt="First slide" />
-        <div class="carousel-caption text-dark w-50 m-auto" style="height: 250px">
-          <div class="mb-5 p-2" style="background-color: #e7e6e4;">
-            <h6>Title</h6>
-            <p>Lorem ipsum dolor sit amet..</p>
-            <h6>Date:jggghghgh</h6>
+      {% for items in event_objs %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <img
+          src="{{items.event_img.url}}"
+          class="d-block w-100"
+          alt="First slide"
+        />
+        <div
+          class="carousel-caption text-primary w-50 m-auto"
+          style="height: 250px"
+        >
+          {% comment %}
+          <div class="mb-5 p-2" style="background-color: none">
+            {% endcomment %}
+            <div class="mb-5 p-2" style="background-color: #e7e6e4">
+              <h6>{{items.event_title}}</h6>
+              <p>{{items.event_description}}</p>
+              <h6>{{items.event_date}}</h6>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Controls -->
+      <a
+        class="carousel-control-prev"
+        href="#myCarousel"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#myCarousel"
+        role="button"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+    <!-- liveEvent section end -->
+
+    <!-- completed events starts -->
+    <div class="d-flex justify-content-center pt-3">
+      <h3>
+        Completed Event
+        <hr size="4" class="bg-dark" />
+      </h3>
+    </div>
+
+    <div class="row m-auto py-5">
+      {% for items in event_objs %}
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card small-card mt-3">
+          <img
+            class="card-img-top"
+            src="{{items.event_img.url}}"
+            alt="Card image"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{items.event_title}}</h4>
+            <p class="card-text">{{items.event_description}}</p>
+            <a href="{% url 'event_details' %}" class="btn btn-primary"
+              >Go somewhere</a
+            >
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="./uploads/gallery1.jpg" class="d-block w-100" alt="Second slide" />
-        <div class="carousel-caption text-dark d-md-block w-50 m-auto" style="height: 250px">
-          <div class=" carousel_caption-bg mb-5 p-2" style="background-color: #e7e6e4;">
-            <h6>Title</h6>
-            <p>Lorem ipsum dolor sit amet..</p>
-            <h6>Date:jggghghgh</h6>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./uploads/dance-nepal-dance.jpg" class="d-block w-100" alt="Third slide" />
-        <div class="carousel-caption text-dark d-md-block w-50 m-auto" style="height: 250px">
-          <div class="heyy mb-5 p-2" style="background-color: #e7e6e4;">
-            <h6>Title</h6>
-            <p>Lorem ipsum dolor sit amet..</p>
-            <h6>Date:jggghghgh</h6>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-
-    <!-- Controls -->
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </a>
+    <!-- completed events starts -->
   </div>
-  <!-- liveEvent section end -->
-
-  <!-- completed events starts -->
-  <div class="d-flex justify-content-center pt-3">
-    <h3>
-      Completed Event
-      <hr size="4" class="bg-dark" />
-    </h3>
-  </div>
-
-  <div class="row m-auto py-5">
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card small-card mt-3">
-        <img class="card-img-top" src="./uploads/cloud.png" alt="Card image" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="{% url 'event_details' %}" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card small-card mt-3">
-        <img class="card-img-top" src="./uploads/cloud.png" alt="Card image" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="{% url 'event_details' %}" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card small-card mt-3">
-        <img class="card-img-top" src="./uploads/cloud.png" alt="Card image" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="{% url 'event_details' %}" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- completed events starts -->
+  <!-- main section -->
+  {% endblock content %}
 </div>
-<!-- main section -->
-{% endblock content %}
