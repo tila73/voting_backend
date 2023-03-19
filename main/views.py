@@ -44,7 +44,9 @@ def blog(request):
     return render(request, "home/blog.html")
 
 def gallery(request):
-    return render(request, "home/gallery.html")
+    gallery = Gallery.objects.all()
+    context = {'gallery':gallery}
+    return render(request, "home/gallery.html", context)
 
 def news(request):
     return render(request, "home/news.html")
