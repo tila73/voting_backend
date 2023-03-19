@@ -1,0 +1,74 @@
+{% extends 'admin/admin.html' %}
+{% load static %}
+{% block contents %}
+
+<style>
+    #create {
+      width: 60%;
+    }
+  
+    @media (max-width: 750px) {
+      #create {
+        width: 85% !important;
+      }
+    }
+  </style>
+  <div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Create Team Member</h1>
+    <form name="teamform" action="#" method="post" enctype="multipart/form-data" onsubmit="return teamValidation()" >
+      {% csrf_token %}
+      <div class="form-group mb-2 mt-2">
+        <label for="">Image</label>
+        <input type="file" class="form-control" id="" name="img" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="img" class="text-danger"></p>
+
+      <div class="form-group mb-2 mt-2">
+        <label for="">Name</label>
+        <input type="text" class="form-control" id="" name="name" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="names" class="text-danger"></p>
+
+      <div class="form-group mb-2 mt-2">
+        <label for="">Post</label>
+        <input type="text" class="form-control" id="" name="post" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="posts" class="text-danger"></p>
+
+      <div class="form-group mb-2 mt-2">
+        <label for="">Facebook Link</label>
+        <input type="text" class="form-control" id="" name="fb_link" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="fbl" class="text-danger"></p>
+
+      <div class="form-group mb-2 mt-2">
+        <label for="">Twitter link</label>
+        <input type="text" class="form-control" id="" name="twitter_link" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="twt" class="text-danger"></p>
+
+      <div class="form-group mb-2 mt-2">
+        <label for="">Instagram link</label>
+        <input type="text" class="form-control" id="" name="insta_link" placeholder="" onclick="removeteamValidation()"/>
+      </div>
+      <p id="igm" class="text-danger"></p>
+  
+      <div class="form-group mb-2 mt-2">
+        <label for="status">Status</label>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio1">Inactive</label>
+  
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio2">Active</label>
+  
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+      <button class="btn btn-primary mb-3 mt-2">cancel</button>
+  
+    </form>
+  </div>
+
+{% endblock contents %}

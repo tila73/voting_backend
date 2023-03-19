@@ -7,7 +7,7 @@
   aria-label="breadcrumb"
 >
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
   </ol>
 </div>
@@ -26,81 +26,28 @@
       data-bs-ride="carousel"
     >
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        {% for item in testimonial %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="m-auto" style="width: 18rem">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+              src="{{ item.testimonial_img.url }}"
               class="card-img-top rounded-circle"
-              alt="..."
+              alt="{{ item.testmoni_name }}"
             />
             <div class="card-body">
-              <h3 class="card-title text-center">Name</h3>
+              <h3 class="card-title text-center my-2">
+                {{ item.testmoni_name }}
+              </h3>
+              <h6 class="card-text text-center">
+                {{ item.testmoni_designation }}
+              </h6>
             </div>
           </div>
           <p class="card-text text-center p-3 container">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.Next, the
-            towel rack fell down when I reached for the one small bath towel.
-            This allowed the towel to fall halfway into the toilet. I tried to
-            watch a movie, but the remote control was sticky and wouldn’t stop
-            scrolling through the channels. I gave up for the night and crawled
-            into bed. I stretched out my leg and felt something furry by my
-            foot. Filled with fear, I reached down and to my surprise, I pulled
-            out a raccoon skin pair of underwear. After my initial relief that
-            it wasn’t alive, the image of a fat, ugly businessman wearing
-            raccoon skin briefs filled my brain. I jumped out of the bed,
+            {{ item.testmoni_message }}
           </p>
         </div>
-        <div class="carousel-item">
-          <div class="m-auto" style="width: 18rem">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-              class="card-img-top rounded-circle"
-              alt="..."
-            />
-            <div class="card-body">
-              <h3 class="card-title text-center">Name</h3>
-            </div>
-          </div>
-          <p class="card-text text-center p-3">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.Next, the
-            towel rack fell down when I reached for the one small bath towel.
-            This allowed the towel to fall halfway into the toilet. I tried to
-            watch a movie, but the remote control was sticky and wouldn’t stop
-            scrolling through the channels. I gave up for the night and crawled
-            into bed. I stretched out my leg and felt something furry by my
-            foot. Filled with fear, I reached down and to my surprise, I pulled
-            out a raccoon skin pair of underwear. After my initial relief that
-            it wasn’t alive, the image of a fat, ugly businessman wearing
-            raccoon skin briefs filled my brain. I jumped out of the bed,
-          </p>
-        </div>
-        <div class="carousel-item">
-          <div class="m-auto" style="width: 18rem">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
-              class="card-img-top rounded-circle"
-              alt="..."
-            />
-            <div class="card-body">
-              <h3 class="card-title text-center">Name</h3>
-            </div>
-          </div>
-          <p class="card-text text-center p-3">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.Next, the
-            towel rack fell down when I reached for the one small bath towel.
-            This allowed the towel to fall halfway into the toilet. I tried to
-            watch a movie, but the remote control was sticky and wouldn’t stop
-            scrolling through the channels. I gave up for the night and crawled
-            into bed. I stretched out my leg and felt something furry by my
-            foot. Filled with fear, I reached down and to my surprise, I pulled
-            out a raccoon skin pair of underwear. After my initial relief that
-            it wasn’t alive, the image of a fat, ugly businessman wearing
-            raccoon skin briefs filled my brain. I jumped out of the bed,
-          </p>
-        </div>
+        {% endfor %}
       </div>
       <button
         class="carousel-control-prev"

@@ -41,7 +41,8 @@
   <div class="wrapper">
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="{% static 'dist/img/AdminLTELogo.png' %} " alt="AdminLTELogo" height="60" />
+      <img class="animation__shake rounded-circle" src="{% static 'img/capture.jpg' %} " alt="AdminLTELogo"
+        height="90" />
     </div>
 
     <!-- Navbar -->
@@ -193,7 +194,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link">
-        <img src="{% static 'dist/img/AdminLTELogo.png' %} " alt="VotingApp" class="brand-image img-circle elevation-3"
+        <img src="{% static 'img/capture.jpg' %} " alt="VotingApp" class="brand-image img-circle elevation-3"
           style="opacity: 0.8" />
         <span class="brand-text font-weight-light">VotingApp</span>
       </a>
@@ -398,9 +399,16 @@
                 </li>
 
                 <li class="nav-item">
+                  <a href="{% url 'admin_team_member' %}" class="nav-link">
+                    <i class="nav-icon far fa-image"></i>
+                    <p>Team Members</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
                   <a href="{% url 'admin_faq' %}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
-                    <p>faqs</p>
+                    <p>FAQs</p>
                   </a>
                 </li>
 
@@ -454,8 +462,6 @@
         </div>
         <!-- /.container-fluid -->
       </section>
-
-
 
       <!-- /.content -->
     </div>
@@ -514,19 +520,6 @@
   <script src="{% static 'dist/js/demo.js' %}"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="{% static 'dist/js/pages/dashboard.js' %} "></script>
-
-  <script>
-    var mydate = new Date(document.querySelector('#event_date').value);
-    var year = mydate.getFullYear();
-    var month = (1 + mydate.getMonth()).toString();
-    month = month.length > 1 ? month : '0' + month;
-    var day = mydate.getDate().toString();
-    day = day.length > 1 ? day : '0' + day;
-    var d = year + '-' + month + '-' + day;
-    console.log(d);
-    document.getElementById('test').value = d;
-
-  </script>
 </body>
 
 </html>

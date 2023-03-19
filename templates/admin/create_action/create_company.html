@@ -13,7 +13,7 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create Company Information</h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <form  name="companyform" action="#" method="post" enctype="multipart/form-data" onsubmit="return companyValidation()">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="companyImg">Company Image</label>
@@ -23,8 +23,10 @@
         id="companyImg"
         name="companyImg"
         placeholder=""
+        onclick="removecompanyValidation()"
       />
     </div>
+    <p id="img" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="title">Title</label>
@@ -36,11 +38,13 @@
         placeholder=""
       />
     </div>
+    <p id="title" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="desc">Description </label>
       <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
     </div>
+    <p id="desc" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="mission">Mission</label>
@@ -51,6 +55,8 @@
         rows="3"
       ></textarea>
     </div>
+    <p id="missions" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="vision">Vision </label>
       <textarea
@@ -60,35 +66,23 @@
         rows="3"
       ></textarea>
     </div>
-    
+    <p id="visions" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
-      <label for="news_date">Status</label>
+      <label>Status</label>
+    </div>
       <div
         class="btn-group"
         role="group"
-        aria-label="Basic radio toggle button group"
-      >
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio1"
-          autocomplete="off"
-          checked
-        />
-        <label class="btn btn-outline-primary" for="btnradio1">Active</label>
+        aria-label="Basic radio toggle button group">
+        <input type="radio" id="isactive" class="btn-check" name="status" value="true">
+        <label for="isactive" class="btn btn-outline-primary" checked="true" >Active</label><br>
+        <input type="radio" id="inactive" class="btn-check" name="status" value="false">
+        <label for="inactive" class="btn btn-outline-primary">In Active</label><br>
 
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio2"
-          autocomplete="off"
-        />
-        <label class="btn btn-outline-primary" for="btnradio2">Inactive</label>
       </div>
-    </div>
-    
+      <p id="statuss" class="text-danger"></p>
+
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
     <button class="btn btn-primary mb-3 mt-2">cancel</button>
   </form>

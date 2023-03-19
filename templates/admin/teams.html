@@ -27,9 +27,7 @@
   <thead>
     <tr>
       <th scope="col">Title</th>
-      <th scope="col">Name</th>
-      <th scope="col">img</th>
-      <th scope="col">Post</th>
+      <th scope="col">Description</th>
       <th scope="col">Status</th>
       <th scope="col">Actions</th>
     </tr>
@@ -38,9 +36,7 @@
     {% for items in teams %}
     <tr>
       <td>{{items.title}}</td>
-      <td>{{items.name}}</td>
-      <td>{{items.img.url}}</td>
-      <td>{{items.post}}</td>
+      <td>{{items.sub_desc}}</td>
       <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary" href="{% url 'view_admin_teams' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_team' team_id=items.id %}">Update</a>

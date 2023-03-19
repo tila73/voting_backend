@@ -15,34 +15,41 @@
   </style>
   <div id="create" class="m-auto my-5 p-4 shadow">
     <h1 class="text-center">Create Services</h1>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form name="serviceform" action="#" method="post" enctype="multipart/form-data" onsubmit="return serviceValidation()">
       {% csrf_token %}
       <div class="form-group mb-2 mt-2">
         <label for="">Image</label>
-        <input type="file" class="form-control" id="" name="servicesImg" placeholder="" />
+        <input type="file" class="form-control" id="" name="servicesImg" placeholder="" onclick="removeserviceValidation()" />
       </div>
-  
+      <p id="img" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Title</label>
-        <input type="text" class="form-control" id="" name="title" placeholder="" />
+        <input type="text" class="form-control" id="" name="title" placeholder="" onclick="removeserviceValidation()"/>
       </div>
-  
+      <p id="title" class="text-danger"></p>
+
       <div class="form-group mb-2 mt-2">
         <label for="">Description</label>
-        <textarea name="desc" class="form-control" id="" cols="30" rows="10"></textarea>
+        <textarea name="desc" class="form-control" id="" cols="30" rows="10" onclick="removeserviceValidation()"></textarea>
       </div>
+      <p id="desc" class="text-danger"></p>
       <div class="form-group mb-2 mt-2">
-        <label for="">Status</label>
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-          <label class="btn btn-outline-primary" for="btnradio1">Inactive</label>
-  
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-          <label class="btn btn-outline-primary" for="btnradio2">Active</label>
+        <label>Status</label>
+      </div>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group">
+          <input type="radio" id="isactive" class="btn-check" name="status" value="true">
+          <label for="isactive" class="btn btn-outline-primary" checked="true" >Active</label><br>
+          <input type="radio" id="inactive" class="btn-check" name="status" value="false">
+          <label for="inactive" class="btn btn-outline-primary">In Active</label><br>
   
         </div>
-      </div>
+        <p id="statuss" class="text-danger"></p>
   
+
       <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
       <button class="btn btn-primary mb-3 mt-2">cancel</button>
   

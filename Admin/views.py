@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
+# from django.contrib.auth.hashers import PasswordHasher
+from django.contrib.auth.hashers import make_password
 
 
 # Create your views here.
@@ -24,6 +26,10 @@ def faqq(request):
 def teams(request):
     team_object = Teams.objects.all()
     return render(request, 'admin/teams.html',{'teams': team_object})
+
+def team_member(request):
+    team_member = TeamMembers.objects.all()
+    return render(request, 'admin/team-member.html',{'team_member': team_member})
 
 def services(request):
     service_objects = Service.objects.all()
@@ -93,9 +99,23 @@ def create_user(request):
         users = UserForm
         return render(request, 'admin/create_action/create_user.html', context={'form': users})
     else:
-        users = UserForm(request.POST, request.FILES)
-        if users.is_valid():
-            users.save()
+        if request.method=="POST":
+            name = request.POST['name']
+            username = request.POST['username']
+            email = request.POST['email']
+            address = request.POST['address']
+            phone_number = request.POST['phone_number']
+            esewa_number = request.POST['esewa_number']
+            role = request.POST['role']
+            # status = request.POST['']
+            created_at = request.POST['created_at']
+            updated_at = request.POST['updated_at']
+            password = request.POST['password']
+
+            hashed_password = make_password(password)
+            user = User(name=name, username=username, email=email, address=address,  phone_number=phone_number, esewa_number=esewa_number, role=role, created_at=created_at, updated_at=updated_at, password=hashed_password)
+            user.save()
+
             return redirect('User')
     return render(request, 'admin/create_action/create_user.html', context={'form': users})
 
@@ -177,6 +197,17 @@ def create_team(request):
             team.save()
             return redirect('admin_teams')
     return render(request, 'admin/create_action/create_team.html', context={'form': team})
+
+def create_team_member(request):
+    if request.method == "GET":
+        team_member = TeamMemberForm
+        return render(request, 'admin/create_action/create_team-member.html', context={'form': team_member})
+    else:
+        team_member = TeamMemberForm(request.POST, request.FILES)
+        if team_member.is_valid():
+            team_member.save()
+            return redirect('admin_team_member')
+    return render(request, 'admin/create_action/create_team-member.html', context={'form': team_member})
 
 def create_whychooseus(request):
     if request.method == "GET":
@@ -532,12 +563,18 @@ def update_testimonial_detail(request, testimonial_detail_id):
 
 
 #delete
+def delete_user(request, user_id):
+    userobj = User.objects.get(id=user_id)
+    if request.method=="POST":
+        userobj.delete()
+        return redirect('User')
+    
+
 def delete_news(request, news_id):
     newsobj = News.objects.get(id=news_id)
     if request.method=="POST":
         newsobj.delete()
         return redirect('admin_news')
-
 
 
 def delete_news_details(request, id):
@@ -554,13 +591,11 @@ def delete_event(request, id):
         return redirect('admin_Event')
 
 
-
 def delete_event_details(request, id):
     obj = EventDetails.objects.get(id=id)
     if request.method=="POST":
         obj.delete()
         return redirect('admin_event_detail')
-
 
 
 def delete_faq(request, id):
@@ -570,13 +605,11 @@ def delete_faq(request, id):
         return redirect('admin_faq')
 
 
-
 def delete_service(request, service_id):
     obj = Service.objects.get(id=service_id)
     if request.method=="POST":
         obj.delete()
         return redirect('admin_services')
-
 
 
 def delete_team(request, id):
@@ -586,7 +619,6 @@ def delete_team(request, id):
         return redirect('admin_teams')
 
 
-
 def delete_whychooseus(request, id):
     obj = WhyChooseUs.objects.get(id=id)
     if request.method=="POST":
@@ -594,15 +626,12 @@ def delete_whychooseus(request, id):
         return redirect('admin_whychooseus')
 
 
-
-
 def delete_company(request, id):
     obj = Company.objects.get(id=id)
     if request.method=="POST":
         obj.delete()
         return redirect('admin_company')
-
-
+    
 
 def delete_counts(request, id):
     obj = Counts.objects.get(id=id)
@@ -611,15 +640,11 @@ def delete_counts(request, id):
         return redirect('admin_counts')
 
 
-
-
 def delete_gallery(request, id):
     obj = Gallery.objects.get(id=id)
     if request.method=="POST":
         obj.delete()
         return redirect('admin_gallery')
-
-
 
 
 def delete_slider(request, id):
@@ -670,7 +695,9 @@ def delete_testimonial_details(request,id):
         obj.delete()
         return redirect('admin_testimonial_detail')
 
-# detail views
+
+
+#! detail views
 
 def view_Users(request,id):
     users = User.objects.get(id=id)
@@ -756,10 +783,6 @@ def view_testimonial_detail(request):
     return render(request, 'admin/view_action/view_testimonial_detail.html', {'testimoniald': testimonial_detail_object})
 
 
-
-
-
-# ! details section
 
 
 

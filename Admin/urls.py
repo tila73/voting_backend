@@ -8,6 +8,7 @@ urlpatterns = [
     path('Event', views.adminevent, name="admin_Event"),  
     path('faq/', views.faqq, name="admin_faq"),
     path('teams/', views.teams, name="admin_teams"),
+    path('team_members/', views.team_member, name="admin_team_member"),
     path('services/', views.services, name="admin_services"),
     path('whychooseus/', views.whychooseus, name="admin_whychooseus"),
     path('Event/details/', views.event_detail, name="admin_event_detail"),  
@@ -37,6 +38,7 @@ urlpatterns = [
     path('faq/create/', views.create_faq, name="create_faq"),
     path('services/create/', views.create_service, name="create_service"),
     path('teams/create/', views.create_team, name="create_team"),
+    path('team_members/create/', views.create_team_member, name="create_team_member"),
     path('whychooseus/create/', views.create_whychooseus, name="create_whychooseus"), 
     path('company/create/', views.create_company, name="create_company"),
     path('counts/create/', views.create_counts, name="create_counts"),
@@ -93,6 +95,7 @@ urlpatterns = [
 
 
         #! delete section
+        path('user/delete/<int:user_id>/', views.delete_user, name="delete_user"),  
         path('news/delete/<int:news_id>/', views.delete_news, name="delete_news"),  
         path('news/delete_detail/<int:id>/', views.delete_news_details, name="delete_news_details"),  
         path('events/delete/<int:id>/', views.delete_event, name="delete_event"),  

@@ -3,7 +3,11 @@
 <!-- Heading and breadcrumb -->
 <div class="d-flex flex-column align-items-center">
   <h1 class="mt-1">Company</h1>
-  <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb" class="mt-1">
+  <nav
+    style="--bs-breadcrumb-divider: '>'"
+    aria-label="breadcrumb"
+    class="mt-1"
+  >
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Company</li>
@@ -56,17 +60,38 @@
     <div class="card-body">
       <h2 class="card-title text-center p-4 me-5">Our Services</h2>
     </div>
+<<<<<<< HEAD
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+=======
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f
       <div class="carousel-inner">
         {% for item in services %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="m-auto" style="width: 12rem">
+<<<<<<< HEAD
             <img src="{{ item.servicesImg.url }}" class="card-img-top rounded-circle" alt="{{ item.title }}" style="
+=======
+            <img
+              src="{{ item.servicesImg.url }}"
+              class="card-img-top rounded-circle"
+              alt="{{ item.title }}"
+              style="
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f
                 max-width: 100%;
                 height: auto;
                 display: block;
                 margin: auto;
+<<<<<<< HEAD
               " />
+=======
+              "
+            />
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f
             <div class="card-body">
               <h3 class="card-title text-center md:text-nowrap">{{ item.title }}</h3>
             </div>
@@ -75,6 +100,7 @@
         </div>
         {% endfor %}
       </div>
+<<<<<<< HEAD
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
@@ -83,6 +109,30 @@
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
         data-bs-slide="next">
         <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+=======
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon bg-dark"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon bg-dark"
+          aria-hidden="true"
+        ></span>
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f
         <span class="visually-hidden">Next</span>
       </button>
     </div>
@@ -96,6 +146,7 @@
     {% for item in whychooseus %}
     <div class="accordion-item">
       <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+<<<<<<< HEAD
         <button class="accordion-button" type="button" data-mdb-toggle="collapse"
           data-mdb-target="#collapse{{ forloop.counter }}" aria-expanded="true"
           aria-controls="collapse{{ forloop.counter }}">
@@ -108,6 +159,33 @@
           <div class="row">
             <div class="col-md-3 text-center">
               <img src="{{ item.img.url }}" alt="{{ item.title }}" class="img-fluid" />
+=======
+        <button
+          class="accordion-button"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#collapse{{ forloop.counter }}"
+          aria-expanded="true"
+          aria-controls="collapse{{ forloop.counter }}"
+        >
+          {{ item.title }}
+        </button>
+      </h2>
+      <div
+        id="collapse{{ forloop.counter }}"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading{{ forloop.counter }}"
+        data-mdb-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img
+                src="{{ item.img.url }}"
+                alt="{{ item.title }}"
+                class="img-fluid"
+              />
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f
             </div>
             <div class="col-md-9">
               <p>{{ item.desc }}</p>
@@ -122,5 +200,13 @@
 <!-- Why choose us section ends here-->
 
 <!-- MDB -->
+<<<<<<< HEAD
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 {% endblock content %}
+=======
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
+{% endblock content %}
+>>>>>>> 21aac72588538baf2bba63ef651af51b2808f38f

@@ -49,7 +49,7 @@ class Slider(models.Model):
 # About Model
 class About(models.Model):
     about_title = models.CharField(("Title"), max_length=100)
-    about_description = models.TextField(("Description"), max_length=255)
+    about_description = models.TextField()
     about_img = models.ImageField(("Image"), upload_to='img/about/', height_field=None, width_field=None, max_length=None)
     status = models.BooleanField( default=True, help_text="0=inactive, 1=active")
 
@@ -68,6 +68,7 @@ class Counts(models.Model):
 
 # Testimonials Model
 class Testimonial(models.Model):
+    testimonial_img = models.ImageField(upload_to='img/testimonial', null=True)
     testmoni_name = models.CharField(("Name"), max_length=50)
     testmoni_designation = models.CharField(("Designation"), max_length=30)
     testmoni_message = models.TextField(("Message"))
@@ -81,7 +82,7 @@ class Company(models.Model):
     desc = models.TextField()
     mission = models.TextField()
     vision = models.TextField()
-    status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
+    status = models.BooleanField(default=True , help_text="0=inactive, 1=active")
 
     def __str__(self):
         return self.title
@@ -107,6 +108,11 @@ class WhyChooseUs(models.Model):
 class Teams(models.Model):
     title = models.CharField(max_length=150)
     sub_desc = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+class TeamMembers(models.Model):
     img = models.ImageField(upload_to='img/teams', blank=False, null=False)
     name = models.CharField(max_length=60)
     post = models.CharField(max_length=100)
@@ -116,19 +122,13 @@ class Teams(models.Model):
     status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
 
     def __str__(self):
-        return self.title
-
-
-
-# # for hashed password
-raw_password = 'Insert password12'
-hashed_password = make_password(raw_password)
+        return self.name
 
 class User(models.Model):
     name = models.CharField(("Name"), max_length=255)
     username = models.CharField(("Username"), max_length=255, unique=True)
     email = models.EmailField(("Email"), max_length=255, unique=True)
-    password = models.CharField(("Password"), max_length=128, default=hashed_password)
+    password = models.CharField(("Password"), max_length=128)
     address = models.CharField(("Address"), max_length=100, null=True)
     phone_number = models.CharField(("Phone Number"), max_length=100)
     esewa_number = models.CharField(("Esewa Number"), max_length=100, null=True)
@@ -139,30 +139,6 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
-# def generate_username(instance):
-#     username = slugify(instance.name)
-#     counter = 1
-#     while instance.__class__.objects.filter(username=username).exists():
-#         username = f'{username}-{counter}'
-#         counter += 1
-#         return username
-    
-
-
-# @receiver(pre_save, sender=AdminUser)
-# def set_username(sender, instance, **kwargs):
-#             if not instance.username:
-#                 instance.username = generate_username(instance)
-
-
-# def save(self, *args, **kwargs):
-#         if not self.username:
-#             self.username = generate_username(self) #generate_username function from the controller
-#         super(AdminUser, self).save(*args, **kwargs)
-
 
 
 class Gallery(models.Model):

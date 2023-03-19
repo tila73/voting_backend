@@ -13,17 +13,19 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
     <h1 class="text-center">Create Counts Number</h1>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form name="countform" action="#" method="post" enctype="multipart/form-data" onsubmit="return CountFormValidation()">
         {% csrf_token %}
         <div class="form-group mb-2 mt-2">
             <label for="count_number">Count Number </label>
-            <input type="number" class="form-control" id="count_number" name="count_number" placeholder="" />
+            <input type="number" class="form-control" id="count_number" name="count_number" placeholder="" onclick="removeCountValidation()" />
         </div>
+        <p id="cnumber" class="text-danger"></p>
 
         <div class="form-group mb-2 mt-2">
             <label for="count_title">Count Title</label>
-            <input type="text" class="form-control" id="count_title" name="count_title" placeholder="" />
+            <input type="text" class="form-control" id="count_title" name="count_title" placeholder="" onclick="removeCountValidation()"/>
         </div>
+        <p id="ctitle" class="text-danger"></p>
 
         <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
         <button class="btn btn-primary mb-3 mt-2">cancel</button>

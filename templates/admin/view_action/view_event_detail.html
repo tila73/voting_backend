@@ -12,7 +12,7 @@
       <div class="mb-5">
           <div class="row">
               <div class="col-lg-7 col-md-6 col-sm-12 d-flex justify-content-center">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp">
+                  <img src="{{eventd.event_img.url}}" height="300px" width="550px">
               </div>
               <div class="col-lg-5 col-md-6 col-sm-12 ">
                 <ul class="list-unstyled mb-4">
@@ -20,8 +20,8 @@
                   <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>+977 9876456343</a></li>
                   <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>Pokhara,bagar </a></li>
               </ul>
-              <h5 class=""> Slug</h5>
-              <h5 class=""> Date </h5>
+              <h6 class=""> Slug: {{eventd.slug}}</h6>
+              <h6 class=""> Date: {{eventd.event_date}} </h6>
               <ul class="social-icon-style2 ps-0 d-flex p-2 m-5 nav-item">
                   <li><a href="#!" class="rounded-3 "><i class="fab fa-facebook-f px-3"></i></a></li>
                   <li><a href="#!" class="rounded-3"><i class="fab fa-twitter px-3"></i></a></li>
@@ -38,18 +38,8 @@
       </div>
   </section>
   <div class="col-lg-12 col-md-6 col-sm-12">
-    <h2 class="text-center"> Title </h2>
-    <p class="card-text p-3 text-justify">This is a wider card with supporting text below as a natural
-        lead-in to
-        additional content. This content is a little bit longer.loremI checked in for the night at Out O The
-        Way motel. What a bad choice that was. First I took a shower and a spider crawled out of the drain.
-        Next, the towel rack fell down when I reached for the one small bath towel. This allowed the towel
-        to fall halfway into the toilet. I tried to watch a movie, but the remote control was sticky and
-        wouldn’t stop scrolling through the channels. I gave up for the night and crawled into bed. I
-        stretched out my leg and felt something furry by my foot. Filled with fear, I reached down and to my
-        surprise, I pulled out a raccoon skin pair of underwear. After my initial relief that it wasn’t
-        alive, the image of a fat, ugly businessman wearing raccoon skin briefs filled my brain. I jumped
-        out of the bed, threw my toothbrush into my bag, and sprinted towards my car.</p>
+    <h2 class="text-center"> {{eventd.event_title}} </h2>
+    <p class="card-text p-3 text-justify">{{eventd.event_description}}</p>
 </div>
   <!-- second section -->
 
