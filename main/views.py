@@ -40,14 +40,16 @@ def event(request):
     event_objs = Event.objects.all()
     return render (request,'home/event.html',{'event_objs':event_objs})
 
-def blog(request):
-    return render(request, "home/blog.html")
+def Blog(request):
+    blog_objects = blog.objects.all()
+    return render(request, "home/blog.html", {'blog': blog_objects})
 
 def gallery(request):
     return render(request, "home/gallery.html")
 
 def news(request):
-    return render(request, "home/news.html")
+    news_object = News.objects.all()
+    return render(request, "home/news.html", {'news': news_object})
 
 def faq(request):
     return render(request, "home/faq.html")
@@ -62,13 +64,15 @@ def register(request):
     return render(request, "home/register.html")
 
 def blog_detail(request):
-    return render(request, "home/blog-detail.html")
+    blog_detail_object = blogDetails.objects.all()
+    return render(request, "home/blog-detail.html", {'blogd': blog_detail_object})
 
 def event_details(request):
     return render(request, "home/event_details.html")
 
 def news_detail(request):
-    return render(request, "home/news_detail.html")
+    news_details_object = NewsDetails.objects.all()
+    return render(request, "home/news_detail.html", {'newsd': news_details_object})
 
 def voting_detail(request):
     return render(request, "home/voting_detail.html")
