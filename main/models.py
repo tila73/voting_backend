@@ -27,7 +27,7 @@ class News(models.Model):
     news_author = models.CharField(("Written By"), max_length=50)
     news_date = models.DateField(("News date"), auto_now=False, auto_now_add=False)
     news_img = models.ImageField(("Image"), upload_to='img/news/', height_field=None, width_field=None, max_length=None)
-    slug = models.SlugField()
+    slug = models.CharField(max_length=255)
 
     def __str__(self):
        return self.news_title

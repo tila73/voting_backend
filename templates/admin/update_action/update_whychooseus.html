@@ -20,16 +20,20 @@
 
         <div class="form-group mb-2 mt-2">
             <label for="">Title</label>
-            <input type="text" class="form-control" id="" name="title" placeholder="" />
+            <input type="text" class="form-control" id="" name="title" placeholder="" value="{{whychooseus.title}}" />
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="">Image</label>
+            <br>
+            {% if whychooseus.img %}
+            <img src="{{ whychooseus.img.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
             <input type="file" class="form-control" id="" name="img" placeholder="" />
         </div>
         <div class="form-group mb-2 mt-2">
             <label for="">Description</label>
-            <textarea name="desc" class="form-control" id="" cols="30" rows="10"></textarea>
+            <textarea name="desc" class="form-control" id="" cols="30" rows="10">{{whychooseus.desc}}</textarea>
         </div>
         <div class="form-group mb-2 mt-2">
             <label for="">Status</label>

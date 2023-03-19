@@ -36,9 +36,9 @@
   <tbody>
     {% for items in testimonial %}
     <tr>
-      <td>{{items.testimoni_name}}</td>
+      <td>{{items.testmoni_name}}</td>
       <td>{{items.testmoni_message}}</td>
-      <td>{{items.testimoni_designation}}</td>
+      <td>{{items.testmoni_designation}}</td>
       <td>{{items.status}}</td>
       <td><a class="btn table_button btn-primary" href="{% url 'view_admin_testimonial' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary"
