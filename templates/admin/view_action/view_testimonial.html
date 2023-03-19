@@ -2,62 +2,27 @@
 {% load static %}
 {% block contents %}
 <style>
-  ul li{
+  ul li {
     list-style-type: none;
   }
 </style>
 
-  <!-- first section -->
-  <section class="container mt-4">
-      <div class="mb-5">
-          <div class="row">
-              <div class="col-lg-7 col-md-6 col-sm-12 d-flex justify-content-center">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp">
-              </div>
-              <div class="col-lg-5 col-md-6 col-sm-12 ">
-                <ul class="list-unstyled mb-4">
-                  <li class="mb-3"><a href="#!"><i class="far fa-envelope display-25 me-3 text-secondary"></i>abcdefgthjkloiu@gmail.com</a></li>
-                  <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>+977 9876456343</a></li>
-                  <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>Pokhara,bagar </a></li>
-              </ul>
-              <h5 class=""> Slug</h5>
-              <h5 class=""> Date </h5>
-              <ul class="social-icon-style2 ps-0 d-flex p-2 m-5 nav-item">
-                  <li><a href="#!" class="rounded-3 "><i class="fab fa-facebook-f px-3"></i></a></li>
-                  <li><a href="#!" class="rounded-3"><i class="fab fa-twitter px-3"></i></a></li>
-                  <li><a href="#!" class="rounded-3"><i class="fab fa-youtube px-3"></i></a></li>
-                  <li><a href="#!" class="rounded-3"><i class="fab fa-instagram px-3"></i></a></li>
-                  <li><a href="#!" class="rounded-3"><i class="fab fa-tiktok px-3"></i></a></li>
-              </ul>
+<!-- first section -->
+<section class="container mt-4">
 
-                
-              </div>
-
-  
-          </div>
-      </div>
-  </section>
-  <div class="col-lg-12 col-md-6 col-sm-12">
-    <h2 class="text-center"> Title </h2>
-    <p class="card-text p-3 text-justify">This is a wider card with supporting text below as a natural
-        lead-in to
-        additional content. This content is a little bit longer.loremI checked in for the night at Out O The
-        Way motel. What a bad choice that was. First I took a shower and a spider crawled out of the drain.
-        Next, the towel rack fell down when I reached for the one small bath towel. This allowed the towel
-        to fall halfway into the toilet. I tried to watch a movie, but the remote control was sticky and
-        wouldn’t stop scrolling through the channels. I gave up for the night and crawled into bed. I
-        stretched out my leg and felt something furry by my foot. Filled with fear, I reached down and to my
-        surprise, I pulled out a raccoon skin pair of underwear. After my initial relief that it wasn’t
-        alive, the image of a fat, ugly businessman wearing raccoon skin briefs filled my brain. I jumped
-        out of the bed, threw my toothbrush into my bag, and sprinted towards my car.</p>
+</section>
+<div class="col-lg-12 col-md-6 col-sm-12">
+  <h2 class="text-center"> {{testimonial.testmoni_name}} </h2>
+  <h6> Designation: {{testimonial.testmoni_designation}} </h6>
+  <h6> Status: {{testimonial.status}}</h6>
+  <p class="card-text  text-center">{{testimonial.testmoni_message}}</p>
 </div>
-  <!-- second section -->
+<!-- second section -->
 
 
-  <!-- js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"></script>
+<!-- js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-  
+
 {% endblock contents %}

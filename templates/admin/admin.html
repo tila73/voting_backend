@@ -75,10 +75,10 @@
         class="preloader flex-column justify-content-center align-items-center"
       >
         <img
-          class="animation__shake"
-          src="{% static 'dist/img/AdminLTELogo.png' %} "
+          class="animation__shake rounded-circle"
+          src="{% static 'img/capture.jpg' %} "
           alt="AdminLTELogo"
-          height="60"
+          height="90"
         />
       </div>
 
@@ -277,7 +277,7 @@
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
           <img
-            src="{% static 'dist/img/AdminLTELogo.png' %} "
+            src="{% static 'img/capture.jpg' %} "
             alt="VotingApp"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
@@ -562,47 +562,6 @@
           </div>
           <!-- /.container-fluid -->
         </section>
-
-        <!-- delete Modal -->
-        <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form class="" action="">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">
-                    Modal title
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">Are you sure you want to delete?</div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-danger">Delete</button>
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        {% comment %} delete modal {% endcomment %}
 
         <!-- /.content -->
       </div>

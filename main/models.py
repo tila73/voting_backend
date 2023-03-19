@@ -82,7 +82,7 @@ class Company(models.Model):
     desc = models.TextField()
     mission = models.TextField()
     vision = models.TextField()
-    status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
+    status = models.BooleanField(default=True , help_text="0=inactive, 1=active")
 
     def __str__(self):
         return self.title
