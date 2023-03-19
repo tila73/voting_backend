@@ -373,7 +373,7 @@ def update_event(request, event_id):
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('admin_event')
+            return redirect('admin_Event')
     else:
         form = EventForm(instance=event)
     return render(request, 'admin/update_action/update_event.html', {'form':form, 'event':event})
@@ -408,7 +408,7 @@ def update_team(request, team_id):
         form = TeamsForm(request.POST, request.FILES, instance=team)
         if form.is_valid():
             form.save()
-            return redirect('admin_team')
+            return redirect('admin_teams')
     else:
         form = TeamsForm(instance=team)
     return render(request, 'admin/update_action/update_team.html', {'form':form, 'team':team})
@@ -419,7 +419,7 @@ def update_service(request, service_id):
         form = ServiceForm(request.POST, request.FILES, instance=service)
         if form.is_valid():
             form.save()
-            return redirect('admin_service')
+            return redirect('admin_services')
     else:
         form= ServiceForm(instance=service)
     return render(request, 'admin/update_action/update_service.html', {'form':form, 'service':service})
@@ -617,6 +617,15 @@ def delete_team(request, id):
     if request.method=="POST":
         obj.delete()
         return redirect('admin_teams')
+    
+
+def delete_team_member(request, id):
+    obj = TeamMembers.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_team_member')
+
+
 
 
 def delete_whychooseus(request, id):
@@ -715,6 +724,10 @@ def view_faqq(request,id):
 def view_teams(request,id):
     team_object = Teams.objects.get(id=id)
     return render(request, 'admin/view_action/view_teams.html',{'teams': team_object})
+
+def view_team_member(request,id):
+    team_member_object = TeamMembers.objects.get(id=id)
+    return render(request, 'admin/view_action/view_teams.html',{'teams': team_member_object})
 
 def view_services(request,id):
     service_objects = Service.objects.get(id=id)

@@ -3,72 +3,76 @@
 {% block contents %}
 
 <style>
+  #create {
+    width: 60%;
+  }
+
+  @media (max-width: 750px) {
     #create {
-      width: 60%;
+      width: 85% !important;
     }
-  
-    @media (max-width: 750px) {
-      #create {
-        width: 85% !important;
-      }
-    }
-  </style>
-  <div id="create" class="m-auto my-5 p-4 shadow">
-    <h1 class="text-center">Update Team</h1>
-    <form action="#" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="form-group mb-2 mt-2">
-        <label for="">Title</label>
-        <input type="text" class="form-control" id="" name="title" placeholder="" />
-      </div>
-      
-      <div class="form-group mb-2 mt-2">
-        <label for="news_date">Sub Description</label>
-        <textarea name="sub_desc" class="form-control" id="" cols="30" rows="10"></textarea>
-      </div>
+  }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+  <h1 class="text-center">Update Team</h1>
+  <form action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group mb-2 mt-2">
+      <label for="">Title</label>
+      <input type="text" class="form-control" id="" name="title" placeholder="" value="{{team.title}}" />
+    </div>
 
-      <div class="form-group mb-2 mt-2">
-        <label for="">Image</label>
-        <input type="file" class="form-control" id="" name="img" placeholder="" />
-      </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="news_date">Sub Description</label>
+      <textarea name="sub_desc" class="form-control" id="" cols="30" rows="10">{{team.sub_desc}}</textarea>
+    </div>
 
-      <div class="form-group mb-2 mt-2">
-        <label for="">Name</label>
-        <input type="text" class="form-control" id="" name="name" placeholder="" />
+    <div class="form-group mb-2 mt-2">
+      <label for="">Image</label>
+      <br>
+      {% if team.img %}
+      <img src="{{ team.img.url }}" alt="Company Image" style="max-width: 100px">
+      {% endif %}
+      <input type="file" class="form-control" id="" name="img" placeholder="" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="">Name</label>
+      <input type="text" class="form-control" id="" name="name" placeholder="" value="{{team.name}}" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="">Post</label>
+      <input type="text" class="form-control" id="" name="post" placeholder="" value="{{team.post}}" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="">Facebook Link</label>
+      <input type="text" class="form-control" id="" name="fb_link" placeholder="" value="{{team.fb_link}}" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="">Twitter link</label>
+      <input type="text" class="form-control" id="" name="twitter_link" placeholder="" value="{{team.twitter_link}}" />
+    </div>
+    <div class="form-group mb-2 mt-2">
+      <label for="">Instagram link</label>
+      <input type="text" class="form-control" id="" name="insta_link" placeholder="" value="{{team.insta_link}}" />
+    </div>
+
+    <div class="form-group mb-2 mt-2">
+      <label for="status">Status</label>
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="btnradio1">Inactive</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">Active</label>
+
       </div>
-      <div class="form-group mb-2 mt-2">
-        <label for="">Post</label>
-        <input type="text" class="form-control" id="" name="post" placeholder="" />
-      </div>
-      <div class="form-group mb-2 mt-2">
-        <label for="">Facebook Link</label>
-        <input type="text" class="form-control" id="" name="fb_link" placeholder="" />
-      </div>
-      <div class="form-group mb-2 mt-2">
-        <label for="">Twitter link</label>
-        <input type="text" class="form-control" id="" name="twitter_link" placeholder="" />
-      </div>
-      <div class="form-group mb-2 mt-2">
-        <label for="">Instagram link</label>
-        <input type="text" class="form-control" id="" name="insta_link" placeholder="" />
-      </div>
-  
-      <div class="form-group mb-2 mt-2">
-        <label for="status">Status</label>
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-          <label class="btn btn-outline-primary" for="btnradio1">Inactive</label>
-  
-          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-          <label class="btn btn-outline-primary" for="btnradio2">Active</label>
-  
-        </div>
-      </div>
-  
-      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-      <button class="btn btn-primary mb-3 mt-2">cancel</button>
-  
-    </form>
-  </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
+
+  </form>
+</div>
 
 {% endblock contents %}
