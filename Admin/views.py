@@ -617,6 +617,15 @@ def delete_team(request, id):
     if request.method=="POST":
         obj.delete()
         return redirect('admin_teams')
+    
+
+def delete_team_member(request, id):
+    obj = TeamMembers.objects.get(id=id)
+    if request.method=="POST":
+        obj.delete()
+        return redirect('admin_team_member')
+
+
 
 
 def delete_whychooseus(request, id):
@@ -715,6 +724,10 @@ def view_faqq(request,id):
 def view_teams(request,id):
     team_object = Teams.objects.get(id=id)
     return render(request, 'admin/view_action/view_teams.html',{'teams': team_object})
+
+def view_team_member(request,id):
+    team_member_object = TeamMembers.objects.get(id=id)
+    return render(request, 'admin/view_action/view_teams.html',{'teams': team_member_object})
 
 def view_services(request,id):
     service_objects = Service.objects.get(id=id)
