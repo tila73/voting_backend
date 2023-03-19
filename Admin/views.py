@@ -373,7 +373,7 @@ def update_event(request, event_id):
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('admin_event')
+            return redirect('admin_Event')
     else:
         form = EventForm(instance=event)
     return render(request, 'admin/update_action/update_event.html', {'form':form, 'event':event})
@@ -408,7 +408,7 @@ def update_team(request, team_id):
         form = TeamsForm(request.POST, request.FILES, instance=team)
         if form.is_valid():
             form.save()
-            return redirect('admin_team')
+            return redirect('admin_teams')
     else:
         form = TeamsForm(instance=team)
     return render(request, 'admin/update_action/update_team.html', {'form':form, 'team':team})
@@ -419,7 +419,7 @@ def update_service(request, service_id):
         form = ServiceForm(request.POST, request.FILES, instance=service)
         if form.is_valid():
             form.save()
-            return redirect('admin_service')
+            return redirect('admin_services')
     else:
         form= ServiceForm(instance=service)
     return render(request, 'admin/update_action/update_service.html', {'form':form, 'service':service})

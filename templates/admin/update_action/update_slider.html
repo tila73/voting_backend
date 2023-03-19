@@ -17,16 +17,22 @@
         {% csrf_token %}
         <div class="form-group mb-2 mt-2">
             <label for="slider_title">Slider Title</label>
-            <input type="text" class="form-control" id="slider_title" name="slider_title" placeholder="" />
+            <input type="text" class="form-control" id="slider_title" name="slider_title" placeholder=""
+                value="{{slider.slider_title}}" />
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="slider_description">Slider Description </label>
-            <textarea class="form-control" id="slider_description" name="status" rows="3"></textarea>
+            <textarea class="form-control" id="slider_description" name="slider_description"
+                rows="3">{{slider.slider_description}}</textarea>
         </div>
 
         <div class="form-group mb-2 mt-2">
             <label for="slider_img">Slider Img </label>
+            <br>
+            {% if slider.slider_img %}
+            <img src="{{ slider.slider_img.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
             <input type="file" class="form-control" id="slider_img" name="slider_img" />
         </div>
 
