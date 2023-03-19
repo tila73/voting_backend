@@ -25,7 +25,8 @@ def testimonial(request):
     return render(request, "home/testimonial.html")
 
 def event(request):
-    return render (request,'home/event.html')
+    event_objs = Event.objects.all()
+    return render (request,'home/event.html',{'event_objs':event_objs})
 
 def blog(request):
     return render(request, "home/blog.html")

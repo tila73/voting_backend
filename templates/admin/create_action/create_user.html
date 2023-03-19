@@ -13,43 +13,55 @@
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
   <h1 class="text-center">Create User</h1>
-  <form action="#" method="POST" enctype="multipart/form-data">
+  <form name="userform" action="#" method="POST" enctype="multipart/form-data" onsubmit="return userValidation()" >
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="" />
+      <input type="text" class="form-control" id="name" name="name" placeholder="" onclick="removeuserValidation()" />
     </div>
+    <p id="names" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="username">UserName</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="" />
+      <input type="text" class="form-control" id="username" name="username" placeholder="" onclick="removeuserValidation()"/>
     </div>
+    <p id="usernames" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="email">Email Address</label>
-      <input type="email" class="form-control" id="email" name="email" />
+      <input type="email" class="form-control" id="email" name="email" onclick="removeuserValidation()"/>
     </div>
+    <p id="emails" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="" />
+      <input type="password" class="form-control" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required onclick="removeuserValidation()"/>
     </div>
+    <p id="passwords" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" name="address" placeholder="" />
+      <input type="text" class="form-control" id="address" name="address" placeholder="" onclick="removeuserValidation()"/>
     </div>
+    <p id="addresses" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="phone_number">Phone</label>
-      <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="" />
+      <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="" onclick="removeuserValidation()"/>
     </div>
+    <p id="phones" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="esewa_number">Esewa Number</label>
-      <input type="number" class="form-control" id="esewa_number" name="esewa_number" placeholder="" />
+      <input type="number" class="form-control" id="esewa_number" name="esewa_number" placeholder="" onclick="removeuserValidation()"/>
     </div>
+    <p id="esewa" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="role">Role</label>
-      <input type="number" class="form-control" id="role" name="role" placeholder="" />
+      <input type="number" class="form-control" id="role" name="role" placeholder="" onclick="removeuserValidation()"/>
     </div>
+    <p id="roles" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
         <label for="news_date">Status</label>
@@ -61,9 +73,10 @@
           <input
             type="radio"
             class="btn-check"
-            name="btnradio"
+            name="isMale"
             id="btnradio1"
             autocomplete="off"
+            value="true"
             checked
           />
           <label class="btn btn-outline-primary" for="btnradio1">Active</label>
@@ -71,23 +84,27 @@
           <input
             type="radio"
             class="btn-check"
-            name="btnradio"
+            name="isMale"
             id="btnradio2"
             autocomplete="off"
+            value="false"
           />
           <label class="btn btn-outline-primary" for="btnradio2">Inactive</label>
         </div>
       </div>
-      
+      <p id="statuss" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="created_at">Created date</label>
-      <input type="date" class="form-control" id="created_at" name="created_at" />
+      <input type="date" class="form-control" id="created_at" name="created_at" onclick="removeuserValidation()"/>
     </div>
+    <p id="created" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="updated_at">Updated date</label>
-      <input type="date" class="form-control" id="updated_at" name="updated_at" />
+      <input type="date" class="form-control" id="updated_at" name="updated_at" onclick="removeuserValidation()"/>
     </div>
+    <p id="updated" class="text-danger"></p>
 
 
     <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>

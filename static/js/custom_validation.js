@@ -240,7 +240,7 @@ function companyValidation() {
   var desc = document.companyform.desc.value;
   var missions = document.companyform.mission.value;
   var visions = document.companyform.vision.value;
-  var statuss = document.companyform.btnradio.value;
+  var statuss = document.companyform.status.value;
   
 
   if (img == null || img == "") {
@@ -285,7 +285,7 @@ function serviceValidation() {
   var img = document.serviceform.servicesImg.value;
   var title = document.serviceform.title.value;
   var desc = document.serviceform.desc.value;
-  var statuss = document.serviceform.btnradio.value;
+  var statuss = document.serviceform.status.value;
   
 
   if (img == null || img == "") {
@@ -324,7 +324,7 @@ function whyValidation() {
   var title = document.whyform.title.value;
   var img = document.whyform.img.value;
   var desc = document.whyform.desc.value;
-  var statuss = document.whyform.btnradio.value;
+  var statuss = document.whyform.status.value;
   
 
   if (title == null || title == "") {
@@ -368,6 +368,7 @@ function teamValidation() {
   var fbl = document.teamform.fb_link.value;
   var twt = document.teamform.twitter_link.value;
   var igm = document.teamform.insta_link.value;
+  var statuss = document.teamform.status.value;
   
 
   if (title == null || title == "") {
@@ -402,6 +403,10 @@ function teamValidation() {
     document.getElementById("igm").innerText = "required";
     return false;
   } 
+  else if (statuss == null || statuss == "") {
+    document.getElementById("statuss").innerText = "required";
+    return false;
+  } 
 
 }
 
@@ -420,7 +425,7 @@ function faqValidation() {
   var namess = document.faqform.name.value;
   var emails = document.faqform.email.value;
   var messages = document.faqform.message.value;
-  var statuss = document.faqform.btnradio.value;
+  var statuss = document.faqform.status.value;
   
 
   if (namess == null || namess == "") {
@@ -496,3 +501,162 @@ function blogValidation() {
   } 
 
 }
+
+
+
+
+
+
+
+
+
+// //! password validation
+// function paswordValidation(){
+// var myInput = document.getElementById("password");
+
+// // When the user starts to type something inside the password field
+// myInput.onkeyup = function() {
+//   // Validate lowercase letters
+//   var lowerCaseLetters = /[a-z]/g;
+//   if(myInput.value.match(lowerCaseLetters)) {  
+//     letter.classList.remove("invalid");
+//     letter.classList.add("valid");
+//   } else {
+//     letter.classList.remove("valid");
+//     letter.classList.add("invalid");
+//   }
+  
+//   // Validate capital letters
+//   var upperCaseLetters = /[A-Z]/g;
+//   if(myInput.value.match(upperCaseLetters)) {  
+//     capital.classList.remove("invalid");
+//     capital.classList.add("valid");
+//   } else {
+//     capital.classList.remove("valid");
+//     capital.classList.add("invalid");
+//   }
+
+//   // Validate numbers
+//   var numbers = /[0-9]/g;
+//   if(myInput.value.match(numbers)) {  
+//     number.classList.remove("invalid");
+//     number.classList.add("valid");
+//   } else {
+//     number.classList.remove("valid");
+//     number.classList.add("invalid");
+//   }
+  
+//   // Validate length
+//   if(myInput.value.length >= 8) {
+//     length.classList.remove("invalid");
+//     length.classList.add("valid");
+//   } else {
+//     length.classList.remove("valid");
+//     length.classList.add("invalid");
+//   }
+// }
+// }
+
+
+
+
+
+//! user form validaition
+
+// function removeuserValidation(){
+//   document.getElementById("names").innerText = "";
+//   document.getElementById("usernames").innerText = "";
+//   document.getElementById("emails").innerHTML = "";
+//   document.getElementById("passwords").innerText = "";
+//   document.getElementById("addresses").innerText = "";
+//   document.getElementById("phones").innerText = "";
+//   document.getElementById("esewa").innerText = "";
+//   document.getElementById("roles").innerText = "";
+//   document.getElementById("roles").innerText = "";
+//   document.getElementById("statuss").innerText = "";
+//   document.getElementById("created").innerText = "";
+//   document.getElementById("updated").innerText = ""; 
+// }
+
+
+// function userValidation() {
+//   var names = document.userform.name.value;
+//   var usernames = document.userform.username.value;
+//   var emails = document.userform.email.value;
+//   var passwords = document.userform.password.value;
+//   var addresses = document.userform.address.value;
+//   var phones = document.userform.phone_number.value;
+//   var esewa = document.userform.esewa_number.value;
+//   var roles = document.userform.role.value;
+//   var statuss = document.userform.btnradio.value;
+//   var created = document.userform.created_at.value;
+//   var updated = document.userform.updated_at.value;
+
+
+//   if (names == null || names == "") {
+//     document.getElementById("names").innerText = "required field";
+//     return false;
+//   } 
+
+//   else if (usernames == null || usernames == "") {
+//     document.getElementById("usernames").innerText = "required field";
+//     return false;
+//   }
+//   else if(emails == null || emails == "") {
+//     document.getElementById("emails").innerHTML = "required field";
+//     return false;
+//   }
+
+//   else if (passwords == null || passwords == "") {
+//     document.getElementById("passwords").innerText = "required field";
+//     return false;
+//   } 
+//   else if (addresses == null || addresses == "") {
+//     document.getElementById("addresses").innerText = "required field";
+//     return false;
+//   } 
+//   else if (phones == null || phones == "") {
+//     document.getElementById("phones").innerText = "required field";
+//     return false;
+//   } 
+//   else if (esewa == null || esewa == "") {
+//     document.getElementById("esewa").innerText = "required field";
+//     return false;
+//   } 
+//   else if (roles == null || roles == "") {
+//     document.getElementById("roles").innerText = "required field";
+//     return false;
+//   } 
+//   else if (statuss == null || statuss == "") {
+//     document.getElementById("statuss").innerText = "required field";
+//     return false;
+//   } 
+//   else if (created == null || created == "") {
+//     document.getElementById("created").innerText = "required field";
+//     return false;
+//   } 
+//   else if (updated == null || updated == "") {
+//     document.getElementById("updated").innerText = "required field";
+//     return false;
+//   } 
+
+// }
+
+// function radiobtn(){
+//   var tstatus = document.userform.btnradio.value;
+
+//   if(tstatus=="true" || tstatus=="false"){
+//     document.getElementById("btnradio1")
+//   }
+// }
+
+// //Form has been submitted
+// if(isset($_POST['submit'])) {
+
+//   //Radio button has been set to "true"
+//   if(isset($_POST['isMale']) && $_POST['isMale'] == 'true') $_POST['isMale'] = TRUE;
+
+//   //Radio button has been set to "false" or a value was not selected
+//   else $_POST['isMale'] = FALSE;
+
+// }
