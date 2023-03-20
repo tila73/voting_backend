@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import *
+from .forms import *
 # Create your views here.
 
 def home(request):
@@ -74,13 +75,23 @@ def blog_detail(request,blog_slug, blogdet_slug):
             return redirect('blog')
 
 def gallery(request):
-    return render(request, "home/gallery.html")
+    gallery = Gallery.objects.all()
+    context = {'gallery':gallery}
+    return render(request, "home/gallery.html", context)
 
 def news(request):
     return render(request, "home/news.html")
 
-def faq(request):
-    return render(request, "home/faq.html")
+def faqq(request):
+    if request.method == "GET":
+        question = questionForm
+        return render(request, "home/faq.html", {'question':question})
+    else:
+        question = questionForm(request.POST, request.FILES)
+        if question.is_valid():
+            question.save()
+            return redirect('faq')
+    return render(request, "home/faq.html", {'question':question})
 
 def contact(request):
     return render(request, "home/contact.html")
@@ -94,8 +105,9 @@ def register(request):
 def event_details(request):
     return render(request, "home/event_details.html")
 
-def news_detail(request):
-    return render(request, "home/news_detail.html")
+def news_detail(request, slug):
+    news_details_object = News.objects.get(slug=slug)
+    return render(request, "home/news_detail.html", {'newsd': news_details_object})
 
 def voting_detail(request):
     return render(request, "home/voting_detail.html")
