@@ -32,17 +32,15 @@
     >
       <div class="card large-card mb-5" style="width: 100%">
         <img
-          src="./uploads/gallery3.jpg"
+          src="{{eve_obj.event_img.url}}"
           class="card-img-top"
           alt="..."
           height="500px"
         />
         <div class="card-body">
-          <h5 class="card-title mt-2">Card title</h5>
+          <h5 class="card-title mt-2">{{eve_obj.event_title}}</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content. Some quick example text to build on the
-            card title and make up the bulk of the card's content.
+            {{eve_obj.event_description}}
           </p>
         </div>
       </div>
