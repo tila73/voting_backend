@@ -27,12 +27,26 @@
         value="{{news.news_author}}" />
     </div>
     <p id="nauthor" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="news_date">News Date</label>
+      <input type="hidden" class="form-control" id="news_date" value="{{news.news_date}}" />
+      <input type="date" class="form-control" id="news_date1" name="news_date" />
 
-      <input type="hidden" class="form-control" id="event_date" name="news_date" value="{{news.news_date}}" />
+      <script>
+        const date = new Date(document.querySelector('#news_date').value);
 
-      <input type="date" class="form-control" id="test" name="event_date" />
+        const year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        const day = date.getDate();
+        if (month <= 9) {
+          month = "0" + month;
+        }
+        const withHyphens = [year, month, day].join('-');
+        document.querySelector('#news_date1').value = withHyphens;
+
+
+      </script>
     </div>
 
     <div class="form-group mb-2 mt-2">

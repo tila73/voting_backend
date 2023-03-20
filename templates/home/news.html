@@ -63,21 +63,21 @@
           </div>
 
           <div class="highlight_news shadow-sm mb-3">
-            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
+            <a href="#" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
             </p>
           </div>
           <div class="highlight_news shadow-sm mb-3">
-            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
+            <a href="#" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
             </p>
           </div>
           <div class="highlight_news shadow-sm mb-3">
-            <a href="{% url 'news_detail' %}" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
+            <a href="#" class="btn btn-sm btn-outline-primary shadow mb-1">HightLight</a>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
               asperiores.
@@ -87,52 +87,22 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-12">
-        <div class="row p-2">
-          <div class="col-4 small-card">
-            <img src="./uploads/download.jpeg" alt="" class="w-100" />
-          </div>
+        {% for items in news %}
+        <a href="{% url 'news_detail' slug=items.slug %}" class="text-decoration-none text-dark">
+          <div class="row p-2">
+            <div class="col-4 small-card">
+              <img src="{{items.news_img.url}}" alt="" class="w-100" />
+            </div>
 
-          <div class="col-8">
-            <h4>News Heading</h4>
-            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
-            </a>
-            <p>
-              brief news hello the weather is forcasted to be cloudy in most of
-              the parts of Gandaki province
-            </p>
+            <div class="col-8">
+              <h5>{{items.news_title}}</h5>
+              <strong>{{items.news_author}}</strong>
+              <h6>{{items.news_date}}</h6>
+            </div>
           </div>
-        </div>
-
-        <div class="row p-2">
-          <div class="col-4 small-card">
-            <img src="./uploads/download.jpeg" alt="" class="w-100" />
-          </div>
-
-          <div class="col-8">
-            <h4>News Heading</h4>
-            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
-            </a>
-            <p>
-              brief news hello the weather is forcasted to be cloudy in most of
-              the parts of Gandaki province
-            </p>
-          </div>
-        </div>
-        <div class="row p-2">
-          <div class="col-4 small-card">
-            <img src="./uploads/download.jpeg" alt="" class="w-100" />
-          </div>
-
-          <div class="col-8">
-            <h4>News Heading</h4>
-            <a href="{% url 'news_detail' %}" class="text-decoration-none text-danger"><strong>News writer</strong>
-            </a>
-            <p>
-              brief news hello the weather is forcasted to be cloudy in most of
-              the parts of Gandaki province
-            </p>
-          </div>
-        </div>
+        </a>
+        <hr>
+        {% endfor %}
       </div>
     </div>
   </div>

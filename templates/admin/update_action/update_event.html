@@ -27,11 +27,24 @@
       <label for="event_date">Event Date</label>
 
 
-      <input type="hidden" class="form-control" id="event_date" name="news_date" value="{{news.news_date}}" />
+      <input type="hidden" class="form-control" id="event_date" value="{{event.event_date}}" />
 
-      <input type="date" class="form-control" id="event_date" name="event_date" />
+      <input type="date" class="form-control" id="event_date1" name="event_date" />
+
+      <script>
+        const date = new Date(document.querySelector('#event_date').value);
+
+        const year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        const day = date.getDate();
+        if (month <= 9) {
+          month = "0" + month;
+        }
+        const withHyphens = [year, month, day].join('-');
+        document.querySelector('#event_date1').value = withHyphens;
 
 
+      </script>
     </div>
 
 

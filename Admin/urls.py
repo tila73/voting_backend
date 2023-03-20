@@ -103,6 +103,7 @@ urlpatterns = [
         path('faq/delete/<int:id>/', views.delete_faq, name="delete_faq"),
         path('services/delete/<int:service_id>/', views.delete_service, name="delete_service"),
         path('teams/delete/<int:id>/', views.delete_team, name="delete_team"),
+        path('teams/members/delete/<int:id>/', views.delete_team_member, name="delete_team_member"),
         path('whychooseus/delete/<int:id>/', views.delete_whychooseus, name="delete_whychooseus"), 
         path('company/delete/<int:id>/', views.delete_company, name="delete_company"),
         path('counts/delete/<int:id>/', views.delete_counts, name="delete_counts"),

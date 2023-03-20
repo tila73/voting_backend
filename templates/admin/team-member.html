@@ -62,10 +62,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                Are you sure you want to delete {{items.title}} ?
+                Are you sure you want to delete {{items.name}} ?
               </div>
               <div class="modal-footer">
-                <form method="POST" action="{% url 'delete_team' id=items.id %}">
+                <form method="POST" action="{% url 'delete_team_member' id=items.id %}">
                   {% csrf_token %}
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="submit" value="delete" class="btn btn-danger">Delete</button>
