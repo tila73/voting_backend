@@ -8,16 +8,17 @@
       </div>
       <div>
         <h2>Join As Volunteer</h2>
-        <form class="row g-3 shadow mt-1 mb-1 p-2" style="border-radius: 15px">
+        <form class="row g-3 shadow mt-1 mb-1 p-2" style="border-radius: 15px" method="POST">
+          {% csrf_token %}
           <div class="col-md-12">
-            <input type="text" class="form-control" placeholder="Name" />
+            <input type="text" class="form-control" placeholder="Name" name="name" />
           </div>
           <div class="col-md-12">
-            <input type="email" class="form-control" placeholder="Email" />
+            <input type="email" class="form-control" placeholder="Email" name="email" />
           </div>
           <div class="col-md-12">
             <textarea
-              name=""
+              name="message"
               id=""
               cols="30"
               rows="4"
