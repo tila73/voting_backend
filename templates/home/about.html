@@ -1,7 +1,7 @@
 {% extends 'inc/nav.html' %} {% load static %} {% block content %}
 
 <!-- body -->
-{% for item in about %}
+
 <div class="pt-4">
   <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
     <ol class="breadcrumb d-flex justify-content-center">
@@ -11,6 +11,7 @@
       <li class="breadcrumb-item active" aria-current="page">About</li>
     </ol>
   </nav>
+  {% for item in about %}
   <li class="list-group-item text-center">
     <h1 class="py-2">{{ item.about_title }}</h1>
   </li>
