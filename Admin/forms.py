@@ -56,7 +56,7 @@ class TeamsForm(forms.ModelForm):
 
 class TeamMemberForm(forms.ModelForm):
     class Meta:
-        model = TeamMembers
+        model = Teams
         fields = '__all__'
 
 class GalleryForm(forms.ModelForm):
