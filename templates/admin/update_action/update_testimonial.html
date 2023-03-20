@@ -12,33 +12,53 @@
   }
 </style>
 <div id="create" class="m-auto my-5 p-4 shadow">
-  <h1 class="text-center">Update testimonial </h1>
-  <form action="#" method="post" enctype="multipart/form-data">
+  <h1 class="text-center">Update Testimonial</h1>
+  <form name="tesimonialform" action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group mb-2 mt-2">
-      <label for="testmoni_name">Title</label>
+      {% if testimonial.testimonial_img %}
+      <img src="{{ testimonial.testimonial_img.url }}" alt="{{testimonial.testmoni_name}}" style="max-width: 100px">
+      {% endif %}
+      <label for="testimonial_img">Image</label> <input type="file" class="form-control" id="testimonial_img"
+        name="testimonial_img" placeholder="" />
+    </div>
+    <p id="names" class="text-danger"></p>
+    <div class="form-group mb-2 mt-2">
+      <label for="testmoni_name">Name</label>
       <input type="text" class="form-control" id="testmoni_name" name="testmoni_name" placeholder=""
         value="{{testimonial.testmoni_name}}" />
     </div>
-
+    <p id="names" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="testmoni_designation">Designation</label>
-      <textarea class="form-control" name="testmoni_designation" id="testmoni_designation" cols="3"
-        rows="3">{{testimonial.testmoni_designation}}</textarea>
+      <input type="text" class="form-control" name="testmoni_designation" id="testmoni_designation" placeholder=""
+        value="{{testimonial.testmoni_designation}}" />
     </div>
+    <p id="designation" class="text-danger"></p>
+
     <div class="form-group mb-2 mt-2">
       <label for="testmoni_message">Message</label>
       <textarea class="form-control" id="testmoni_message" name="testmoni_message" cols="30"
         rows="3">{{testimonial.testmoni_message}}</textarea>
     </div>
+    <p id="message" class="text-danger"></p>
 
     <div class="form-group mb-2 mt-2">
       <label for="status"> status</label>
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
-      <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
-      <button class="btn btn-primary mb-3 mt-2">cancel</button>
+      <input type="radio" class="btn-check" name="status" id="btnradio1" autocomplete="off" checked />
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" id="isactive" class="btn-check" name="status" value="true">
+      <label for="isactive" class="btn btn-outline-primary" checked="true">Active</label><br>
+      <input type="radio" id="inactive" class="btn-check" name="status" value="false">
+      <label for="inactive" class="btn btn-outline-primary">In Active</label><br>
 
+    </div>
+    <p id="statuss" class="text-danger"></p>
+
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
   </form>
 </div>
 

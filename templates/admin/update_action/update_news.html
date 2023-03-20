@@ -1,0 +1,80 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Update News</h1>
+
+    <form name="myform" action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-2 mt-2">
+            <label for="news_title">News Title</label>
+            <input type="text" class="form-control" id="news_title" name="news_title" placeholder=""
+                value="{{news.news_title}}" />
+        </div>
+        <div class="form-group mb-2 mt-2">
+            <label for="news_author">News Author</label>
+            <input type="text" class="form-control" id="news_author" name="news_author" placeholder="Enter Author Name"
+                value="{{news.news_author}}" />
+        </div>
+        <p id="nauthor" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="news_date">News Date</label>
+            <input type="hidden" class="form-control" id="news_date" value="{{news.news_date}}" />
+            <input type="date" class="form-control" id="news_date1" name="news_date" />
+
+            <script>
+                const date = new Date(document.querySelector('#news_date').value);
+
+                const year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                const day = date.getDate();
+                if (month <= 9) {
+                    month = "0" + month;
+                }
+                const withHyphens = [year, month, day].join('-');
+                document.querySelector('#news_date1').value = withHyphens;
+
+
+            </script>
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="slug">Slug</label>
+            <input type="text" class="form-control" id="slug" name="slug" placeholder="" value="{{news.slug}}" />
+
+        </div>
+        <div class="form-group mb-2 mt-2">
+            <label for="event_img">Image</label>
+
+            {% if news.news_img %}
+            <img src="{{ news.news_img.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
+            <input type="file" class="form-control" id="news_img" name="news_img" value="{{ news.news_img.url }}" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="news_description">News Description</label>
+            <textarea class="form-control" id="news_description" name="news_description"
+                rows="3">{{news.news_description}}</textarea>
+            <p id="ndesc" class="text-danger"></p>
+
+        </div>
+        <button id="subbtn" type="submit" class="btn btn-primary mb-3 mt-2">
+            Submit
+        </button>
+        <button class="btn btn-primary mb-3 mt-2">cancel</button>
+    </form>
+</div>
+
+{% endblock contents %}

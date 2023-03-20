@@ -103,8 +103,12 @@ def login(request):
 def register(request):
     return render(request, "home/register.html")
 
-def event_details(request):
-    return render(request, "home/event_details.html")
+def blog_detail(request):
+    return render(request, "home/blog-detail.html")
+
+def event_details(request, slug):
+    event_details_object = Event.objects.get(slug=slug)
+    return render(request, "home/event_details.html", {'eventd': event_details_object})
 
 def news_detail(request, slug):
     news_details_object = News.objects.get(slug=slug)
