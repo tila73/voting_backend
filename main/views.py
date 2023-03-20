@@ -70,8 +70,8 @@ def blog_detail(request):
 def event_details(request):
     return render(request, "home/event_details.html")
 
-def news_detail(request):
-    news_details_object = NewsDetails.objects.all()
+def news_detail(request, slug):
+    news_details_object = News.objects.get(slug=slug)
     return render(request, "home/news_detail.html", {'newsd': news_details_object})
 
 def voting_detail(request):
