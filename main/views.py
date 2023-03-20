@@ -80,7 +80,8 @@ def gallery(request):
     return render(request, "home/gallery.html", context)
 
 def news(request):
-    return render(request, "home/news.html")
+    news = News.objects.all()
+    return render(request, "home/news.html", {'news':news})
 
 def faqq(request):
     if request.method == "GET":
