@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 # Create your views here.
 
 def home(request):
@@ -41,8 +42,7 @@ def event(request):
     return render (request,'home/event.html',{'event_objs':event_objs})
 
 def Blog(request):
-    blog_objects = blog.objects.all()
-    return render(request, "home/blog.html", {'blog': blog_objects})
+    return render(request, "home/blog.html")
 
 def gallery(request):
     gallery = Gallery.objects.all()
@@ -50,11 +50,18 @@ def gallery(request):
     return render(request, "home/gallery.html", context)
 
 def news(request):
-    news_object = News.objects.all()
-    return render(request, "home/news.html", {'news': news_object})
+    return render(request, "home/news.html")
 
 def faq(request):
-    return render(request, "home/faq.html")
+    if request.method == "GET":
+        question = questionForm
+        return render(request, "home/faq.html", {'question':question})
+    else:
+        question = questionForm(request.POST, request.FILES)
+        if question.is_valid():
+            question.save()
+            return redirect('faq')
+    return render(request, "home/faq.html", {'question':question})
 
 def contact(request):
     return render(request, "home/contact.html")
@@ -66,15 +73,13 @@ def register(request):
     return render(request, "home/register.html")
 
 def blog_detail(request):
-    blog_detail_object = blogDetails.objects.all()
-    return render(request, "home/blog-detail.html", {'blogd': blog_detail_object})
+    return render(request, "home/blog-detail.html")
 
 def event_details(request):
     return render(request, "home/event_details.html")
 
 def news_detail(request):
-    news_details_object = NewsDetails.objects.all()
-    return render(request, "home/news_detail.html", {'newsd': news_details_object})
+    return render(request, "home/news_detail.html")
 
 def voting_detail(request):
     return render(request, "home/voting_detail.html")
