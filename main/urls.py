@@ -10,7 +10,11 @@ urlpatterns = [
     path('team/', views.team, name="team"),  
     path('testimonial/', views.testimonial, name="testimonial"),  
     path('event/', views.event, name="event"),  
+    path('event/<str:event_slug>/', views.event_view, name="event_view"),  
     path('blog/', views.Blog, name="blog"), 
+
+    path('blog/<str:slug>/',views.blog_view, name="blog_view"),
+
     path('gallery/', views.gallery, name="gallery"),  
     path('news/', views.news, name="news"),  
     path('faq/', views.faqq, name="faq"),  

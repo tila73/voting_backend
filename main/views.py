@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 from .models import *
 from .forms import *
 # Create your views here.
@@ -41,8 +41,38 @@ def event(request):
     event_objs = Event.objects.all()
     return render (request,'home/event.html',{'event_objs':event_objs})
 
+def event_view(request, event_slug):
+    if(Event.objects.filter(slug=event_slug)):
+        eve_obj = Event.objects.get(slug=event_slug)
+        context = {'eve_obj':eve_obj}
+        return render(request,'home/event_details.html',context)
+    else:
+        return redirect('event')
+
+
 def Blog(request):
-    return render(request, "home/blog.html")
+    blog_obj= blog.objects.all()
+    return render(request, "home/blog.html", {'blog_obj':blog_obj})
+
+def blog_view(request,slug):
+    if(blog.objects.filter(slug=slug)):
+        blogs = blog.objects.get(slug=slug)
+        blog_dets = blogDetails.objects.filter(slug=slug)
+        context = {'blogs':blogs ,'blog_dets':blog_dets}
+        return render(request, 'home/blog-detail.html', context)
+    else:
+        return redirect('blog')
+
+        
+
+def blog_detail(request,blog_slug, blogdet_slug):
+    if (blog.objects.filter(slug=blog_slug)):
+        if(blogDetails.objects.filter(slug=blogdet_slug)):
+            blog_details = blogDetails.objects.filter(slug=blogdet_slug).first
+            context = {'blog_details':blog_details}
+            return render(request, "home/blog-detail.html", context)
+        else:
+            return redirect('blog')
 
 def gallery(request):
     gallery = Gallery.objects.all()
@@ -50,7 +80,8 @@ def gallery(request):
     return render(request, "home/gallery.html", context)
 
 def news(request):
-    return render(request, "home/news.html")
+    news = News.objects.all()
+    return render(request, "home/news.html", {'news':news})
 
 def faqq(request):
     if request.method == "GET":
@@ -72,12 +103,17 @@ def login(request):
 def register(request):
     return render(request, "home/register.html")
 
+<<<<<<< HEAD
 def blog_detail(request):
     return render(request, "home/blog-detail.html")
 
 def event_details(request, slug):
     event_details_object = Event.objects.get(slug=slug)
     return render(request, "home/event_details.html", {'eventd': event_details_object})
+=======
+def event_details(request):
+    return render(request, "home/event_details.html")
+>>>>>>> a2d607cfae0f0326036e6ab999f623ae11c5d43b
 
 def news_detail(request, slug):
     news_details_object = News.objects.get(slug=slug)
