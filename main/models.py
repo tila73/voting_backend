@@ -155,7 +155,6 @@ class faq(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
-    status = models.BooleanField(default=False, help_text="0=default, 1-Active")
 
     def __str__(self):
         return self.name

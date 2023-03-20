@@ -52,7 +52,7 @@ def gallery(request):
 def news(request):
     return render(request, "home/news.html")
 
-def faq(request):
+def faqq(request):
     if request.method == "GET":
         question = questionForm
         return render(request, "home/faq.html", {'question':question})
