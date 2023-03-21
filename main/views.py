@@ -84,15 +84,16 @@ def news(request):
     return render(request, "home/news.html", {'news':news})
 
 def faqq(request):
+    faqq = faq.objects.all()
     if request.method == "GET":
         question = questionForm
-        return render(request, "home/faq.html", {'question':question})
+        return render(request, "home/faq.html", {'question':question, 'faqq':faqq})
     else:
         question = questionForm(request.POST, request.FILES)
         if question.is_valid():
             question.save()
             return redirect('faq')
-    return render(request, "home/faq.html", {'question':question})
+    return render(request, "home/faq.html", {'question':question, 'faqq':faqq})
 
 def contact(request):
     return render(request, "home/contact.html")

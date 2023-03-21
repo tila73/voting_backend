@@ -795,7 +795,17 @@ def view_testimonial_detail(request):
     testimonial_detail_object = TestimonialDetails.objects.get(id=id)
     return render(request, 'admin/view_action/view_testimonial_detail.html', {'testimoniald': testimonial_detail_object})
 
-
+# create faqans views
+def faq_ans(request, id):
+    faqQsn = faq.objects.get(id=id)
+    if request.method == "POST":
+        formm = faqAnsForm(request.POST, instance=faqQsn)
+        if formm.is_valid():
+            formm.save()
+            return redirect('admin_faq')
+    else:
+        formm = faqAnsForm
+    return render(request, 'admin/create_action/create_faqAns.html', {'form':formm, 'faqQsn':faqQsn})
 
 
 

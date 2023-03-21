@@ -4,4 +4,4 @@ from .models import *
 class questionForm(forms.ModelForm):
     class Meta:
         model = faq
-        fields = '__all__'
+        fields = ['name', 'email', 'question']
