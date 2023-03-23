@@ -23,31 +23,70 @@
       <!-- Background image -->
     </div>
     <div class="col-md-5 col-sm-12 col-lg-5">
-      <div class="content shadow p-3 mx-auto">
-        <div class="pb-4">
-          <h1 class="text-danger">Sahara Malla</h1>
-          <p>Sahara Malla</p>
-        </div>
+      <form action="https://uat.esewa.com.np/epay/main" method="POST">
+        <div class="content shadow p-3 mx-auto">
+          <div class="pb-4">
+            <h1 class="text-danger">Sahara Malla</h1>
+            <p>Sahara Malla</p>
+          </div>
 
-        <div class="mb-3 pb-4">
-          <label for="exampleFormControlInput1" class="form-label">
-            <b>Please Enter No. of Votes </b></label
-          >
-          <input
-            type="email"
-            class="form-control w-50"
-            id="exampleFormControlInput1"
-            placeholder=""
-          />
+          <div class="mb-3 pb-4">
+            <label for="exampleFormControlInput1" class="form-label">
+              <b>Please Enter No. of Votes </b></label
+            >
+            <input
+              id="vote"
+              class="form-control"
+              onkeyup="test();"
+              type="number"
+            />
+            <input id="tAmt" name="tAmt" type="hidden" />
+            <input
+              name="amt"
+              id="amt"
+              type="hidden"
+            />
+            <input value="0" name="txAmt" type="hidden" />
+            <input value="0" name="psc" type="hidden" />
+            <input value="0" name="pdc" type="hidden" />
+            <input value="EPAYTEST" name="scd" type="hidden" />
+            <input value="{{random}}" name="pid" type="hidden" />
+            <input
+              value="http://merchant.com.np/page/esewa_payment_success?q=su"
+              type="hidden"
+              name="su"
+            />
+            <input
+              value="http://merchant.com.np/page/esewa_payment_failed?q=fu"
+              type="hidden"
+              name="fu"
+            />
+          </div>
+
+          <div class="pb-4">
+            <label for="exampleFormControlInput1" class="form-label">
+              Total Amount</label
+            ><br />
+            <label
+              for="exampleFormControlInput1"
+              class="form-label"
+              id="amount"
+            >
+              0</label
+            >
+          </div>
+          <button class="btn btn-danger mb-4" type="submit">Vote Now</button>
         </div>
-        <div class="pb-4">
-          <label for="exampleFormControlInput1" class="form-label">
-            Total Amount</label
-          ><br />
-          <label for="exampleFormControlInput1" class="form-label"> 0</label>
-        </div>
-        <button class="btn btn-danger mb-4">Vote Now</button>
-      </div>
+      </form>
+      <script>
+        function test() {
+          var vote = document.querySelector("#vote").value;
+          var amount = 100*vote;
+          document.querySelector("#amt").value = amount;
+          document.querySelector("#tAmt").value = amount;
+          document.querySelector("#amount").innerHTML = 100 * vote;
+        }
+      </script>
     </div>
   </div>
 </div>

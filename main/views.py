@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render
 from .models import *
 from .forms import *
+import random
+import string
+
 # Create your views here.
 
 def home(request):
@@ -115,5 +118,7 @@ def news_detail(request, slug):
     return render(request, "home/news_detail.html", {'newsd': news_details_object})
 
 def voting_detail(request):
-    return render(request, "home/voting_detail.html")
+    allowed_chars = ''.join((string.ascii_letters, string.digits))
+    unique_id = ''.join(random.choice(allowed_chars) for _ in range(32))
+    return render(request, "home/voting_detail.html",{'random':unique_id})
 
