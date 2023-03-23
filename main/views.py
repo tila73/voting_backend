@@ -157,5 +157,6 @@ def payment(request):
         'pid': oid,
     }
     resp = req.post(url, d)
-    return HttpResponse(resp.text)
+    # if(resp.text=="success"):
+        
 
