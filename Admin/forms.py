@@ -111,7 +111,7 @@ class BusinessForm(forms.ModelForm):
 class CandidateForm(forms.ModelForm):
     class Meta:
         model = Candidate
-        fields = '__all__'
+        fields = ['business', 'candidate_img', 'candidate_name', 'candidate_desc']
 class faqAnsForm(forms.ModelForm):
     class Meta:
         model = faq

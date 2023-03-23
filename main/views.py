@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render,HttpResponse
+from django.contrib import messages
 from .models import *
 from .forms import *
 import random
@@ -10,11 +11,19 @@ import requests as req
 def home(request):
     event = Event.objects.all()
     slider = Slider.objects.all()
-    context = {'event':event, 'slider':slider,}
+    business = Business.objects.all()
+    context = {'event':event, 'slider':slider, 'business': business}
     return render(request, "home/index.html", context)
 
-def voting(request):
-    return render(request, "home/voting.html")
+def business_candidate(request, id):
+    if(Business.objects.filter(id=id)):
+        candidate_obj = Candidate.objects.filter(business__id = id)
+        business = Business.objects.filter(id=id).first()
+        context = {'candidate': candidate_obj, 'business': business}
+        return render(request, "home/voting.html", context)
+    else:
+        messages.warning(request, 'invalid business')
+        return redirect('home')
 
 def about(request):
     about = About.objects.all()
@@ -119,10 +128,21 @@ def news_detail(request, slug):
     news_details_object = News.objects.get(slug=slug)
     return render(request, "home/news_detail.html", {'newsd': news_details_object})
 
-def voting_detail(request):
-    allowed_chars = ''.join((string.ascii_letters, string.digits))
-    unique_id = ''.join(random.choice(allowed_chars) for _ in range(32))
-    return render(request, "home/voting_detail.html",{'random':unique_id})
+def voting_detail(request, business_id, candidate_id):
+    if(Business.objects.filter(id=business_id)):
+        if(Candidate.objects.filter(id=candidate_id)):
+            candidate = Candidate.objects.filter(id=candidate_id).first
+            allowed_chars = ''.join((string.ascii_letters, string.digits))
+            unique_id = ''.join(random.choice(allowed_chars) for _ in range(32))
+            context = {'candidate': candidate, 'random':unique_id}
+            return render(request, 'home/voting_detail.html', context)
+        else:
+            messages.error(request, 'no such candidate')
+            return redirect('voting')
+    else:
+        messages.error(request, ' No such category')
+        return redirect('catview')    
+    
 
 
 def payment(request):

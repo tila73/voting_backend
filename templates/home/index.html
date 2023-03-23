@@ -41,60 +41,20 @@
         join the excitement!
     </p>
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-        <div class="col">
+        {% for items in business %}
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card h-100 small-card">
-                <img src="../uploads/dance-nepal-dance.jpg" class="card-img-top" alt="Hollywood Sign on The Hill" />
+                <img src="{{items.img.url}}" class="card-img-top" alt="Hollywood Sign on The Hill" />
                 <div class="card-body">
-                    <h5 class="card-title text-center">Dance Nepal Dance</h5>
-                    <p class="card-text text-secondary">
-                        <b>Organizer: </b>Glamour Nepal
-                    </p>
-                    <p class="card-text text-secondary">
-                        <b>Info: </b>Dancing reality show
-                    </p>
+                    <h5 class="card-title text-center">{{items.user.name}}</h5>
                 </div>
                 <div class="card-footer text-center">
-                    <p><small class="text-muted">Voting closes in 5 days</small></p>
-                    <a href="voting.html"><button class="btn btn-primary text-light px-5">Vote Now</button></a>
+                    <p><small class="text-muted">{{items.business_desc}}</small></p>
+                    <a href="{% url 'voting' id=items.id %}"><button class="btn btn-primary text-light px-5">Vote Now</button></a>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="../uploads/voice-nepal.jpg" class="card-img-top" alt="Palm Springs Road" />
-                <div class="card-body">
-                    <h5 class="card-title text-center">Voice of Nepal</h5>
-                    <p class="card-text text-secondary">
-                        <b>Organizer: </b>Entertainment Nepal
-                    </p>
-                    <p class="card-text text-secondary">
-                        <b>Info: </b>Singing reality show
-                    </p>
-                </div>
-                <div class="card-footer text-center">
-                    <p><small class="text-muted">Voting closes in 5 days</small></p>
-                    <button class="btn btn-primary text-light px-5">Vote Now</button>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-                <img src="../uploads/download.jpg" class="card-img-top" alt="Los Angeles Skyscrapers" />
-                <div class="card-body">
-                    <h5 class="card-title text-center">Miss SEE Pokhara</h5>
-                    <p class="card-text text-secondary">
-                        <b>Organizer: </b>Nepal Fashion Home
-                    </p>
-                    <p class="card-text text-secondary">
-                        <b>Info: </b>Beauty peagent for SEE passout students
-                    </p>
-                </div>
-                <div class="card-footer text-center">
-                    <p><small class="text-muted">Voting closes in 5 days</small></p>
-                    <button class="btn btn-primary text-light px-5">Vote Now</button>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 <!-- Cards section ends here-->

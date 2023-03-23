@@ -14,16 +14,16 @@
 <div class="container my-3">
   <div class="row mt-2">
     <div class="col-md-7 col-sm-12 col-lg-7">
-      <!-- Background image -->
-      <img class="w-100" src="./uploads/mn1.jpg" alt="" />
-      <!-- Background image -->
+      <!-- Candidate image -->
+      <img class="w-100" src="{{candidate.candidate_img.url}}" alt="" />
+      <!-- Candidate image -->
     </div>
     <div class="col-md-5 col-sm-12 col-lg-5">
       <form action="https://uat.esewa.com.np/epay/main" method="POST">
         <div class="content shadow p-3 mx-auto">
           <div class="pb-4">
-            <h1 class="text-danger">Sahara Malla</h1>
-            <p>Sahara Malla</p>
+            <h1 class="text-danger">{{candidate.candidate_name}}</h1>
+            <p>{{candidate.candidate_desc}}</p>
           </div>
 
           <div class="mb-3 pb-4">

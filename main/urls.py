@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
     path('', views.home, name="home"),  
-    path('voting/', views.voting, name="voting"),  
+    path('voting/<int:id>/', views.business_candidate, name="voting"),  
     path('about/', views.about, name="about"),  
     path('company/', views.company, name="company"),  
     path('team/', views.team, name="team"),  
@@ -24,7 +24,7 @@ urlpatterns = [
     path('blog/blog_detail/', views.blog_detail, name="blog_detail"),
     path('event/event_details/', views.event_details, name="event_details"),
     path('news/news_detail/<str:slug>/', views.news_detail, name="news_detail"),
-    path('voting/voting_detail/', views.voting_detail, name="voting_detail"),
+    path('voting/<int:business_id>/<int:candidate_id>/', views.voting_detail, name="voting_detail"),
     path('payment/check/', views.payment),
     
     
