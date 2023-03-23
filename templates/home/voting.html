@@ -20,7 +20,7 @@
     {% for items in candidate %}
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
       <div class="card m-auto my-1">
-        <img src="{{items.candidate_img}}" class="card-img-top" alt="..." />
+        <img src="{{items.candidate_img.url}}" class="card-img-top" alt="..." />
         <div class="card-body text-center">
           <p class="card-text">{{items.id}}</p>
           <h5 class="card-title">{{items.candidate_name}}</h5>
