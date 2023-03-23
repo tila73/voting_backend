@@ -134,6 +134,9 @@ def voting_detail(request, business_id, candidate_id):
             candidate = Candidate.objects.filter(id=candidate_id).first
             allowed_chars = ''.join((string.ascii_letters, string.digits))
             unique_id = ''.join(random.choice(allowed_chars) for _ in range(32))
+            can = Candidate.objects.get(id=candidate_id)
+            can.pid = unique_id
+            can.save()
             context = {'candidate': candidate, 'random':unique_id}
             return render(request, 'home/voting_detail.html', context)
         else:

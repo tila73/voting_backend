@@ -242,6 +242,7 @@ class Business(models.Model):
 class Candidate(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True)
     candidate_img = models.ImageField(upload_to='img/candidate', blank=False, null=True)
+    pid = models.CharField(max_length=255,null=True)
     candidate_name = models.CharField(max_length=55, null=True)
     total_vote = models.PositiveIntegerField(null=True)
     candidate_desc = models.TextField(null=True)
