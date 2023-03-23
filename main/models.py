@@ -246,4 +246,15 @@ class Candidate(models.Model):
     total_vote = models.PositiveIntegerField(null=True)
     candidate_desc = models.TextField(null=True)
     
+class candidate_payment(models.Model):
+    candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
+    amount = models.CharField(max_length =5)
+    transaction_id = models.CharField(max_length=10)
+    esewa_status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
+
+class business_payment(models.Model):
+    business_id = models.ForeignKey(Business, on_delete=models.CASCADE)
+    amount = models.CharField(max_length =5)
+    transaction_id = models.CharField(max_length=10)
+    esewa_status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
     
