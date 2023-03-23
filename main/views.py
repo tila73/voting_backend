@@ -122,6 +122,7 @@ def news_detail(request, slug):
 def voting_detail(request):
     allowed_chars = ''.join((string.ascii_letters, string.digits))
     unique_id = ''.join(random.choice(allowed_chars) for _ in range(32))
+    
     return render(request, "home/voting_detail.html",{'random':unique_id})
 
 
@@ -137,5 +138,6 @@ def payment(request):
         'pid': oid,
     }
     resp = req.post(url, d)
-    return HttpResponse(resp.text)
+    # if(resp.text=="success"):
+        
 
