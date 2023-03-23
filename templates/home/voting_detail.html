@@ -1,11 +1,7 @@
 {% extends 'inc/nav.html' %} {% load static %} {% block content %}
 
 <!-- Breadcrumb -->
-<div
-  class="container py-2"
-  style="--bs-breadcrumb-divider: '>'"
-  aria-label="breadcrumb"
->
+<div class="container py-2" style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Voting Details</li>
@@ -32,48 +28,24 @@
 
           <div class="mb-3 pb-4">
             <label for="exampleFormControlInput1" class="form-label">
-              <b>Please Enter No. of Votes </b></label
-            >
-            <input
-              id="vote"
-              class="form-control"
-              onkeyup="test();"
-              type="number"
-            />
+              <b>Please Enter No. of Votes </b></label>
+            <input id="vote" class="form-control" onkeyup="test();" type="number" />
             <input id="tAmt" name="tAmt" type="hidden" />
-            <input
-              name="amt"
-              id="amt"
-              type="hidden"
-            />
+            <input name="amt" id="amt" type="hidden" />
             <input value="0" name="txAmt" type="hidden" />
             <input value="0" name="psc" type="hidden" />
             <input value="0" name="pdc" type="hidden" />
             <input value="EPAYTEST" name="scd" type="hidden" />
             <input value="{{random}}" name="pid" type="hidden" />
-            <input
-              value="http://merchant.com.np/page/esewa_payment_success?q=su"
-              type="hidden"
-              name="su"
-            />
-            <input
-              value="http://merchant.com.np/page/esewa_payment_failed?q=fu"
-              type="hidden"
-              name="fu"
-            />
+            <input value="http://127.0.0.1:8000/payment/check" type="hidden" name="su" />
+            <input value="http://127.0.0.1:8000/payment/check" type="hidden" name="fu" />
           </div>
 
           <div class="pb-4">
             <label for="exampleFormControlInput1" class="form-label">
-              Total Amount</label
-            ><br />
-            <label
-              for="exampleFormControlInput1"
-              class="form-label"
-              id="amount"
-            >
-              0</label
-            >
+              Total Amount</label><br />
+            <label for="exampleFormControlInput1" class="form-label" id="amount">
+              0</label>
           </div>
           <button class="btn btn-danger mb-4" type="submit">Vote Now</button>
         </div>
@@ -81,7 +53,7 @@
       <script>
         function test() {
           var vote = document.querySelector("#vote").value;
-          var amount = 100*vote;
+          var amount = 100 * vote;
           document.querySelector("#amt").value = amount;
           document.querySelector("#tAmt").value = amount;
           document.querySelector("#amount").innerHTML = 100 * vote;
