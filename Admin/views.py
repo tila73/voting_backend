@@ -245,15 +245,16 @@ def create_counts(request):
 
 
 def create_gallery(request):
+    userr = User.objects.all()
     if request.method == "GET":
         gallery_form = GalleryForm
-        return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form})
+        return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form, 'user_id': userr})
     else:
         gallery_form = GalleryForm(request.POST, request.FILES)
         if gallery_form.is_valid():
             gallery_form.save()
             return redirect('admin_gallery')
-    return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form})
+    return render(request, 'admin/create_action/create_gallery.html', context={'form': gallery_form ,'user_id': userr})
 
 
 def create_slider(request):
@@ -461,6 +462,7 @@ def update_counts(request, counts_id):
 
 
 def update_gallery(request, gallery_id):
+    userr = User.objects.all()
     gallery = Gallery.objects.get(id=gallery_id)
     if request.method == "POST":
         form = GalleryForm(request.POST, request.FILES, instance=gallery)
@@ -469,7 +471,7 @@ def update_gallery(request, gallery_id):
             return redirect('admin_gallery')
     else:
         form = GalleryForm(instance=gallery)
-    return render(request, 'admin/update_action/update_gallery.html', {'form': form, "gallery": gallery})
+    return render(request, 'admin/update_action/update_gallery.html', {'form': form, "gallery": gallery, 'user': userr})
 
 
 def update_slider(request, slider_id):

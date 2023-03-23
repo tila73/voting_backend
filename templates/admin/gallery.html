@@ -30,12 +30,13 @@
       <th scope="col">Top Title</th>
       <th scope="col">Title</th>
       <th scope="col">Description</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
     {% for items in gallery %}
     <tr>
-      <td>{{items.User_id}}</td>
+      <td>{{items.user_id.id}}</td>
       <td>{{items.img.url}}</td>
       <td>{{items.top_title}}</td>
       <td>{{items.title}}</td>
