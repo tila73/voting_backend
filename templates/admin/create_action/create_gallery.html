@@ -19,7 +19,9 @@
             <label for="user_id">User ID</label>
             <select id="user_id" class="form-select" aria-label="Default select example" name="user_id">
                 <option selected>Choose the user id</option>
-                <option value="">{{items.id}}</option>
+                {% for items in users %}
+                <option value="{{items.id}}">{{items.id}}</option>
+                {% endfor %}
             </select>
         </div>
 

@@ -15,6 +15,15 @@ def Users(request):
     return render(request, 'admin/user.html', {'users':users})
 
 
+def business(request):
+    business_object = Business.objects.all()
+    return render(request, 'admin/business.html', {'business': business_object})
+
+
+def candidate(request):
+    candidate_object = Candidate.objects.all()
+    return render(request, 'admin/candidate.html', {'candidate': candidate_object})
+
 def adminevent(request):
     event_object = Event.objects.all()
     return render(request, 'admin/event.html',{'event': event_object})
@@ -119,6 +128,42 @@ def create_user(request):
             return redirect('User')
     return render(request, 'admin/create_action/create_user.html', context={'form': users})
 
+def create_business(request):
+    users = User.objects.all()
+    if request.method == "GET":
+        business = BusinessForm
+        return render(request, 'admin/create_action/create_business.html', context={'form': business, "users": users})
+    else:
+        business=BusinessForm(request.POST, request.FILES)
+        if business.is_valid():
+            business.save()
+            return redirect('business')
+        return render(request, 'admin/create_action/create_business.html', context={'form': business, "users": users})
+
+
+# def create_business(request):
+#     if request.method == "POST":
+#         form = BusinessForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             business = form.save(commit=False)
+#             business.user = form.cleaned_data['user']
+#             business.save()
+#             return redirect('business')
+#     else:
+#         form = BusinessForm()
+#     return render(request, 'admin/create_action/create_business.html', context={'form': form})
+
+def create_candidate(request):
+    business = Business.objects.all()
+    if request.method == "GET":
+        candidate = CandidateForm
+        return render(request, 'admin/create_action/create_candidate.html', context={'form': candidate, 'business': business})
+    else:
+        candidate = CandidateForm(request.POST, request.FILES)
+        if candidate.is_valid():
+            candidate.save()
+            return redirect('candidate')
+    return render(request, 'admin/create_action/create_candidate.html', context={'form': candidate, 'business': business})
 
 def create_news(request):
     if request.method == "GET":
@@ -343,6 +388,45 @@ def create_testimonial_details(request):
 
 
 # update
+
+def update_users(request, users_id):
+    users = User.objects.get(id=users_id)
+    if request.method == "POST":
+        form = UserForm(request.POST, request.FILES, instance=users)
+        if form.is_valid():
+            form.save()
+            return redirect('User')
+    else:
+        form = UserForm(instance=users)
+    return render(request, 'admin/update_action/update_user.html', {'form': form, "users": users})
+
+
+def update_business(request,  business_id):
+    users = User.objects.all()
+    business = Business.objects.get(id=business_id)
+    if request.method == "POST":
+        form = BusinessForm(request.POST, request.FILES, instance=business)
+        if form.is_valid():
+            form.save()
+            return redirect('business')
+    else:
+        form = BusinessForm(instance=business)
+    return render(request, 'admin/update_action/update_business.html', {'form': form, 'users': users, "business": business})
+
+
+def update_candidate(request, candidate_id):
+    business = Business.objects.all()
+    candidate = Candidate.objects.get(id=candidate_id)
+    if request.method == "POST":
+        form = CandidateForm(request.POST, request.FILES, instance=candidate)
+        if form.is_valid():
+            form.save()
+            return redirect('candidate')
+    else:
+        form = CandidateForm(instance=candidate)
+    return render(request, 'admin/update_action/update_candidate.html', {'form': form, 'business':business, "candidate": candidate})
+
+
 def update_news(request, news_id):
     news = News.objects.get(id=news_id)
     if request.method == "POST":

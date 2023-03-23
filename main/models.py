@@ -231,3 +231,18 @@ class TestimonialDetails(models.Model):
 
     def __str__(self):
         return self.testmoni_name
+    
+class Business(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    logo = models.ImageField(upload_to='img/business_logo', blank=False, null=True)
+    img = models.ImageField(upload_to='img/business', blank=False, null=True)
+    business_desc = models.TextField(null=True)
+
+class Candidate(models.Model):
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True)
+    candidate_img = models.ImageField(upload_to='img/candidate', blank=False, null=True)
+    candidate_name = models.CharField(max_length=55, null=True)
+    total_vote = models.PositiveIntegerField(null=True)
+    candidate_desc = models.TextField(null=True)
+    
+    

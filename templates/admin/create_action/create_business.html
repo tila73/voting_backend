@@ -1,0 +1,50 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Create Business User</h1>
+    <form name="businessform" action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group mb-2 mt-2">
+            <label for="user">User</label>
+            <select id="user" class="form-select" aria-label="Default select example" name="user">
+                <option selected>Choose the user</option>
+                {% for user in users %}
+                <option value="{{ user.id }}">{{ user.id }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="logo">Logo</label>
+            <input type="file" class="form-control" id="logo" name="logo" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="img">Image</label>
+            <input type="file" class="form-control" id="img" name="img" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="business_desc">Business Description</label>
+            <textarea class="form-control" id="business_desc" name="business_desc" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+        <button class="btn btn-primary mb-3 mt-2">Cancel</button>
+    </form>
+
+</div>
+
+{% endblock contents %}

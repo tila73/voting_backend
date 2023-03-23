@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.Dashboard, name="admin_Dashboard"),  
     path('User/', views.Users, name="User"),  
+    path('business/', views.business, name="business"),
+    path('candidate/', views.candidate, name="candidate"),
     path('Event', views.adminevent, name="admin_Event"),  
     path('faq/', views.faqq, name="admin_faq"),
     path('teams/', views.teams, name="admin_teams"),
@@ -31,6 +33,8 @@ urlpatterns = [
     
     # create section
     path('user/create/', views.create_user, name="create_user"),  
+    path('business/create/', views.create_business, name="create_business"),
+    path('candidate/create/', views.create_candidate, name="create_candidate"),
     path('news/create/', views.create_news, name="create_news"),  
     path('news/create_detail/', views.create_news_details, name="create_news_details"),  
     path('events/create/', views.create_event, name="create_event"),  
@@ -58,6 +62,12 @@ urlpatterns = [
 
 
 # update section
+    path('user/update_user/<int:users_id>/',
+         views.update_users, name="update_users"),
+    path('business/update_business/<int:business_id>/',
+         views.update_business, name="update_business"),
+    path('candidate/update_candidate/<int:candidate_id>/',
+         views.update_candidate, name="update_candidate"),
     path('news/update/<int:news_id>/',
          views.update_news, name="update_news"),
     path('news/update_details/<int:news_detail_id>/', views.update_news_detail, name="update_news_detail"),  

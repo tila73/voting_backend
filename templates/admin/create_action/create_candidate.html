@@ -1,0 +1,55 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Create Candidate User</h1>
+    <form name="candidateform" action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group mb-2 mt-2">
+            <label for="business">Business</label>
+            <select id="business" class="form-select" aria-label="Default select example" name="business">
+                <option selected>Choose the user</option>
+                {% for business in business %}
+                <option value="{{ business.id }}">{{ business.id }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="candidate_img">Candidate Image</label>
+            <input type="file" class="form-control" id="candidate_img" name="candidate_img" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="candidate_name">Candidate Name</label>
+            <input type="text" class="form-control" id="candidate_name" name="candidate_name" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="total_vote">Total Vote </label>
+            <input type="number" class="form-control" id="total_vote" name="total_vote" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="candidate_desc">Candidate Description </label>
+            <textarea class="form-control" id="candidate_desc" name="candidate_desc" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+        <button class="btn btn-primary mb-3 mt-2">Cancel</button>
+    </form>
+
+</div>
+
+{% endblock contents %}
