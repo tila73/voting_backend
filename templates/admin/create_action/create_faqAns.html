@@ -1,0 +1,40 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+  #create {
+    width: 60%;
+  }
+
+  @media (max-width: 750px) {
+    #create {
+      width: 85% !important;
+    }
+  }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+  <h1 class="text-center">Answer the FAQ question</h1>
+  <form name="aboutform" action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    
+
+    <div class="form-group mb-2 mt-2">
+      <label for="question">Question</label>
+      <textarea class="form-control" name="question" id="question" cols="30" rows="10">{{ faqQsn.question }}</textarea>
+    </div>
+    <p id="adesc" class="text-danger"></p>
+    
+    <div class="form-group mb-2 mt-2">
+      <label for="answer">Answer</label>
+      <textarea class="form-control" name="answer" id="answer" cols="30" rows="10"></textarea>
+    </div>
+    <p id="adesc" class="text-danger"></p>
+    
+
+    <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+    <button class="btn btn-primary mb-3 mt-2">cancel</button>
+
+  </form>
+</div>
+
+{% endblock contents %}

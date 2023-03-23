@@ -150,7 +150,8 @@ urlpatterns = [
     path('testimonial/view/<int:id>/', views.view_testimonial, name="view_admin_testimonial"),  
     path('testimonial/detail/view/<int:id>/', views.view_testimonial_detail, name="view_admin_testimonial_detail"),
 
-    
+    #     faq ans url
+     path('faq/ans/<int:id>/', views.faq_ans, name="faq_ans"),
 
 ]
 if settings.DEBUG:

@@ -112,3 +112,7 @@ class CandidateForm(forms.ModelForm):
     class Meta:
         model = Candidate
         fields = '__all__'
+class faqAnsForm(forms.ModelForm):
+    class Meta:
+        model = faq
+        fields = ['question', 'answer']

@@ -27,8 +27,7 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Message</th>
-      <th scope="col">Status</th>
+      <th scope="col">Question</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -37,11 +36,11 @@
     <tr>
       <td>{{items.name}}</td>
       <td>{{items.email}}</td>
-      <td>{{items.message}}</td>
-      <td>{{items.status}}</td>
+      <td>{{items.question}}</td>
       <td>
         <a class="btn table_button btn-primary" href="{% url 'view_admin_faq' id=items.id %}">Details</a>
         <a class="btn table_button btn-secondary" href="{% url 'update_faq' faaq_id=items.id %}">Update</a>
+        <a href="{% url 'faq_ans' id=items.id %}" class="btn table_button btn-success">Give Ans</a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
           Delete
