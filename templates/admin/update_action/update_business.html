@@ -1,0 +1,67 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Update Business User</h1>
+    <form name="businessform" action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group mb-2 mt-2">
+            <label for="user">User</label>
+            <select id="user" class="form-select" aria-label="Default select example" name="user">
+
+                <option value="{{ business.user.id }}">{{ business.user.id }}</option>
+
+                {% for items in users %}
+                {% if business.user.id != items.id %}
+
+                <option value="{{items.id}}">{{items.id}}</option>
+
+                {% endif %}
+
+                {% endfor %}
+
+            </select>
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="logo">Logo</label>
+            <br>
+            {% if business.logo %}
+            <img src="{{ business.logo.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
+            <input type="file" class="form-control" id="logo" name="logo" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="img">Image</label>
+            <br>
+            {% if business.img %}
+            <img src="{{ business.img.url }}" alt="Company Image" style="max-width: 100px">
+            {% endif %}
+            <input type="file" class="form-control" id="img" name="img" placeholder="" />
+        </div>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="business_desc">Business Description</label>
+            <textarea class="form-control" id="business_desc" name="business_desc"
+                rows="3">{{business.business_desc}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+        <button class="btn btn-primary mb-3 mt-2">Cancel</button>
+    </form>
+
+</div>
+
+{% endblock contents %}

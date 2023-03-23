@@ -154,7 +154,8 @@ class Gallery(models.Model):
 class faq(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
-    message = models.TextField()
+    question = models.TextField(null=True)
+    answer = models.TextField(null=True)
 
     def __str__(self):
         return self.name
@@ -231,3 +232,29 @@ class TestimonialDetails(models.Model):
 
     def __str__(self):
         return self.testmoni_name
+    
+class Business(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    logo = models.ImageField(upload_to='img/business_logo', blank=False, null=True)
+    img = models.ImageField(upload_to='img/business', blank=False, null=True)
+    business_desc = models.TextField(null=True)
+
+class Candidate(models.Model):
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True)
+    candidate_img = models.ImageField(upload_to='img/candidate', blank=False, null=True)
+    candidate_name = models.CharField(max_length=55, null=True)
+    total_vote = models.PositiveIntegerField(null=True)
+    candidate_desc = models.TextField(null=True)
+    
+class candidate_payment(models.Model):
+    candidate_id = models.ForeignKey(Candidate, on_delete=models.CASCADE)
+    amount = models.CharField(max_length =5)
+    transaction_id = models.CharField(max_length=10)
+    esewa_status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
+
+class business_payment(models.Model):
+    business_id = models.ForeignKey(Business, on_delete=models.CASCADE)
+    amount = models.CharField(max_length =5)
+    transaction_id = models.CharField(max_length=10)
+    esewa_status = models.BooleanField(default=True, help_text="0=inactive, 1=active")
+    

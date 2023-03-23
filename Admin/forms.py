@@ -102,3 +102,17 @@ class blogDetailsForm(forms.ModelForm):
     class Meta:
         model = blogDetails
         fields = '__all__'
+
+class BusinessForm(forms.ModelForm):
+    class Meta:
+        model = Business
+        fields = '__all__'
+
+class CandidateForm(forms.ModelForm):
+    class Meta:
+        model = Candidate
+        fields = '__all__'
+class faqAnsForm(forms.ModelForm):
+    class Meta:
+        model = faq
+        fields = ['question', 'answer']

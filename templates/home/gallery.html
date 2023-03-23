@@ -13,72 +13,16 @@
   </div>
   <div class="container">
     <div class="row">
+      {% for items in gallery %}
       <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery1.jpg" class="card-img-top" alt="..." />
+          <img src="{{items.img.url}}" class="card-img-top" alt="..." />
           <div class="card-body text-center">
-            <h5 class="card-title">Miss SEE Pokhara</h5>
+            <h5 class="card-title">{{items.title}}</h5>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery2.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Voice of Nepal Contestent</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery3.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Voice of Nepal Winner</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery4.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Crowning Moment</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery5.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Contestent Performing</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery6.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Dance Competetion</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery2.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Voice of Nepal Contestent</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card m-auto my-1 border-0">
-          <img src="../uploads/gallery3.jpg" class="card-img-top" alt="..." />
-          <div class="card-body text-center">
-            <h5 class="card-title">Voice of Nepal Winner</h5>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

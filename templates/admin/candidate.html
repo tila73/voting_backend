@@ -1,0 +1,90 @@
+{% extends 'admin/admin.html' %}
+{% load static %}
+{% block contents %}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-sm-6">
+            <h1 class="m-0">User</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{% url 'admin_Dashboard' %}">Home</a></li>
+                <li class="breadcrumb-item active">User</li>
+            </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+
+<div class="create_button mb-3">
+    <a class="btn btn-success" href="{% url 'create_candidate' %}">Create</a>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Business</th>
+            <th scope="col">Candidate Image</th>
+            <th scope="col">Candidate Name</th>
+            <th scope="col"> Total Vote </th>
+            <th scope="col">Candidate Description </th>
+            <th scope="col">Action </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for items in candidate %}
+        <tr>
+            <td>{{items.business.id}}</td>
+            <td>{{items.candidate_img}}</td>
+            <td>{{items.candidate_name}}</td>
+            <td>{{items.total_vote}}</td>
+            <td>{{items.candidate_desc}}</td>
+
+            <td><a class="btn table_button btn-primary mb-1" href="#"> Details </a>
+                <a class="btn table_button btn-secondary mb-1"
+                    href="{% url 'update_candidate' candidate_id=items.id %}">Update</a>
+
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    Delete
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete user {{items.username}} ?
+                            </div>
+                            <div class="modal-footer">
+                                <form method="POST" action="{% url 'delete_user' user_id=items.id %}">
+                                    {% csrf_token %}
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" value="delete" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+
+
+
+    </tbody>
+</table>
+
+
+
+{% endblock contents %}

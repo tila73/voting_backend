@@ -1,0 +1,95 @@
+{% extends 'admin/admin.html' %} {% load static %} {% block contents %}
+
+<style>
+    #create {
+        width: 60%;
+    }
+
+    @media (max-width: 750px) {
+        #create {
+            width: 85% !important;
+        }
+    }
+</style>
+<div id="create" class="m-auto my-5 p-4 shadow">
+    <h1 class="text-center">Update User</h1>
+    <form name="userform" action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group mb-2 mt-2">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{users.name}}" />
+        </div>
+        <p id="names" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="username">UserName</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder=""
+                value="{{users.username}}" />
+        </div>
+        <p id="usernames" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{users.email}}" />
+        </div>
+        <p id="emails" class="text-danger"></p>
+
+        <!-- <div class="form-group mb-2 mt-2">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" value="{{users.password}}"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required  />
+        </div>
+        <p id="passwords" class="text-danger"></p> -->
+
+        <div class="form-group mb-2 mt-2">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder=""
+                value="{{users.address}}" />
+        </div>
+        <p id="addresses" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="phone_number">Phone</label>
+            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder=""
+                value="{{users.phone_number}}" />
+        </div>
+        <p id="phones" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="esewa_number">Esewa Number</label>
+            <input type="number" class="form-control" id="esewa_number" name="esewa_number" placeholder=""
+                value="{{users.esewa_number}}" />
+        </div>
+        <p id="esewa" class="text-danger"></p>
+
+        <div class="form-group mb-2 mt-2">
+            <label for="role">Role</label>
+            <input type="number" class="form-control" id="role" name="role" placeholder="" value="{{users.role}}" />
+        </div>
+        <p id="roles" class="text-danger"></p>
+
+        <!-- <div class="form-group mb-2 mt-2">
+            <label for="news_date">Status</label>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="isMale" id="btnradio1" autocomplete="off"
+                    value="{{users.status}}" checked />
+                <label class="btn btn-outline-primary" for="btnradio1">Active</label>
+
+                <input type="radio" class="btn-check" name="isMale" id="btnradio2" autocomplete="off"
+                    value="{{users.status}}" />
+                <label class="btn btn-outline-primary" for="btnradio2">Inactive</label>
+            </div>
+        </div>
+        <p id="statuss" class="text-danger"></p> -->
+
+
+
+        <button type="submit" class="btn btn-primary mb-3 mt-2">Submit</button>
+        <button class="btn btn-primary mb-3 mt-2">cancel</button>
+
+    </form>
+</div>
+
+{% endblock contents %}
